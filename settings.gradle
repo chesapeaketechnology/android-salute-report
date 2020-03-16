@@ -1,0 +1,2 @@
+rootProject.name='Salute Report'
+include ':app'

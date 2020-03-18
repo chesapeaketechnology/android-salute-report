@@ -11,6 +11,12 @@
         android:label="@string/home_fragment_label"
         tools:layout="@layout/fragment_home">
 
+        <argument
+            android:name="saluteReport"
+            app:nullable="true"
+            android:defaultValue="@null"
+            app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
+
         <action
             android:id="@+id/action_create_salute_report"
             app:destination="@id/FirstFragmentSize" />
@@ -21,6 +27,10 @@
         android:name="com.chesapeaketechnology.salute.FirstFragmentSize"
         android:label="@string/size_title"
         tools:layout="@layout/fragment_first_size">
+
+        <argument
+            android:name="saluteReport"
+            app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
 
         <action
             android:id="@+id/action_Size_to_Activity"
@@ -33,6 +43,10 @@
         android:label="@string/activity_title"
         tools:layout="@layout/fragment_second_activity">
 
+        <argument
+            android:name="saluteReport"
+            app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
+
         <action
             android:id="@+id/action_Activity_to_Location"
             app:destination="@id/ThirdFragmentLocation" />
@@ -43,6 +57,10 @@
         android:name="com.chesapeaketechnology.salute.ThirdFragmentLocation"
         android:label="@string/location_title"
         tools:layout="@layout/fragment_third_location">
+
+        <argument
+            android:name="saluteReport"
+            app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
 
         <action
             android:id="@+id/action_Location_to_Unit"
@@ -55,6 +73,10 @@
         android:label="@string/unit_title"
         tools:layout="@layout/fragment_fourth_unit">
 
+        <argument
+            android:name="saluteReport"
+            app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
+
         <action
             android:id="@+id/action_Unit_to_Time"
             app:destination="@id/FifthFragmentTime" />
@@ -65,6 +87,10 @@
         android:name="com.chesapeaketechnology.salute.FifthFragmentTime"
         android:label="@string/time_title"
         tools:layout="@layout/fragment_fifth_time">
+
+        <argument
+            android:name="saluteReport"
+            app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
 
         <action
             android:id="@+id/action_Time_to_Equipment"
@@ -77,6 +103,10 @@
         android:label="@string/equipment_title"
         tools:layout="@layout/fragment_sixth_equipment">
 
+        <argument
+            android:name="saluteReport"
+            app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
+
         <action
             android:id="@+id/action_Equipment_to_Remarks"
             app:destination="@id/SeventhFragmentRemarks" />
@@ -87,6 +117,10 @@
         android:name="com.chesapeaketechnology.salute.SeventhFragmentRemarks"
         android:label="@string/remarks_title"
         tools:layout="@layout/fragment_seventh_remarks">
+
+        <argument
+            android:name="saluteReport"
+            app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
 
         <action
             android:id="@+id/action_Submit"

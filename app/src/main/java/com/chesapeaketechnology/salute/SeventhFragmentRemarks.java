@@ -1,34 +1,73 @@
 package com.chesapeaketechnology.salute;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.chesapeaketechnology.salute.model.SaluteReport;
+
+/**
+ * This is the final fragment in the SALUTE report wizard.  It handles taking any additional information from the user
+ * and then submitting it to the {@link HomeFragment}.
+ */
 public class SeventhFragmentRemarks extends Fragment
 {
+    private static final String LOG_TAG = SeventhFragmentRemarks.class.getSimpleName();
+
+    private SaluteReport saluteReport;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         return inflater.inflate(R.layout.fragment_seventh_remarks, container, false);
     }
 
+    @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState)
     {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.button_next).setOnClickListener(new View.OnClickListener()
+        extractSaluteReport();
+
+        view.findViewById(R.id.button_next).setOnClickListener(view1 -> sendSaluteReportToHomeFragment());
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState)
+    {
+        super.onActivityCreated(savedInstanceState);
+    }
+
+    /**
+     * Pull the Salute Report from the fragment's arguments and set it as an instance variable.
+     */
+    private void extractSaluteReport()
+    {
+        final Bundle arguments = getArguments();
+        if (arguments == null)
         {
-            @Override
-            public void onClick(View view)
-            {
-                NavHostFragment.findNavController(SeventhFragmentRemarks.this)
-                        .navigate(R.id.action_Submit);
-            }
-        });
+            Log.wtf(LOG_TAG, "The arguments bundle was null when creating the Remarks Fragment (Seventh Fragment)");
+        } else
+        {
+            saluteReport = SeventhFragmentRemarksArgs.fromBundle(arguments).getSaluteReport();
+        }
+    }
+
+    /**
+     * Pass off the Salute Report to the home fragment so that it can process the newly created report.
+     */
+    private void sendSaluteReportToHomeFragment()
+    {
+        final SeventhFragmentRemarksDirections.ActionSubmit submitAction = SeventhFragmentRemarksDirections.actionSubmit();
+        submitAction.setSaluteReport(saluteReport);
+
+        NavHostFragment.findNavController(SeventhFragmentRemarks.this).navigate(submitAction);
     }
 }

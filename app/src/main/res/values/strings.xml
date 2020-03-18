@@ -16,4 +16,8 @@
     <string name="equipment_title">Equipment</string>
     <string name="remarks_title">Remarks</string>
     <string name="create_report_button_text">Create Report</string>
+
+    <!-- Name Dialog Strings -->
+    <string name="name_dialog_title">SALUTE Report Name</string>
+
 </resources>

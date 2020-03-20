@@ -1,7 +1,12 @@
 package com.chesapeaketechnology.salute;
 
 import android.annotation.SuppressLint;
+import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,25 +20,50 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.chesapeaketechnology.salute.model.SaluteReport;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The main fragment that lists all the existing SALUTE reports, and allows the user to create a new SALUTE report.
  *
  * @since 0.1.0
  */
-public class HomeFragment extends Fragment
+public class HomeFragment extends Fragment implements SaluteReportInteractionListener
 {
     private static final String LOG_TAG = HomeFragment.class.getSimpleName();
+
+    private final List<SaluteReport> saluteReports = new ArrayList<>();
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+
+        findAndAddSaluteReports();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         final View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        final RecyclerView recyclerView = view.findViewById(R.id.list);
+        final Context context = view.getContext();
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        recyclerView.setAdapter(new MySaluteReportRecyclerViewAdapter(saluteReports, this));
 
         final FloatingActionButton fab = view.findViewById(R.id.fab);
         fab.setOnClickListener(view1 -> startSaluteReportWizard(null));
@@ -60,6 +90,54 @@ public class HomeFragment extends Fragment
     public void onActivityCreated(@Nullable Bundle savedInstanceState)
     {
         super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
+    public void onReportSelected(SaluteReport report)
+    {
+        // TODO Finish me
+    }
+
+    /**
+     * Scan the file system for salute report files and add them to the list of reports.
+     */
+    private void findAndAddSaluteReports()
+    {
+        final File[] saluteFiles = getPrivateSaluteReportDirectory().listFiles();
+
+        int failedCount = 0;
+
+        if (saluteFiles != null)
+        {
+            for (File saluteFile : saluteFiles)
+            {
+                final Gson gson = new GsonBuilder().create();
+                try (final FileReader fileReader = new FileReader(saluteFile))
+                {
+                    final SaluteReport saluteReport = gson.fromJson(fileReader, SaluteReport.class);
+                    if (saluteReport == null)
+                    {
+                        Log.e(LOG_TAG, "Found a null salute report when scanning the app's private report directory");
+                    } else
+                    {
+                        saluteReports.add(saluteReport);
+                    }
+                } catch (Exception e)
+                {
+                    failedCount++;
+                    Log.wtf(LOG_TAG, "Could not read the salute report from a file");
+                }
+            }
+
+            if (failedCount > 0)
+            {
+                //noinspection ConstantConditions
+                Snackbar.make(getView(), "Could not open " + failedCount + " salute report(s)", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        }
+
+        // TODO Scan the file system for any existing salute report json files
     }
 
     /**
@@ -132,16 +210,108 @@ public class HomeFragment extends Fragment
         // The salute report will be null if this fragment is being displayed on app opening, or if the user canceled the wizard
         if (saluteReport == null) return;
 
+        boolean error = false;
+        String snackbarMessage = getString(R.string.created_report_toast_message);
+
+        saluteReports.add(saluteReport);
+
         Log.d(LOG_TAG, "Serializing a SALUTE report");
 
-        final GsonBuilder gsonBuilder = new GsonBuilder();
-        final String saluteReportJsonString = gsonBuilder.create().toJson(saluteReport);
+        final File uniqueReportFile = createUniqueFile(saluteReport.getReportName() + SaluteAppConstants.SALUTE_REPORT_FILE_EXTENSION);
 
-        Log.i(LOG_TAG, saluteReportJsonString);
+        try (final FileWriter writer = new FileWriter(uniqueReportFile))
+        {
+            new GsonBuilder().setPrettyPrinting().create().toJson(saluteReport, writer);
 
-        // TODO update the recycler view and write the salute report to disk
+            Log.i(LOG_TAG, saluteReport.toString());
+        } catch (Exception e)
+        {
+            error = true;
+            snackbarMessage = getString(R.string.error_creating_report_toast_message);
+            Log.e(LOG_TAG, "Failed to write the Salute report to disk", e);
+        }
 
-        Snackbar.make(view, "Created the SALUTE Report", Snackbar.LENGTH_LONG)
+        if (!error)
+        {
+            error = !sendReportToSyncMonkey(uniqueReportFile);
+            if (error) snackbarMessage = getString(R.string.sync_monkey_error_toast_message);
+        }
+
+        Snackbar.make(view, snackbarMessage, error ? Snackbar.LENGTH_INDEFINITE : Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
+    }
+
+    /**
+     * Given a starting file name, create a file name that is unique in the report directory.  If the provided
+     * file name is already unique, then use it.  If it is not unique, then keep counting up and adding that number to
+     * the file name until a unique file name is found.
+     *
+     * @param fileName The file name to start with.
+     * @return A unique file mapped to the app's private report directory.
+     */
+    private File createUniqueFile(String fileName)
+    {
+        final File privateAppFilesSyncDirectory = getPrivateSaluteReportDirectory();
+        File potentialNewFile = new File(privateAppFilesSyncDirectory, fileName);
+
+        if (potentialNewFile.exists())
+        {
+            final String nameWithoutExtension = SaluteAppUtils.getNameWithoutExtension(fileName);
+            final String ext = SaluteAppUtils.getExtension(fileName);
+            final String extension = ext == null ? "" : ext;
+
+            int i = 1;
+
+            while (potentialNewFile.exists())
+            {
+                fileName = nameWithoutExtension + "(" + i++ + ")" + extension;
+                potentialNewFile = new File(privateAppFilesSyncDirectory, fileName);
+            }
+        }
+
+        return potentialNewFile;
+    }
+
+    /**
+     * @return The File object representing the app's private storage directory where the Salute Report JSON files are
+     * stored.
+     */
+    @SuppressWarnings("ResultOfMethodCallIgnored")
+    private File getPrivateSaluteReportDirectory()
+    {
+        @SuppressWarnings("ConstantConditions") final File privateAppFilesSyncDirectory = new File(getContext().getFilesDir(), SaluteAppConstants.PRIVATE_REPORT_DIRECTORY);
+        if (!privateAppFilesSyncDirectory.exists()) privateAppFilesSyncDirectory.mkdir();
+        return privateAppFilesSyncDirectory;
+    }
+
+    /**
+     * Shares the provided file directly to the Sync Monkey app so it can be uploaded to Azure (or another cloud
+     * provider).  If the app is not found then false is returned.
+     *
+     * @param reportFile The file to share to Sync Monkey.
+     * @return True if the Sync Monkey app is found on this device.  False if the Sync Monkey app could not be found.
+     */
+    private boolean sendReportToSyncMonkey(File reportFile)
+    {
+        final Intent sendFileToSyncMonkey = new Intent(SaluteAppConstants.ACTION_SEND_FILE_NO_UI);
+        //final Intent sendFileToSyncMonkey = new Intent(Intent.ACTION_SEND);
+        sendFileToSyncMonkey.addCategory(Intent.CATEGORY_DEFAULT);
+        sendFileToSyncMonkey.setComponent(new ComponentName("com.chesapeaketechnology.syncmonkey", "com.chesapeaketechnology.syncmonkey.SharingActivity"));
+        //noinspection ConstantConditions
+        final Uri reportUri = FileProvider.getUriForFile(getContext(), SaluteAppConstants.AUTHORITY, reportFile);
+        sendFileToSyncMonkey.setDataAndType(reportUri, "application/json");
+        sendFileToSyncMonkey.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        sendFileToSyncMonkey.putExtra(Intent.EXTRA_STREAM, reportUri);
+
+        try
+        {
+            startActivity(sendFileToSyncMonkey);
+        } catch (ActivityNotFoundException e)
+        {
+            Log.e(LOG_TAG, "Could not find the Sync Monkey SharingActivity.  Only saving the file locally.", e);
+            return false;
+        }
+
+        return true;
     }
 }

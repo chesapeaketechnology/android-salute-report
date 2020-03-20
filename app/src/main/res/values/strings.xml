@@ -4,8 +4,6 @@
     <!-- Strings used for fragments for navigation -->
     <string name="home_fragment_label">SALUTE Reports</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="size_title">Size</string>
     <string name="next_button_text">Next</string>
     <string name="back_button_text">Back</string>
@@ -16,6 +14,10 @@
     <string name="equipment_title">Equipment</string>
     <string name="remarks_title">Remarks</string>
     <string name="create_report_button_text">Create Report</string>
+
+    <string name="created_report_toast_message">Created a SALUTE report and sent it to Sync Monkey</string>
+    <string name="error_creating_report_toast_message">Could not save the SALUTE report. Please try again or contact the developer if the issue persists.</string>
+    <string name="sync_monkey_error_toast_message">Saved the SALUTE report, but could not find the Sync Monkey app to upload it to Azure</string>
 
     <!-- Name Dialog Strings -->
     <string name="name_dialog_title">SALUTE Report Name</string>

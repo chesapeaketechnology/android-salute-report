@@ -1,10 +1,13 @@
 package com.chesapeaketechnology.salute;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +19,8 @@ import com.chesapeaketechnology.salute.model.SaluteReport;
 /**
  * This is the final fragment in the SALUTE report wizard.  It handles taking any additional information from the user
  * and then submitting it to the {@link HomeFragment}.
+ *
+ * @since 0.1.0
  */
 public class SeventhFragmentRemarks extends Fragment
 {
@@ -36,7 +41,7 @@ public class SeventhFragmentRemarks extends Fragment
 
         extractSaluteReport();
 
-        view.findViewById(R.id.button_next).setOnClickListener(view1 -> sendSaluteReportToHomeFragment());
+        view.findViewById(R.id.button_next).setOnClickListener(view1 -> sendSaluteReportToHomeFragment(view));
     }
 
     @Override
@@ -63,11 +68,16 @@ public class SeventhFragmentRemarks extends Fragment
     /**
      * Pass off the Salute Report to the home fragment so that it can process the newly created report.
      */
-    private void sendSaluteReportToHomeFragment()
+    private void sendSaluteReportToHomeFragment(View view)
     {
-        final SeventhFragmentRemarksDirections.ActionSubmit submitAction = SeventhFragmentRemarksDirections.actionSubmit();
-        submitAction.setSaluteReport(saluteReport);
+        final Context context = getContext();
+        if (context != null)
+        {
+            final InputMethodManager inputMethodManager = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+            if (inputMethodManager != null) inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
 
-        NavHostFragment.findNavController(SeventhFragmentRemarks.this).navigate(submitAction);
+        NavHostFragment.findNavController(SeventhFragmentRemarks.this)
+                .navigate(SeventhFragmentRemarksDirections.actionSubmit(saluteReport));
     }
 }

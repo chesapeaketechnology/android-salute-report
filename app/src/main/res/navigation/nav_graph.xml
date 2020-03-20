@@ -13,9 +13,9 @@
 
         <argument
             android:name="saluteReport"
-            app:nullable="true"
             android:defaultValue="@null"
-            app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
+            app:argType="com.chesapeaketechnology.salute.model.SaluteReport"
+            app:nullable="true" />
 
         <action
             android:id="@+id/action_create_salute_report"
@@ -124,6 +124,13 @@
 
         <action
             android:id="@+id/action_Submit"
-            app:destination="@id/HomeFragment" />
+            app:destination="@id/HomeFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/HomeFragment"
+            app:popUpToInclusive="true">
+            <argument
+                android:name="saluteReport"
+                app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
+        </action>
     </fragment>
 </navigation>

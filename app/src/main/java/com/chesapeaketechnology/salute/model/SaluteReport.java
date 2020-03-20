@@ -19,8 +19,8 @@ public class SaluteReport implements Serializable
     @SerializedName("ReportCreationTime")
     private Date reportCreationTime;
 
-    @SerializedName("ReportNumber")
-    private String reportNumber;
+    @SerializedName("ReportName")
+    private String reportName;
 
     @SerializedName("Size")
     private String size;
@@ -48,10 +48,10 @@ public class SaluteReport implements Serializable
 
     }
 
-    public SaluteReport(long reportCreationTime, String reportNumber)
+    public SaluteReport(long reportCreationTime, String reportName)
     {
         this.reportCreationTime = new Date(reportCreationTime);
-        this.reportNumber = reportNumber;
+        this.reportName = reportName;
     }
 
     public void setTo(String to)
@@ -109,9 +109,9 @@ public class SaluteReport implements Serializable
         return reportCreationTime;
     }
 
-    public String getReportNumber()
+    public String getReportName()
     {
-        return reportNumber;
+        return reportName;
     }
 
     public String getSize()

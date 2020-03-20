@@ -7,28 +7,30 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.chesapeaketechnology.salute.SaluteReportFragment.OnListFragmentInteractionListener;
-import com.chesapeaketechnology.salute.dummy.DummyContent.DummyItem;
+import com.chesapeaketechnology.salute.model.SaluteReport;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
 /**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link OnListFragmentInteractionListener}.
- * TODO: Replace the implementation with code for your data type.
+ * {@link RecyclerView.Adapter} that can display a {@link SaluteReport} and makes a call to the
+ * specified {@link SaluteReportInteractionListener}.
+ *
+ * @since 0.1.0
  */
 public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySaluteReportRecyclerViewAdapter.ViewHolder>
 {
+    private final List<SaluteReport> mValues;
+    private final SaluteReportInteractionListener mListener;
 
-    private final List<DummyItem> mValues;
-    private final OnListFragmentInteractionListener mListener;
-
-    public MySaluteReportRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener)
+    MySaluteReportRecyclerViewAdapter(List<SaluteReport> items, SaluteReportInteractionListener listener)
     {
         mValues = items;
         mListener = listener;
     }
 
+    @NotNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
@@ -40,22 +42,12 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position)
     {
-        holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        holder.saluteReport = mValues.get(position);
+        holder.mIdView.setText(mValues.get(position).getReportName());
+        holder.mContentView.setText(mValues.get(position).getActivity());
 
-        holder.mView.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                if (null != mListener)
-                {
-                    // Notify the active callbacks interface (the activity, if the
-                    // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(holder.mItem);
-                }
-            }
+        holder.mView.setOnClickListener(v -> {
+            if (null != mListener) mListener.onReportSelected(holder.saluteReport);
         });
     }
 
@@ -65,21 +57,26 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
         return mValues.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder
+    /**
+     * The representation for a single salute report in the recycler view.  This class holds the view elements for the
+     * report.
+     */
+    public static class ViewHolder extends RecyclerView.ViewHolder
     {
-        public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
-        public DummyItem mItem;
+        final View mView;
+        final TextView mIdView;
+        final TextView mContentView;
+        SaluteReport saluteReport;
 
-        public ViewHolder(View view)
+        ViewHolder(View view)
         {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.item_number);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            mIdView = view.findViewById(R.id.report_name);
+            mContentView = view.findViewById(R.id.content);
         }
 
+        @NotNull
         @Override
         public String toString()
         {

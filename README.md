@@ -17,7 +17,7 @@ Install Android Studio to work on this code.
 
 ## Changelog
 
-##### [0.0.1]() - 2020-03-31
+##### [0.1.0]() - 2020-03-31
  * Initial cut of the SALUTE Report Android App
 
 ## Contact

@@ -136,8 +136,6 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
                         .setAction("Action", null).show();
             }
         }
-
-        // TODO Scan the file system for any existing salute report json files
     }
 
     /**
@@ -294,9 +292,9 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
     private boolean sendReportToSyncMonkey(File reportFile)
     {
         final Intent sendFileToSyncMonkey = new Intent(SaluteAppConstants.ACTION_SEND_FILE_NO_UI);
-        //final Intent sendFileToSyncMonkey = new Intent(Intent.ACTION_SEND);
         sendFileToSyncMonkey.addCategory(Intent.CATEGORY_DEFAULT);
         sendFileToSyncMonkey.setComponent(new ComponentName("com.chesapeaketechnology.syncmonkey", "com.chesapeaketechnology.syncmonkey.SharingActivity"));
+
         //noinspection ConstantConditions
         final Uri reportUri = FileProvider.getUriForFile(getContext(), SaluteAppConstants.AUTHORITY, reportFile);
         sendFileToSyncMonkey.setDataAndType(reportUri, "application/json");

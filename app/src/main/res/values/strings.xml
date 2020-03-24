@@ -4,15 +4,33 @@
     <!-- Strings used for fragments for navigation -->
     <string name="home_fragment_label">SALUTE Reports</string>
 
-    <string name="size_title">Size</string>
     <string name="next_button_text">Next</string>
     <string name="back_button_text">Back</string>
+
+    <string name="size_title">Size</string>
+    <string name="size_description">Size/Who: Expressed as a quantity, and echelon, or size.</string>
+
     <string name="activity_title">Activity</string>
+    <string name="activity_description">Activity/What: This line is the focal point of the report and relates to the PIR or important non-PIR information being reported. It should be a concise bullet statement.</string>
+
     <string name="location_title">Location</string>
+    <string name="location_description">Location/Where: Generally a grid coordinate, but can include an address if appropriate.</string>
+
     <string name="unit_title">Unit</string>
+    <string name="unit_description">Unit/Who: This entry identifies who is performing the activity described. Include the complete designation of a military unit, identification of a civilian or insurgent group, or the full name of an individual, as appropriate.</string>
+
     <string name="time_title">Time</string>
+    <string name="time_description">Time/When: For a future event, this is when the activity will initiate. Ongoing events are reported as such.</string>
+    <string name="ongoing">Ongoing</string>
+    <string name="select_date_time">Select Date/Time</string>
+    <string name="date_time_label">Date/Time:</string>
+
     <string name="equipment_title">Equipment</string>
+    <string name="equipment_description">Equipment/How: The information reported in this entry clarifies, completes, and/or expands upon information reported in any of the previous entries. It includes information concerning equipment involved, tactics used, and any other essential elements of information.</string>
+
     <string name="remarks_title">Remarks</string>
+    <string name="remarks_description">Use this entry to report the source of the information, whether a person, a CED, open-source media, or other source.</string>
+
     <string name="create_report_button_text">Create Report</string>
 
     <string name="created_report_toast_message">Created a SALUTE report and sent it to Sync Monkey</string>

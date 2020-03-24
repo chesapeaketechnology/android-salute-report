@@ -7,6 +7,9 @@ import java.util.Date;
 
 /**
  * Represents a single Salute Report.  This class can be serialized and deserialized to/from JSON.
+ * <p>
+ * Most of these fields are not required for a SALUTE report.  It is only necessary to fill out the fields that the
+ * reporter finds meaningful.
  */
 public class SaluteReport implements Serializable
 {
@@ -34,6 +37,9 @@ public class SaluteReport implements Serializable
     @SerializedName("Unit")
     private String unit;
 
+    @SerializedName("TimeOngoing")
+    private Boolean timeOngoing;
+
     @SerializedName("Time")
     private Date time;
 
@@ -45,7 +51,6 @@ public class SaluteReport implements Serializable
      */
     public SaluteReport()
     {
-
     }
 
     public SaluteReport(long reportCreationTime, String reportName)
@@ -82,6 +87,11 @@ public class SaluteReport implements Serializable
     public void setUnit(String unit)
     {
         this.unit = unit;
+    }
+
+    public void setTimeOngoing(Boolean ongoing)
+    {
+        timeOngoing = ongoing;
     }
 
     public void setTime(Date time)
@@ -132,6 +142,11 @@ public class SaluteReport implements Serializable
     public String getUnit()
     {
         return unit;
+    }
+
+    public Boolean getTimeOngoing()
+    {
+        return timeOngoing;
     }
 
     public Date getTime()

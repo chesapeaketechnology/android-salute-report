@@ -8,7 +8,7 @@
     <string name="back_button_text">Back</string>
 
     <string name="size_title">Size</string>
-    <string name="size_description">Size/Who: Expressed as a quantity, and echelon, or size.</string>
+    <string name="size_description">Size/Who: Expressed as a quantity, an echelon, or size.</string>
 
     <string name="activity_title">Activity</string>
     <string name="activity_description">Activity/What: This line is the focal point of the report and relates to the PIR or important non-PIR information being reported. It should be a concise bullet statement.</string>

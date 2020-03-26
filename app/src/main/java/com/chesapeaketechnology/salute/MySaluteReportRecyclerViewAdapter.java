@@ -11,6 +11,8 @@ import com.chesapeaketechnology.salute.model.SaluteReport;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -43,8 +45,10 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
     public void onBindViewHolder(final ViewHolder holder, int position)
     {
         holder.saluteReport = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).getReportName());
-        holder.mContentView.setText(mValues.get(position).getActivity());
+        holder.mIdView.setText(holder.saluteReport.getReportName());
+        holder.mContentView.setText(truncateDescription(holder.saluteReport.getActivity(),100));
+        holder.mTimeView.setText(formatDate(holder.saluteReport.getTime()));
+        holder.mCreatedView.setText(formatDate(holder.saluteReport.getReportCreationTime()));
 
         holder.mView.setOnClickListener(v -> {
             if (null != mListener) mListener.onReportSelected(holder.saluteReport);
@@ -58,6 +62,30 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
     }
 
     /**
+     * Returns a date formatted according to yyyy/MM/dd HHMM zzz.
+     * @param d The Date object
+     * @return Formatted string
+     */
+    private String formatDate(Date d)
+    {
+        if (d == null) return "N/A";
+
+        SimpleDateFormat militaryFormat = new SimpleDateFormat("yyyy/MM/dd HHMM zzz");
+        return militaryFormat.format(d);
+    }
+
+    /**
+     * Cuts off string at given length with ellipsis
+     * @param desc
+     * @return Truncated string
+     */
+    private String truncateDescription(String desc, int len)
+    {
+        if (desc.length() <= len)  return desc;
+        return desc.substring(0, len) + "...";
+    }
+
+    /**
      * The representation for a single salute report in the recycler view.  This class holds the view elements for the
      * report.
      */
@@ -66,6 +94,8 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
         final View mView;
         final TextView mIdView;
         final TextView mContentView;
+        final TextView mTimeView;
+        final TextView mCreatedView;
         SaluteReport saluteReport;
 
         ViewHolder(View view)
@@ -74,6 +104,8 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
             mView = view;
             mIdView = view.findViewById(R.id.report_name);
             mContentView = view.findViewById(R.id.content);
+            mTimeView = view.findViewById(R.id.time);
+            mCreatedView = view.findViewById(R.id.created);
         }
 
         @NotNull

@@ -39,5 +39,8 @@
 
     <!-- Name Dialog Strings -->
     <string name="name_dialog_title">SALUTE Report Name</string>
+    <string name="activity_title_text">Activity:</string>
+    <string name="created_title_text">Created:</string>
+    <string name="occurs_at">Occurs At:</string>
 
 </resources>

@@ -1,8 +1,13 @@
 package com.chesapeaketechnology.salute;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,12 +52,20 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
         holder.saluteReport = mValues.get(position);
         holder.mIdView.setText(holder.saluteReport.getReportName());
         holder.mContentView.setText(truncateDescription(holder.saluteReport.getActivity(),100));
-        holder.mTimeView.setText(formatDate(holder.saluteReport.getTime()));
         holder.mCreatedView.setText(formatDate(holder.saluteReport.getReportCreationTime()));
+
+        String time = formatDate(holder.saluteReport.getTime());;
+        if (holder.saluteReport.getTimeOngoing() != null && holder.saluteReport.getTimeOngoing())
+        {
+            time = "Ongoing";
+        }
+        holder.mTimeView.setText(time);
 
         holder.mView.setOnClickListener(v -> {
             if (null != mListener) mListener.onReportSelected(holder.saluteReport);
         });
+
+        holder.mDeleteButton.setOnClickListener(v -> deleteReport(holder, position));
     }
 
     @Override
@@ -70,6 +83,7 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
     {
         if (d == null) return "N/A";
 
+        @SuppressLint("SimpleDateFormat")
         SimpleDateFormat militaryFormat = new SimpleDateFormat("yyyy/MM/dd HHMM zzz");
         return militaryFormat.format(d);
     }
@@ -86,6 +100,28 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
     }
 
     /**
+     * Delete report from list and filesystem.
+     * @param position index of report
+     */
+    private void deleteReport(ViewHolder holder, int position)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(holder.mView.getContext());
+        builder.setTitle("Delete report?")
+                .setMessage("Are you sure you want to delete this SALUTE report?")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        mValues.get(position).getFile().delete();
+                        mValues.remove(position);
+                        notifyItemRemoved(position);
+                        notifyItemRangeChanged(position, mValues.size());
+                    }
+                })
+                .setNegativeButton(android.R.string.no, null)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
+    }
+
+    /**
      * The representation for a single salute report in the recycler view.  This class holds the view elements for the
      * report.
      */
@@ -96,6 +132,7 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
         final TextView mContentView;
         final TextView mTimeView;
         final TextView mCreatedView;
+        final ImageButton mDeleteButton;
         SaluteReport saluteReport;
 
         ViewHolder(View view)
@@ -106,6 +143,7 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
             mContentView = view.findViewById(R.id.content);
             mTimeView = view.findViewById(R.id.time);
             mCreatedView = view.findViewById(R.id.created);
+            mDeleteButton = view.findViewById(R.id.deleteButton);
         }
 
         @NotNull

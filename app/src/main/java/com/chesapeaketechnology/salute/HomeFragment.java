@@ -115,6 +115,8 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
                 try (final FileReader fileReader = new FileReader(saluteFile))
                 {
                     final SaluteReport saluteReport = gson.fromJson(fileReader, SaluteReport.class);
+                    saluteReport.setFile(saluteFile);
+
                     if (saluteReport == null)
                     {
                         Log.e(LOG_TAG, "Found a null salute report when scanning the app's private report directory");
@@ -216,6 +218,7 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
         Log.d(LOG_TAG, "Serializing a SALUTE report");
 
         final File uniqueReportFile = createUniqueFile(saluteReport.getReportName() + SaluteAppConstants.SALUTE_REPORT_FILE_EXTENSION);
+        saluteReport.setFile(uniqueReportFile);
 
         try (final FileWriter writer = new FileWriter(uniqueReportFile))
         {

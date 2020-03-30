@@ -43,4 +43,16 @@
     <string name="created_title_text">Created:</string>
     <string name="occurs_at">Occurs At:</string>
 
+    <!-- Report Details Strings  -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="report_details_fragment_label">Report Details</string>
+    <string name="size_label">Size:</string>
+    <string name="activity_label">Activity:</string>
+    <string name="location_label">Location:</string>
+    <string name="unit_label">Unit:</string>
+    <string name="time_label">Time:</string>
+    <string name="equiment_label">Equiment</string>
+    <string name="remarks_label">Remarks:</string>
+    <string name="created_label">Created:</string>
+
 </resources>

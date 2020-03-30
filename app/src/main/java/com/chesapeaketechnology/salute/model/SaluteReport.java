@@ -47,6 +47,9 @@ public class SaluteReport implements Serializable
     @SerializedName("Equipment")
     private String equipment;
 
+    @SerializedName("Remarks")
+    private String remarks;
+
     private File file;
 
     /**
@@ -165,4 +168,8 @@ public class SaluteReport implements Serializable
     {
         return equipment;
     }
+
+    public String getRemarks() { return remarks; }
+
+    public void setRemarks(String remarks) { this.remarks = remarks; }
 }

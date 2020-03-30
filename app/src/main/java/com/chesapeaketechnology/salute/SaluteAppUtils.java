@@ -1,5 +1,12 @@
 package com.chesapeaketechnology.salute;
 
+import android.annotation.SuppressLint;
+
+import com.chesapeaketechnology.salute.model.SaluteReport;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * A collection of utilities for use throughout the Sync Monkey app.
  *
@@ -41,5 +48,35 @@ public final class SaluteAppUtils
             ext = fileName.substring(i).toLowerCase();
         }
         return ext;
+    }
+
+    /**
+     * Returns a date formatted according to yyyy/MM/dd HHMM zzz.
+     * Ex: 2020/02/30 1345 PST
+     * @param d The Date object
+     * @return Formatted string
+     */
+    public static String formatDate(Date d)
+    {
+        if (d == null) return "N/A";
+
+        @SuppressLint("SimpleDateFormat")
+        SimpleDateFormat militaryFormat = new SimpleDateFormat("yyyy/MM/dd HHMM zzz");
+        return militaryFormat.format(d);
+    }
+
+    /**
+     * Formats date in the same style of formatDate, or returns "Ongoing"
+     * @param report Salute report object
+     * @return Formatted string
+     */
+    public static String formatReportTime(SaluteReport report)
+    {
+        String time = formatDate(report.getTime());
+
+        if (report.getTimeOngoing() != null && report.getTimeOngoing()) {
+            time = "Ongoing";
+        }
+        return time;
     }
 }

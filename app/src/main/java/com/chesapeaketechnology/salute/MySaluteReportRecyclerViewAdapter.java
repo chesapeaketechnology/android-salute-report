@@ -52,14 +52,9 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
         holder.saluteReport = mValues.get(position);
         holder.mIdView.setText(holder.saluteReport.getReportName());
         holder.mContentView.setText(truncateDescription(holder.saluteReport.getActivity(),100));
-        holder.mCreatedView.setText(formatDate(holder.saluteReport.getReportCreationTime()));
-
-        String time = formatDate(holder.saluteReport.getTime());;
-        if (holder.saluteReport.getTimeOngoing() != null && holder.saluteReport.getTimeOngoing())
-        {
-            time = "Ongoing";
-        }
-        holder.mTimeView.setText(time);
+        holder.mCreatedView.setText(
+                SaluteAppUtils.formatDate(holder.saluteReport.getReportCreationTime()));
+        holder.mTimeView.setText(SaluteAppUtils.formatReportTime(holder.saluteReport));
 
         holder.mView.setOnClickListener(v -> {
             if (null != mListener) mListener.onReportSelected(holder.saluteReport);
@@ -72,20 +67,6 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
     public int getItemCount()
     {
         return mValues.size();
-    }
-
-    /**
-     * Returns a date formatted according to yyyy/MM/dd HHMM zzz.
-     * @param d The Date object
-     * @return Formatted string
-     */
-    private String formatDate(Date d)
-    {
-        if (d == null) return "N/A";
-
-        @SuppressLint("SimpleDateFormat")
-        SimpleDateFormat militaryFormat = new SimpleDateFormat("yyyy/MM/dd HHMM zzz");
-        return militaryFormat.format(d);
     }
 
     /**

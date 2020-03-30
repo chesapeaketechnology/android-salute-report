@@ -95,7 +95,10 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
     @Override
     public void onReportSelected(SaluteReport report)
     {
-        // TODO Finish me
+        final HomeFragmentDirections.ActionViewSaluteReport actionViewSaluteReport =
+                HomeFragmentDirections.actionViewSaluteReport(report);
+        NavHostFragment.findNavController(HomeFragment.this)
+                .navigate(actionViewSaluteReport);
     }
 
     /**

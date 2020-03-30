@@ -1,23 +1,18 @@
 package com.chesapeaketechnology.salute;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.chesapeaketechnology.salute.model.SaluteReport;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,7 +32,7 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
         mListener = listener;
     }
 
-    @NotNull
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
@@ -127,7 +122,7 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
             mDeleteButton = view.findViewById(R.id.deleteButton);
         }
 
-        @NotNull
+        @NonNull
         @Override
         public String toString()
         {

@@ -103,4 +103,43 @@
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>
     </style>
 
+    <style name="ReportDetailsLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:ems">10</item>
+        <item name="android:padding">@dimen/x_small_margin</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ReportDetailsValueText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ems">10</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="ReportListTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/text_margin</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginRight">@dimen/text_margin</item>
+        <item name="android:layout_marginBottom">@dimen/x_small_margin</item>
+        <item name="android:textAppearance">?attr/textAppearanceListItem</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ReportListValue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/text_margin</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginRight">@dimen/text_margin</item>
+        <item name="android:layout_marginBottom">@dimen/x_small_margin</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textAppearance">?attr/textAppearanceListItem</item>
+    </style>
+
 </resources>

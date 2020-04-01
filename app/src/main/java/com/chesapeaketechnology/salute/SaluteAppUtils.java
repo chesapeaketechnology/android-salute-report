@@ -15,6 +15,10 @@ import java.util.Date;
 @SuppressWarnings("WeakerAccess")
 public final class SaluteAppUtils
 {
+    // TODO: change to DateTimeFormatter when minimum API is 26
+    @SuppressLint("SimpleDateFormat")
+    private static SimpleDateFormat militaryFormat = new SimpleDateFormat("yyyy/MM/dd HHmm zzz");
+
     /**
      * Get the name of a file without the file extension or period.
      *
@@ -51,32 +55,30 @@ public final class SaluteAppUtils
     }
 
     /**
-     * Returns a date formatted according to yyyy/MM/dd HHMM zzz.
+     * Returns a date formatted according to yyyy/MM/dd HHmm zzz.
      * Ex: 2020/02/30 1345 PST
+     *
      * @param d The Date object
      * @return Formatted string
      */
     public static String formatDate(Date d)
     {
         if (d == null) return "N/A";
-
-        @SuppressLint("SimpleDateFormat")
-        SimpleDateFormat militaryFormat = new SimpleDateFormat("yyyy/MM/dd HHMM zzz");
         return militaryFormat.format(d);
     }
 
     /**
      * Formats date in the same style of formatDate, or returns "Ongoing"
+     *
      * @param report Salute report object
      * @return Formatted string
      */
     public static String formatReportTime(SaluteReport report)
     {
-        String time = formatDate(report.getTime());
-
-        if (report.getTimeOngoing() != null && report.getTimeOngoing()) {
-            time = "Ongoing";
+        if (report.getTimeOngoing() != null && report.getTimeOngoing())
+        {
+            return "Ongoing";
         }
-        return time;
+        return formatDate(report.getTime());
     }
 }

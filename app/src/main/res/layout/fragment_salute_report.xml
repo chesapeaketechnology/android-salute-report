@@ -33,7 +33,6 @@
             android:layout_alignParentEnd="true"
             android:background="#00FFFFFF"
             android:backgroundTint="#FFFFFF"
-            android:onClick="test"
             android:tint="#474747"
             app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
@@ -49,27 +48,13 @@
 
             <TextView
                 android:id="@+id/activityDescTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/text_margin"
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="@dimen/text_margin"
-                android:layout_marginBottom="@dimen/x_small_margin"
                 android:text="@string/activity_title_text"
-                android:textAppearance="?attr/textAppearanceListItem"
-                android:textStyle="bold" />
+                style="@style/ReportListTitle" />
 
             <TextView
                 android:id="@+id/content"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/text_margin"
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="@dimen/text_margin"
-                android:layout_marginBottom="@dimen/x_small_margin"
-                android:layout_weight="1"
-                android:textAppearance="?attr/textAppearanceListItem"
-                tools:text="Here is a sample activity desc.\nHere is line #2 of that description." />
+                tools:text="Here is a sample activity desc.\nHere is line #2 of that description."
+                style="@style/ReportListValue" />
 
         </TableRow>
 
@@ -79,26 +64,14 @@
 
             <TextView
                 android:id="@+id/timeTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/text_margin"
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="@dimen/text_margin"
-                android:layout_marginBottom="@dimen/x_small_margin"
-                android:text="@string/occurs_at"
-                android:textAppearance="?attr/textAppearanceListItem"
-                android:textStyle="bold" />
+                android:text="@string/time_title_text"
+                style="@style/ReportListTitle" />
 
             <TextView
                 android:id="@+id/time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/text_margin"
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="@dimen/text_margin"
-                android:layout_marginBottom="@dimen/x_small_margin"
-                android:textAppearance="?attr/textAppearanceListItem"
-                tools:text="2020/03/25 1500 EDT" />
+                tools:text="2020/03/25 1500 EDT"
+                style="@style/ReportListValue" />
+
 
         </TableRow>
 
@@ -108,26 +81,14 @@
 
             <TextView
                 android:id="@+id/createdTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/text_margin"
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="@dimen/text_margin"
-                android:layout_marginBottom="@dimen/medium_margin"
                 android:text="@string/created_title_text"
-                android:textAppearance="?attr/textAppearanceListItem"
-                android:textStyle="bold" />
+                style="@style/ReportListTitle" />
 
             <TextView
                 android:id="@+id/created"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/text_margin"
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="@dimen/text_margin"
-                android:layout_marginBottom="@dimen/medium_margin"
-                android:textAppearance="?attr/textAppearanceListItem"
-                tools:text="2020/03/25 1500 EDT" />
+                tools:text="2020/03/25 1500 EDT"
+                style="@style/ReportListValue" />
+
         </TableRow>
 
     </TableLayout>
@@ -136,5 +97,7 @@
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginTop="@dimen/medium_margin"
         android:background="?android:attr/listDivider" />
+
 </LinearLayout>

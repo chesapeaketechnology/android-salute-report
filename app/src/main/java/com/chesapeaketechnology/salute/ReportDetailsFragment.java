@@ -1,21 +1,24 @@
 package com.chesapeaketechnology.salute;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
 import com.chesapeaketechnology.salute.model.SaluteReport;
 
 /**
  * The fragment that appears on clicking through to view a SALUTE report.
+ *
+ * @since 0.1.0
  */
 public class ReportDetailsFragment extends Fragment
 {
@@ -33,6 +36,14 @@ public class ReportDetailsFragment extends Fragment
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState)
     {
         super.onViewCreated(view, savedInstanceState);
+
+        ActionBar actionbar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        if (actionbar != null)
+        {
+            actionbar.setDisplayHomeAsUpEnabled(true);
+            actionbar.setHomeButtonEnabled(true);
+        }
+
         extractSaluteReport();
 
         TextView reportLabel = view.findViewById(R.id.reportLabel);
@@ -62,6 +73,19 @@ public class ReportDetailsFragment extends Fragment
         super.onActivityCreated(savedInstanceState);
     }
 
+    @Override
+    public void onDestroyView()
+    {
+        super.onDestroyView();
+
+        // Hide the back button when navigating away
+        ActionBar actionbar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        if (actionbar != null)
+        {
+            actionbar.setDisplayHomeAsUpEnabled(false);
+        }
+    }
+
     /**
      * Pull the Salute Report from the fragment's arguments and set it as an instance variable.
      */
@@ -70,7 +94,7 @@ public class ReportDetailsFragment extends Fragment
         final Bundle arguments = getArguments();
         if (arguments == null)
         {
-            Log.wtf(LOG_TAG, "The arguments bundle was null when creating the Remarks Fragment (Seventh Fragment)");
+            Log.wtf(LOG_TAG, "The arguments bundle was null when creating the Report Details Fragment");
         } else
         {
             saluteReport = ReportDetailsFragmentArgs.fromBundle(arguments).getSaluteReport();
@@ -79,11 +103,12 @@ public class ReportDetailsFragment extends Fragment
 
     /**
      * If argument is empty string, return "N/A", otherwise return string
+     *
      * @param s String to check
      */
     private String stringOrNA(String s)
     {
-        if (s == null || s.equals("")) return "N/A";
+        if (s == null || s.isEmpty()) return "N/A";
         return s;
     }
 }

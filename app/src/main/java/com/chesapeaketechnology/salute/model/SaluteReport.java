@@ -50,7 +50,7 @@ public class SaluteReport implements Serializable
     @SerializedName("Remarks")
     private String remarks;
 
-    private File file;
+    private transient File file;
 
     /**
      * Constructor for GSON to create this class from the JSON string.
@@ -130,9 +130,15 @@ public class SaluteReport implements Serializable
         return reportName;
     }
 
-    public File getFile() { return file; }
+    public File getFile()
+    {
+        return file;
+    }
 
-    public void setFile(File file) { this.file = file; }
+    public void setFile(File file)
+    {
+        this.file = file;
+    }
 
     public String getSize()
     {
@@ -169,7 +175,13 @@ public class SaluteReport implements Serializable
         return equipment;
     }
 
-    public String getRemarks() { return remarks; }
+    public String getRemarks()
+    {
+        return remarks;
+    }
 
-    public void setRemarks(String remarks) { this.remarks = remarks; }
+    public void setRemarks(String remarks)
+    {
+        this.remarks = remarks;
+    }
 }

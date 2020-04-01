@@ -93,6 +93,13 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
     }
 
     @Override
+    public void onDestroyView()
+    {
+        super.onDestroyView();
+        if (getArguments() != null) getArguments().clear();
+    }
+
+    @Override
     public void onReportSelected(SaluteReport report)
     {
         final HomeFragmentDirections.ActionViewSaluteReport actionViewSaluteReport =
@@ -118,7 +125,6 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
                 try (final FileReader fileReader = new FileReader(saluteFile))
                 {
                     final SaluteReport saluteReport = gson.fromJson(fileReader, SaluteReport.class);
-                    saluteReport.setFile(saluteFile);
 
                     if (saluteReport == null)
                     {
@@ -126,6 +132,7 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
                     } else
                     {
                         saluteReports.add(saluteReport);
+                        saluteReport.setFile(saluteFile);
                     }
                 } catch (Exception e)
                 {

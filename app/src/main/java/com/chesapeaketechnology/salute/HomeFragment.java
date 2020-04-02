@@ -112,11 +112,10 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
     /**
      * Scan the file system for salute report files and add them to the list of reports.
      */
-    private void findAndAddSaluteReports()
+    private synchronized void findAndAddSaluteReports()
     {
+        saluteReports.clear();
         final File[] saluteFiles = getPrivateSaluteReportDirectory().listFiles();
-
-        int failedCount = 0;
 
         if (saluteFiles != null)
         {
@@ -137,16 +136,8 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
                     }
                 } catch (Exception e)
                 {
-                    failedCount++;
                     Log.wtf(LOG_TAG, "Could not read the salute report from a file");
                 }
-            }
-
-            if (failedCount > 0)
-            {
-                //noinspection ConstantConditions
-                Snackbar.make(getView(), "Could not open " + failedCount + " salute report(s)", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
             }
         }
     }
@@ -214,7 +205,7 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
      * @param arguments The bundle that contains the Salute Report.
      * @param view      The view to use when showing a toast to the user about the newly created report.
      */
-    private void createSaluteReport(Bundle arguments, View view)
+    private synchronized void createSaluteReport(Bundle arguments, View view)
     {
         final SaluteReport saluteReport = HomeFragmentArgs.fromBundle(arguments).getSaluteReport();
 

@@ -1,148 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="@dimen/medium_margin"
-    android:layout_marginTop="@dimen/medium_margin"
-    android:layout_marginRight="@dimen/medium_margin"
+    android:layout_margin="@dimen/medium_margin"
+    android:orientation="vertical"
     tools:context=".ReportDetailsFragment">
 
-    <TableRow
+    <TextView
+        android:id="@+id/reportLabel"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/reportLabel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-    </TableRow>
-
-    <TableRow
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/sizeLabel"
-            android:text="@string/size_label"
-            style="@style/ReportDetailsLabel" />
+            style="@style/ReportDetailsLabel"
+            android:text="@string/size_label" />
 
         <TextView
             android:id="@+id/size"
             style="@style/ReportDetailsValueText" />
 
-    </TableRow>
+    </LinearLayout>
 
-    <TableRow
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/activityLabel"
-                android:text="@string/activity_label"
-                style="@style/ReportDetailsLabel" />
+            style="@style/ReportDetailsLabel"
+            android:text="@string/activity_label" />
 
 
         <TextView
             android:id="@+id/activity"
             style="@style/ReportDetailsValueText" />
 
-    </TableRow>
+    </LinearLayout>
 
-    <TableRow
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/locationLabel"
-                android:text="@string/location_label"
-                style="@style/ReportDetailsLabel" />
+            style="@style/ReportDetailsLabel"
+            android:text="@string/location_label" />
 
         <TextView
             android:id="@+id/location"
             style="@style/ReportDetailsValueText" />
 
-    </TableRow>
+    </LinearLayout>
 
-    <TableRow
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/unitLabel"
-                android:text="@string/unit_label"
-                style="@style/ReportDetailsLabel" />
+            style="@style/ReportDetailsLabel"
+            android:text="@string/unit_label" />
 
         <TextView
             android:id="@+id/unit"
             style="@style/ReportDetailsValueText" />
 
-    </TableRow>
+    </LinearLayout>
 
-    <TableRow
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/timeLabel"
-                android:text="@string/time_label"
-                style="@style/ReportDetailsLabel" />
+            style="@style/ReportDetailsLabel"
+            android:text="@string/time_label" />
 
         <TextView
             android:id="@+id/time"
             style="@style/ReportDetailsValueText" />
 
-    </TableRow>
+    </LinearLayout>
 
-    <TableRow
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/equipmentLabel"
-                android:text="@string/equipment_title"
-                style="@style/ReportDetailsLabel" />
+            style="@style/ReportDetailsLabel"
+            android:text="@string/equipment_label" />
 
         <TextView
             android:id="@+id/equipment"
             style="@style/ReportDetailsValueText" />
 
-    </TableRow>
+    </LinearLayout>
 
-    <TableRow
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/remarksLabel"
-            android:text="@string/remarks_label"
-            style="@style/ReportDetailsLabel" />
+            style="@style/ReportDetailsLabel"
+            android:text="@string/remarks_label" />
 
         <TextView
             android:id="@+id/remarks"
             style="@style/ReportDetailsValueText" />
 
-    </TableRow>
+    </LinearLayout>
 
-    <TableRow
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/createdLabel"
-            android:text="@string/created_label"
-            style="@style/ReportDetailsLabel" />
+            style="@style/ReportDetailsLabel"
+            android:text="@string/created_label" />
 
         <TextView
             android:id="@+id/created"
             style="@style/ReportDetailsValueText" />
 
-    </TableRow>
+    </LinearLayout>
 
-</TableLayout>
+</LinearLayout>

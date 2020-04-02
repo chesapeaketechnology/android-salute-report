@@ -63,7 +63,7 @@
         <item name="android:padding">2dp</item>
         <item name="android:paddingTop">4dp</item>
         <item name="android:paddingBottom">4dp</item>
-        <item name="android:minHeight">48dp</item>
+        <item name="android:minHeight">418dp</item>
         <item name="android:textSize">10dp</item>
         <item name="android:textColor">@color/gray_87</item>
         <item name="android:breakStrategy" tools:targetApi="m">balanced</item>
@@ -77,8 +77,8 @@
     </style>
 
     <style name="TextSample.Inverse">
-        <item name="android:layout_marginLeft">8dp</item>
-        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:layout_marginLeft">18dp</item>
+        <item name="android:layout_marginRight">18dp</item>
     </style>
 
     <style name="ViewSample">
@@ -101,6 +101,48 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>
+    </style>
+
+    <style name="ReportDetailsLabel">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">0</item>
+        <item name="android:padding">@dimen/x_small_margin</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/illiniTextColorPrimaryInverse</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="ReportDetailsValueText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/darkGunmetal_87</item>
+        <item name="android:text">Sample value...</item>
+    </style>
+
+    <style name="ReportListTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/text_margin</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginRight">@dimen/text_margin</item>
+        <item name="android:layout_marginBottom">@dimen/x_small_margin</item>
+        <item name="android:textAppearance">?attr/textAppearanceListItem</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ReportListValue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/text_margin</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginRight">@dimen/text_margin</item>
+        <item name="android:layout_marginBottom">@dimen/x_small_margin</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textAppearance">?attr/textAppearanceListItem</item>
     </style>
 
 </resources>

@@ -155,10 +155,10 @@ public class FifthFragmentTime extends Fragment
      */
     private void updateSaluteReportAndPassOn()
     {
-        if (ongoingCheckBox.isSelected())
+        if (ongoingCheckBox.isChecked())
         {
             saluteReport.setTimeOngoing(true);
-        }
+        } else
         {
             saluteReport.setTime(selectedTime);
         }

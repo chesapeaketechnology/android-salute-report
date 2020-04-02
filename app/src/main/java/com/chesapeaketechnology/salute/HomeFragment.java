@@ -93,9 +93,20 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
     }
 
     @Override
+    public void onDestroyView()
+    {
+        super.onDestroyView();
+        Bundle arguments = getArguments();
+        if (arguments != null) arguments.clear();
+    }
+
+    @Override
     public void onReportSelected(SaluteReport report)
     {
-        // TODO Finish me
+        final HomeFragmentDirections.ActionViewSaluteReport actionViewSaluteReport =
+                HomeFragmentDirections.actionViewSaluteReport(report);
+        NavHostFragment.findNavController(HomeFragment.this)
+                .navigate(actionViewSaluteReport);
     }
 
     /**
@@ -115,12 +126,14 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
                 try (final FileReader fileReader = new FileReader(saluteFile))
                 {
                     final SaluteReport saluteReport = gson.fromJson(fileReader, SaluteReport.class);
+
                     if (saluteReport == null)
                     {
                         Log.e(LOG_TAG, "Found a null salute report when scanning the app's private report directory");
                     } else
                     {
                         saluteReports.add(saluteReport);
+                        saluteReport.setFile(saluteFile);
                     }
                 } catch (Exception e)
                 {
@@ -216,6 +229,7 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
         Log.d(LOG_TAG, "Serializing a SALUTE report");
 
         final File uniqueReportFile = createUniqueFile(saluteReport.getReportName() + SaluteAppConstants.SALUTE_REPORT_FILE_EXTENSION);
+        saluteReport.setFile(uniqueReportFile);
 
         try (final FileWriter writer = new FileWriter(uniqueReportFile))
         {

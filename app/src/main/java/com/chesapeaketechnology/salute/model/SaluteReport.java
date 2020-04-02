@@ -2,6 +2,7 @@ package com.chesapeaketechnology.salute.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.File;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -45,6 +46,11 @@ public class SaluteReport implements Serializable
 
     @SerializedName("Equipment")
     private String equipment;
+
+    @SerializedName("Remarks")
+    private String remarks;
+
+    private transient File file;
 
     /**
      * Constructor for GSON to create this class from the JSON string.
@@ -124,6 +130,16 @@ public class SaluteReport implements Serializable
         return reportName;
     }
 
+    public File getFile()
+    {
+        return file;
+    }
+
+    public void setFile(File file)
+    {
+        this.file = file;
+    }
+
     public String getSize()
     {
         return size;
@@ -157,5 +173,15 @@ public class SaluteReport implements Serializable
     public String getEquipment()
     {
         return equipment;
+    }
+
+    public String getRemarks()
+    {
+        return remarks;
+    }
+
+    public void setRemarks(String remarks)
+    {
+        this.remarks = remarks;
     }
 }

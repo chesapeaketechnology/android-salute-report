@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -70,6 +71,9 @@ public class SeventhFragmentRemarks extends Fragment
      */
     private void sendSaluteReportToHomeFragment(View view)
     {
+        final String remarks = ((EditText) view.findViewById(R.id.editText)).getText().toString();
+        saluteReport.setRemarks(remarks);
+
         final Context context = getContext();
         if (context != null)
         {

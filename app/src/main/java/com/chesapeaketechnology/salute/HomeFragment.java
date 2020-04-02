@@ -96,7 +96,8 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
     public void onDestroyView()
     {
         super.onDestroyView();
-        if (getArguments() != null) getArguments().clear();
+        Bundle arguments = getArguments();
+        if (arguments != null) arguments.clear();
     }
 
     @Override

@@ -25,7 +25,7 @@
     <string name="select_date_time">Select Date/Time</string>
     <string name="date_time_label">Date/Time:</string>
 
-    <string name="equipment_title">Equipment</string>
+    <string name="equipment_title">Equipment:</string>
     <string name="equipment_description">Equipment/How: The information reported in this entry clarifies, completes, and/or expands upon information reported in any of the previous entries. It includes information concerning equipment involved, tactics used, and any other essential elements of information.</string>
 
     <string name="remarks_title">Remarks</string>

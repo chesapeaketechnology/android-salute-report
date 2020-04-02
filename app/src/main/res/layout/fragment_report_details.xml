@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".ReportDetailsFragment"
     android:layout_marginLeft="@dimen/medium_margin"
     android:layout_marginTop="@dimen/medium_margin"
-    android:layout_marginRight="@dimen/medium_margin"
-    tools:context=".ReportDetailsFragment">
+    android:layout_marginRight="@dimen/medium_margin">
 
     <TableRow
         android:layout_width="match_parent"
@@ -20,8 +20,8 @@
             android:ems="10"
             android:textAlignment="center"
             android:textSize="24sp"
-            android:textStyle="bold" />
-
+            android:textStyle="bold"
+            tools:text="SALUTE Report" />
     </TableRow>
 
     <TableRow
@@ -30,12 +30,21 @@
 
         <TextView
             android:id="@+id/sizeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:padding="@dimen/x_small_margin"
             android:text="@string/size_label"
-            style="@style/ReportDetailsLabel" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/size"
-            style="@style/ReportDetailsValueText" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textSize="18sp" />
 
     </TableRow>
 
@@ -45,13 +54,21 @@
 
         <TextView
             android:id="@+id/activityLabel"
-                android:text="@string/activity_label"
-                style="@style/ReportDetailsLabel" />
-
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:padding="@dimen/x_small_margin"
+            android:text="@string/activity_label"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/activity"
-            style="@style/ReportDetailsValueText" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textSize="18sp" />
 
     </TableRow>
 
@@ -61,12 +78,21 @@
 
         <TextView
             android:id="@+id/locationLabel"
-                android:text="@string/location_label"
-                style="@style/ReportDetailsLabel" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:padding="@dimen/x_small_margin"
+            android:text="@string/location_label"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/location"
-            style="@style/ReportDetailsValueText" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textSize="18sp" />
 
     </TableRow>
 
@@ -76,12 +102,21 @@
 
         <TextView
             android:id="@+id/unitLabel"
-                android:text="@string/unit_label"
-                style="@style/ReportDetailsLabel" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:padding="@dimen/x_small_margin"
+            android:text="@string/unit_label"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/unit"
-            style="@style/ReportDetailsValueText" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textSize="18sp" />
 
     </TableRow>
 
@@ -91,12 +126,21 @@
 
         <TextView
             android:id="@+id/timeLabel"
-                android:text="@string/time_label"
-                style="@style/ReportDetailsLabel" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:padding="@dimen/x_small_margin"
+            android:text="@string/time_label"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/time"
-            style="@style/ReportDetailsValueText" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textSize="18sp" />
 
     </TableRow>
 
@@ -106,12 +150,21 @@
 
         <TextView
             android:id="@+id/equipmentLabel"
-                android:text="@string/equipment_title"
-                style="@style/ReportDetailsLabel" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:padding="@dimen/x_small_margin"
+            android:text="@string/equiment_label"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/equipment"
-            style="@style/ReportDetailsValueText" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textSize="18sp" />
 
     </TableRow>
 
@@ -121,12 +174,21 @@
 
         <TextView
             android:id="@+id/remarksLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:padding="@dimen/x_small_margin"
             android:text="@string/remarks_label"
-            style="@style/ReportDetailsLabel" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/remarks"
-            style="@style/ReportDetailsValueText" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textSize="18sp" />
 
     </TableRow>
 
@@ -136,12 +198,21 @@
 
         <TextView
             android:id="@+id/createdLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:padding="@dimen/x_small_margin"
             android:text="@string/created_label"
-            style="@style/ReportDetailsLabel" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/created"
-            style="@style/ReportDetailsValueText" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textSize="18sp" />
 
     </TableRow>
 

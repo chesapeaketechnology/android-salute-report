@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.chesapeaketechnology.salute.model.SaluteReport;
@@ -36,13 +34,6 @@ public class ReportDetailsFragment extends Fragment
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState)
     {
         super.onViewCreated(view, savedInstanceState);
-
-        ActionBar actionbar = ((AppCompatActivity) getActivity()).getSupportActionBar();
-        if (actionbar != null)
-        {
-            actionbar.setDisplayHomeAsUpEnabled(true);
-            actionbar.setHomeButtonEnabled(true);
-        }
 
         extractSaluteReport();
 
@@ -71,19 +62,6 @@ public class ReportDetailsFragment extends Fragment
     public void onActivityCreated(@Nullable Bundle savedInstanceState)
     {
         super.onActivityCreated(savedInstanceState);
-    }
-
-    @Override
-    public void onDestroyView()
-    {
-        super.onDestroyView();
-
-        // Hide the back button when navigating away
-        ActionBar actionbar = ((AppCompatActivity) getActivity()).getSupportActionBar();
-        if (actionbar != null)
-        {
-            actionbar.setDisplayHomeAsUpEnabled(false);
-        }
     }
 
     /**

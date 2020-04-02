@@ -24,7 +24,7 @@ import java.util.List;
  */
 public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySaluteReportRecyclerViewAdapter.ViewHolder>
 {
-    public static final int ACTIVITY_MAX_LENGTH = 100;
+    private static final int ACTIVITY_MAX_LENGTH = 100;
     private static final String LOG_TAG = MySaluteReportRecyclerViewAdapter.class.getSimpleName();
 
     private final List<SaluteReport> mValues;

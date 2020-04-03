@@ -168,4 +168,6 @@ gradle-app.setting
 ### Gradle Patch ###
 **/build/
 
+out
+
 # End of https://www.gitignore.io/api/java,gradle,windows,androidstudio

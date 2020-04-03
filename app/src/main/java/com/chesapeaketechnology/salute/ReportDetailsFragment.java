@@ -47,14 +47,14 @@ public class ReportDetailsFragment extends Fragment
         TextView remarks = view.findViewById(R.id.remarks);
         TextView created = view.findViewById(R.id.created);
 
-        reportLabel.setText(stringOrNA(saluteReport.getReportName()));
-        size.setText(stringOrNA(saluteReport.getSize()));
-        activity.setText(stringOrNA(saluteReport.getActivity()));
-        location.setText(stringOrNA(saluteReport.getLocationString()));
-        unit.setText(stringOrNA(saluteReport.getUnit()));
+        reportLabel.setText(stringOrNa(saluteReport.getReportName()));
+        size.setText(stringOrNa(saluteReport.getSize()));
+        activity.setText(stringOrNa(saluteReport.getActivity()));
+        location.setText(stringOrNa(saluteReport.getLocationString()));
+        unit.setText(stringOrNa(saluteReport.getUnit()));
         time.setText(SaluteAppUtils.formatReportTime(saluteReport));
-        equipment.setText(stringOrNA(saluteReport.getEquipment()));
-        remarks.setText(stringOrNA(saluteReport.getRemarks()));
+        equipment.setText(stringOrNa(saluteReport.getEquipment()));
+        remarks.setText(stringOrNa(saluteReport.getRemarks()));
         created.setText(SaluteAppUtils.formatDate(saluteReport.getReportCreationTime()));
     }
 
@@ -83,8 +83,9 @@ public class ReportDetailsFragment extends Fragment
      * If argument is empty string, return "N/A", otherwise return string
      *
      * @param s String to check
+     * @return String passed in or "N/A"
      */
-    private String stringOrNA(String s)
+    private String stringOrNa(String s)
     {
         if (s == null || s.isEmpty()) return "N/A";
         return s;

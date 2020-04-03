@@ -1,5 +1,7 @@
 package com.chesapeaketechnology.salute.model;
 
+import androidx.annotation.Nullable;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.io.File;
@@ -171,20 +173,35 @@ public class SaluteReport implements Serializable
         return location;
     }
 
-    public double getLatitude()
+    /**
+     * Getter for latitude.
+     *
+     * @return Latitude of selected location. Will return null if location was manually entered.
+     */
+    @Nullable
+    public Double getLatitude()
     {
         return latitude;
     }
 
-    public double getLongitude()
+    /**
+     * Getter for longitude.
+     *
+     * @return Longitude of selected location. Will return null if location was manually entered.
+     */
+    @Nullable
+    public Double getLongitude()
     {
         return longitude;
     }
 
     /**
      * Either returns location string user entered or formats (lat, lon) as a string
-     * @return Formatted string
+     *
+     * @return Either the manually entered string or the latitude and longitude separated
+     * by a comma. Will return null if none of the fields are set.
      */
+    @Nullable
     public String getLocationString()
     {
         if (location != null && !location.isEmpty())

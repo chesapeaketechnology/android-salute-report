@@ -23,27 +23,30 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 
-import static com.chesapeaketechnology.salute.R.*;
-
+/**
+ * Fragment for entering location. User can either type in a location manually or flip a switch
+ * to select one from a map.
+ *
+ * @since 0.1.0
+ */
 public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallback
 {
     private static final String LOG_TAG = ThirdFragmentLocation.class.getSimpleName();
 
     private SaluteReport saluteReport;
     private View view;
-    Switch getFromMapSwitch;
+    private Switch getFromMapSwitch;
     private MapView mapView;
     private GoogleMap map;
-    Marker mapMarker;
+    private Marker mapMarker;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        view = inflater.inflate(layout.fragment_third_location, container, false);
+        view = inflater.inflate(R.layout.fragment_third_location, container, false);
 
-        mapView = (MapView) view.findViewById(id.map_view);
+        mapView = view.findViewById(R.id.map_view);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
 
@@ -56,10 +59,10 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
 
         extractSaluteReport();
 
-        view.findViewById(id.button_next).setOnClickListener(view1 -> updateSaluteReportAndPassOn());
+        view.findViewById(R.id.button_next).setOnClickListener(view1 -> updateSaluteReportAndPassOn());
 
-        getFromMapSwitch = view.findViewById(id.switch_get_from_map);
-        EditText editText = view.findViewById(id.editText);
+        getFromMapSwitch = view.findViewById(R.id.switch_get_from_map);
+        EditText editText = view.findViewById(R.id.editText);
 
         // Hide/display editText/map appropriately when switch is flipped
         getFromMapSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -76,19 +79,22 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
     }
 
     @Override
-    public void onResume() {
+    public void onResume()
+    {
         super.onResume();
         mapView.onResume();
     }
 
     @Override
-    public void onDestroy() {
+    public void onDestroy()
+    {
         super.onDestroy();
         mapView.onDestroy();
     }
 
     @Override
-    public void onLowMemory() {
+    public void onLowMemory()
+    {
         super.onLowMemory();
         mapView.onLowMemory();
     }
@@ -100,28 +106,18 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
         UiSettings uiSettings = map.getUiSettings();
         uiSettings.setZoomControlsEnabled(true);
         uiSettings.setZoomGesturesEnabled(true);
-
-        // Set default position to SOCEUR HQ
-        LatLng position = new LatLng(48.735873, 9.080551);
-        String title = getResources().getString(string.map_marker_title);
-        mapMarker = map.addMarker(
-            new MarkerOptions().position(position).title(title)
-        );
-        map.moveCamera(CameraUpdateFactory.newLatLng(position));
+        uiSettings.setMyLocationButtonEnabled(true);
 
         // Default map marker to user's current location if available.
         Activity activity = requireActivity();
-        FusedLocationProviderClient fusedLocationClient =
-                LocationServices.getFusedLocationProviderClient(activity);
+        FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(activity);
         fusedLocationClient.getLastLocation().addOnSuccessListener(activity, location -> {
             LatLng currentPosition = new LatLng(location.getLatitude(), location.getLongitude());
             mapMarker.setPosition(currentPosition);
             map.moveCamera(CameraUpdateFactory.newLatLng(currentPosition));
         });
 
-        map.setOnMapClickListener((point) -> {
-            mapMarker.setPosition(point);
-        });
+        map.setOnMapClickListener((point) -> mapMarker.setPosition(point));
     }
 
     /**
@@ -145,14 +141,13 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
      */
     private void updateSaluteReportAndPassOn()
     {
-        final EditText locationEditText = view.findViewById(id.editText);
+        final EditText locationEditText = view.findViewById(R.id.editText);
         if (getFromMapSwitch.isChecked())
         {
             LatLng markedPosition = mapMarker.getPosition();
             saluteReport.setLatitude(markedPosition.latitude);
             saluteReport.setLongitude(markedPosition.longitude);
-        }
-        else
+        } else
         {
             saluteReport.setLocation(locationEditText.getText().toString());
         }

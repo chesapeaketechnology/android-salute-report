@@ -182,7 +182,7 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
     private void onNameSelected(View dialogView, DialogInterface dialog)
     {
         final EditText reportNameEditText = dialogView.findViewById(R.id.salute_report_name);
-        final String reportName = reportNameEditText.getText().toString();
+        final String reportName = reportNameEditText.getText().toString().trim();
 
         if (reportName.isEmpty())
         {

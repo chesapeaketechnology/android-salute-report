@@ -7,6 +7,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.File;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Represents a single Salute Report.  This class can be serialized and deserialized to/from JSON.
@@ -196,7 +197,7 @@ public class SaluteReport implements Serializable
     }
 
     /**
-     * Either returns location string user entered or formats (lat, lon) as a string
+     * Either returns location string user entered or formats (lat, lon) as a string.
      *
      * @return Either the manually entered string or the latitude and longitude separated
      * by a comma. Will return null if none of the fields are set.
@@ -209,7 +210,7 @@ public class SaluteReport implements Serializable
             return location;
         } else if (latitude != null && longitude != null)
         {
-            return latitude + ", " + longitude;
+            return String.format(Locale.getDefault(), "%.5f, %.5f", latitude, longitude);
         }
         return null;
     }

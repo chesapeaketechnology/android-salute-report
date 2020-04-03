@@ -224,7 +224,7 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
 
         try (final FileWriter writer = new FileWriter(uniqueReportFile))
         {
-            new GsonBuilder().setPrettyPrinting().create().toJson(saluteReport, writer);
+            new GsonBuilder().setPrettyPrinting().serializeNulls().create().toJson(saluteReport, writer);
 
             Log.i(LOG_TAG, saluteReport.toString());
         } catch (Exception e)

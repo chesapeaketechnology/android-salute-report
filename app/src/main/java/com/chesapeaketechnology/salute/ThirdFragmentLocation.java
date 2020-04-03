@@ -1,21 +1,30 @@
 package com.chesapeaketechnology.salute;
 
-import android.app.Activity;
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
+import android.location.LocationProvider;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.chesapeaketechnology.salute.model.SaluteReport;
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -23,6 +32,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 /**
  * Fragment for entering location. User can either type in a location manually or flip a switch
@@ -33,6 +43,7 @@ import com.google.android.gms.maps.model.Marker;
 public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallback
 {
     private static final String LOG_TAG = ThirdFragmentLocation.class.getSimpleName();
+    private static final int ACCESS_PERMISSION_REQUEST_ID = 1;
 
     private SaluteReport saluteReport;
     private View view;
@@ -70,6 +81,7 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
             {
                 editText.setVisibility(View.GONE);
                 mapView.setVisibility(View.VISIBLE);
+                checkAndRequestPermissions();
             } else
             {
                 editText.setVisibility(View.VISIBLE);
@@ -108,16 +120,127 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
         uiSettings.setZoomGesturesEnabled(true);
         uiSettings.setMyLocationButtonEnabled(true);
 
-        // Default map marker to user's current location if available.
-        Activity activity = requireActivity();
-        FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(activity);
-        fusedLocationClient.getLastLocation().addOnSuccessListener(activity, location -> {
-            LatLng currentPosition = new LatLng(location.getLatitude(), location.getLongitude());
-            mapMarker.setPosition(currentPosition);
-            map.moveCamera(CameraUpdateFactory.newLatLng(currentPosition));
+        map.setOnMapClickListener((point) -> {
+            if (mapMarker == null)
+            {
+                mapMarker = map.addMarker(new MarkerOptions().position(point));
+                map.moveCamera(CameraUpdateFactory.newLatLng(point));
+            }
+            mapMarker.setPosition(point);
         });
+    }
 
-        map.setOnMapClickListener((point) -> mapMarker.setPosition(point));
+    @SuppressLint("MissingPermission")
+    private void updateMapMarkerLocation()
+    {
+        final LocationManager locationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
+        if (locationManager == null)
+        {
+            Log.wtf(LOG_TAG, "Location manager is null.");
+            return;
+        }
+        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+        if (location != null)
+        {
+            LatLng currentPosition = new LatLng(location.getLatitude(), location.getLongitude());
+
+            mapMarker = map.addMarker(new MarkerOptions().position(currentPosition));
+            map.moveCamera(CameraUpdateFactory.newLatLng(currentPosition));
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
+    {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == ACCESS_PERMISSION_REQUEST_ID)
+        {
+            for (int index = 0; index < permissions.length; index++)
+            {
+                if (Manifest.permission.ACCESS_FINE_LOCATION.equals(permissions[index]))
+                {
+                    if (grantResults[index] == PackageManager.PERMISSION_GRANTED)
+                    {
+                        checkLocationProvider();
+                        updateMapMarkerLocation();
+                    } else
+                    {
+                        Log.w(LOG_TAG, "The ACCESS_FINE_LOCATION Permission was denied.");
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Request the permissions needed for this app if any of them have not yet been granted.  If all of the permissions
+     * are already granted then don't request anything.
+     */
+    private void checkAndRequestPermissions()
+    {
+        if (ActivityCompat.checkSelfPermission(requireContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED)
+        {
+            String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION};
+            ActivityCompat.requestPermissions(requireActivity(), permissions,
+                    ACCESS_PERMISSION_REQUEST_ID);
+        } else
+        {
+            checkLocationProvider();
+        }
+    }
+
+    /**
+     * Checks that the location provider is enabled and that the location permission has been granted.  If GPS location
+     * is not enabled on this device, then the settings UI is opened so the user can enable it.
+     */
+    private void checkLocationProvider()
+    {
+        final LocationManager locationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
+        if (locationManager == null)
+        {
+            Log.w(LOG_TAG, "Could not get the location manager.  Skipping checking the location provider");
+            return;
+        }
+
+        final LocationProvider locationProvider = locationManager.getProvider(LocationManager.GPS_PROVIDER);
+        if (locationProvider == null)
+        {
+            final String noGpsMessage = getString(R.string.no_gps_device);
+            Log.w(LOG_TAG, noGpsMessage);
+            Toast.makeText(getContext(), noGpsMessage, Toast.LENGTH_LONG).show();
+        } else if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER))
+        {
+            // gps exists, but isn't on
+            final String turnOnGpsMessage = getString(R.string.turn_on_gps);
+            Log.w(LOG_TAG, turnOnGpsMessage);
+            Toast.makeText(getContext(), turnOnGpsMessage, Toast.LENGTH_LONG).show();
+
+            promptEnableGps();
+        }
+    }
+
+    /**
+     * Ask the user if they want to enable GPS.  If they do, then open the Location settings.
+     */
+    private void promptEnableGps()
+    {
+        new AlertDialog.Builder(requireContext())
+                .setMessage(getString(R.string.enable_gps_message))
+                .setPositiveButton(getString(R.string.enable_gps_positive_button),
+                        (dialog, which) -> {
+                            Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                            startActivity(intent);
+                        }
+                )
+                .setNegativeButton(getString(R.string.enable_gps_negative_button),
+                        (dialog, which) -> {
+                        }
+                )
+                .show();
     }
 
     /**

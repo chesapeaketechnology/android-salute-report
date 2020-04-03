@@ -7,30 +7,45 @@
     tools:context=".ThirdFragmentLocation">
 
     <TextView
-        android:id="@+id/title"
-        style="@style/TitleText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/location_title" />
+            android:id="@+id/title"
+            style="@style/TitleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/location_title" />
 
     <TextView
-        android:id="@+id/description"
-        style="@style/TextSample"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/location_description" />
+            android:id="@+id/description"
+            style="@style/TextSample"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/location_description" />
+
+    <Switch
+            android:id="@+id/switch_get_from_map"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/medium_margin"
+            android:layout_weight="0"
+            android:text="@string/get_from_map_switch_text" />
 
     <EditText
-        android:id="@+id/editText"
-        style="@style/EditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine" />
+            android:id="@+id/editText"
+            style="@style/EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine" />
+
+    <com.google.android.gms.maps.MapView
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="@dimen/medium_margin"
+            android:visibility="gone" />
 
     <Button
-        android:id="@+id/button_next"
-        style="@style/NextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+            android:id="@+id/button_next"
+            style="@style/NextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
 </LinearLayout>

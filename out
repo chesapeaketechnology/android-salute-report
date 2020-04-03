@@ -1,0 +1,1100 @@
+--------- beginning of main
+04-02 16:57:40.973 23932 23946 W System  : A resource failed to call close. 
+04-02 16:57:49.058  2235  2235 E netmgr  : Failed to open QEMU pipe 'qemud:network': Invalid argument
+04-02 16:57:50.620 11386 13402 W GmsLocationProvider: Error removing location updates: 16
+04-02 16:58:00.026  2473  2831 D EGL_emulation: eglMakeCurrent: 0xf06ad030: ver 3 0 (tinfo 0xf073b230)
+04-02 16:58:00.033  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:58:03.645 12681 12681 I Choreographer: Skipped 44 frames!  The application may be doing too much work on its main thread.
+04-02 16:58:07.946  2265  2265 E wifi_forwarder: RemoteConnection failed to initialize: RemoteConnection failed to open pipe
+04-02 16:58:49.120  2235  2235 E netmgr  : Failed to open QEMU pipe 'qemud:network': Invalid argument
+04-02 16:59:00.030  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:08.003  2265  2265 E wifi_forwarder: RemoteConnection failed to initialize: RemoteConnection failed to open pipe
+04-02 16:59:09.917 15269 15272 I cmd     : oneway function results will be dropped but finished with status OK and parcel size 4
+--------- beginning of system
+04-02 16:59:10.004  2308  3436 I ActivityManager: Force stopping com.chesapeaketechnology.salute appid=10147 user=0: from pid 15278
+04-02 16:59:10.004  2308  3436 I ActivityManager: Killing 15101:com.chesapeaketechnology.salute/u0a147 (adj 0): stop com.chesapeaketechnology.salute
+04-02 16:59:10.006  2308  3436 W ActivityTaskManager: Force removing ActivityRecord{33f27f3 u0 com.chesapeaketechnology.salute/.MainActivity t234 f}}: app died, no saved state
+04-02 16:59:10.007  2308  2333 I libprocessgroup: Successfully killed process cgroup uid 10147 pid 15101 in 0ms
+04-02 16:59:10.009  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.018  2308  3436 W InputReader: Device virtio_input_multi_touch_10 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.018  2308  3436 W InputReader: Device virtio_input_multi_touch_4 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.018  2308  3436 W InputReader: Device virtio_input_multi_touch_11 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.018  2308  3436 W InputReader: Device virtio_input_multi_touch_9 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.018  2308  3436 W InputReader: Device virtio_input_multi_touch_5 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.018  2308  3436 W InputReader: Device virtio_input_multi_touch_2 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.018  2308  3436 W InputReader: Device virtio_input_multi_touch_7 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.018  2308  3436 W InputReader: Device virtio_input_multi_touch_6 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.018  2308  3436 W InputReader: Device virtio_input_multi_touch_3 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.018  2308  3436 W InputReader: Device virtio_input_multi_touch_8 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.019  2308  3436 W InputReader: Device virtio_input_multi_touch_10 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.019  2308  3436 W InputReader: Device virtio_input_multi_touch_4 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.019  2308  3436 W InputReader: Device virtio_input_multi_touch_11 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.019  2308  3436 W InputReader: Device virtio_input_multi_touch_9 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.019  2308  3436 W InputReader: Device virtio_input_multi_touch_5 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.019  2308  3436 W InputReader: Device virtio_input_multi_touch_2 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.019  2308  3436 W InputReader: Device virtio_input_multi_touch_7 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.019  2308  3436 W InputReader: Device virtio_input_multi_touch_6 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.019  2308  3436 W InputReader: Device virtio_input_multi_touch_3 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.019  2308  3436 W InputReader: Device virtio_input_multi_touch_8 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.026  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.028  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.030 15278 15280 I cmd     : oneway function results will be dropped but finished with status OK and parcel size 4
+04-02 16:59:10.044  2646  2646 D CarrierSvcBindHelper: No carrier app for: 0
+04-02 16:59:10.045  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.050  2308  2308 W ActivityManager: Unable to start service Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } U=0: not found
+04-02 16:59:10.051  2308  2308 W RemoteContentCaptureService: could not bind to Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } using flags 67108865
+04-02 16:59:10.064  2308  2308 W ActivityManager: Unable to start service Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } U=0: not found
+04-02 16:59:10.065  2308  2308 W RemoteContentCaptureService: could not bind to Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } using flags 67108865
+04-02 16:59:10.057  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 1 line
+04-02 16:59:10.074  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.078  2076  2144 D eglCodecCommon: allocate: Ask for block of size 0x8e6200
+04-02 16:59:10.079  2076  2144 D eglCodecCommon: allocate: ioctl allocate returned offset 0x3f6d0e000 size 0x8e8000
+04-02 16:59:10.099  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.109  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.109  2076  2144 D eglCodecCommon: allocate: Ask for block of size 0x8e6200
+04-02 16:59:10.109  2076  2144 D eglCodecCommon: allocate: ioctl allocate returned offset 0x3f50a9000 size 0x8e8000
+04-02 16:59:10.116  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.120  2076  2881 D eglCodecCommon: allocate: Ask for block of size 0x8e6200
+04-02 16:59:10.120  2076  2881 D eglCodecCommon: allocate: ioctl allocate returned offset 0x3f47c1000 size 0x8e8000
+04-02 16:59:10.123  2076  2144 D eglCodecCommon: allocate: Ask for block of size 0x8e6200
+04-02 16:59:10.123  2076  2144 D eglCodecCommon: allocate: ioctl allocate returned offset 0x3fb688000 size 0x8e8000
+04-02 16:59:10.128  2770  3202 D EGL_emulation: eglMakeCurrent: 0xf069eee0: ver 3 0 (tinfo 0xf0735a10)
+04-02 16:59:10.144  2076  2881 D eglCodecCommon: allocate: Ask for block of size 0x8e6200
+04-02 16:59:10.144  2076  2881 D eglCodecCommon: allocate: ioctl allocate returned offset 0x3fada0000 size 0x8e8000
+04-02 16:59:10.156  2076  2076 D eglCodecCommon: allocate: Ask for block of size 0x8e6200
+04-02 16:59:10.157  2076  2076 D eglCodecCommon: allocate: ioctl allocate returned offset 0x3f8a0a000 size 0x8e8000
+04-02 16:59:10.158  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.168  2308  2308 W ActivityManager: Unable to start service Intent { act=android.service.appprediction.AppPredictionService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiPredictionService } U=0: not found
+04-02 16:59:10.168  2308  2308 W RemoteAppPredictionService: could not bind to Intent { act=android.service.appprediction.AppPredictionService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiPredictionService } using flags 67108865
+04-02 16:59:10.165  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.171 11386 11627 D EGL_emulation: eglMakeCurrent: 0xf06841b0: ver 3 0 (tinfo 0xb8e083f0)
+04-02 16:59:10.181  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.181  2473  2473 D ImageWallpaper: wallpaper visibility changes: true
+04-02 16:59:10.182  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.186  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 3 lines
+04-02 16:59:10.194  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.201  2063  2063 I Zygote  : Process 15101 exited due to signal 9 (Killed)
+04-02 16:59:10.204  2473  2831 D EGL_emulation: eglMakeCurrent: 0xf06ad030: ver 3 0 (tinfo 0xf073b230)
+04-02 16:59:10.209  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.210  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.217 11386 11386 W ThreadPoolDumper: Queue length for executor EventBus is now 11. Perhaps some tasks are too long, or the pool is too small.
+04-02 16:59:10.221  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.221  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 2 lines
+04-02 16:59:10.221  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.224  2308  2325 E EventSequenceValidator: IntentStarted during UNKNOWN.Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.chesapeaketechnology.salute/.MainActivity }
+04-02 16:59:10.224  2308  2325 I EventSequenceValidator: inc AccIntentStartedEvents to 2
+04-02 16:59:10.227  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.229  2163  2375 D iorapd  : EventManager: Looking up compiled trace done in 0ms.
+04-02 16:59:10.229  2163  2375 D iorapd  : Cannot find compiled trace in sqlite for package_name: com.chesapeaketechnology.salute activity_name: com.chesapeaketechnology.salute.MainActivity
+04-02 16:59:10.229  2163  2375 E iorapd  : Prebuilt compiled trace doesn't exists. file_path: /product/iorap-trace/com.chesapeaketechnology.salute.compiled_trace.pb
+04-02 16:59:10.230  2308  2331 I DropBoxManagerService: add tag=system_server_wtf isTagEnabled=true flags=0x2
+04-02 16:59:10.237  2308  2325 W ActivityManager: setHasOverlayUi called on unknown pid: 15101
+04-02 16:59:10.238  2308  2325 I ActivityManager: Force stopping com.chesapeaketechnology.salute appid=10147 user=-1: set debug app
+04-02 16:59:10.245  2308  3806 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.chesapeaketechnology.salute/.MainActivity} from uid 2000
+04-02 16:59:10.250  2163 15291 D iorapd  : Create Perfetto handle 228
+04-02 16:59:10.251  2163 15293 D iorapd  : PerfettoConsumer::StartTracing(handle=228)
+04-02 16:59:10.241  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 5 lines
+04-02 16:59:10.249  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.251  2153  2153 I perfetto: ing_service_impl.cc:692 Configured tracing session 228, #sources:1, duration:5000 ms, #buffers:1, total buffer size:4096 KB, total sessions:4, uid:1071 session name: ""
+04-02 16:59:10.252  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.253  2151  2151 I perfetto: probes_producer.cc:256  Ftrace setup (target_buf=228)
+04-02 16:59:10.253  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.254  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.257  2151  2151 I perfetto: ftrace_procfs.cc:176    enabled ftrace
+04-02 16:59:10.258  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.258 15284 15286 I cmd     : oneway function results will be dropped but finished with status OK and parcel size 4
+04-02 16:59:10.262  2308  2325 D CompatibilityChangeReporter: Compat change id reported: 135754954; UID 10147; state: DISABLED
+04-02 16:59:10.263  2308  2325 E EventSequenceValidator: onActivityLaunched during UNKNOWN.
+04-02 16:59:10.265  2163  2375 D iorapd  : EventManager: Looking up compiled trace done in 0ms.
+04-02 16:59:10.265  2163  2375 D iorapd  : Cannot find compiled trace in sqlite for package_name: com.chesapeaketechnology.salute activity_name: com.chesapeaketechnology.salute.MainActivity
+04-02 16:59:10.265  2163  2375 E iorapd  : Prebuilt compiled trace doesn't exists. file_path: /product/iorap-trace/com.chesapeaketechnology.salute.compiled_trace.pb
+04-02 16:59:10.265  2308  2331 I DropBoxManagerService: add tag=system_server_wtf isTagEnabled=true flags=0x2
+04-02 16:59:10.266  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.270  2308  2308 W ActivityManager: Unable to start service Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } U=0: not found
+04-02 16:59:10.270  2308  2308 W RemoteContentCaptureService: could not bind to Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } using flags 67108865
+04-02 16:59:10.272  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 3 lines
+04-02 16:59:10.273  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.291  2063  2063 D Zygote  : Forked child process 15298
+04-02 16:59:10.292  2308  2332 I ActivityManager: Start proc 15298:com.chesapeaketechnology.salute/u0a147 for pre-top-activity {com.chesapeaketechnology.salute/com.chesapeaketechnology.salute.MainActivity}
+04-02 16:59:10.295 11386 11423 I MicroDataManager: isInitializing-false locale not changed-true model not changed-true
+04-02 16:59:10.299  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.296 15298 15298 I chnology.salut: Not late-enabling -Xcheck:jni (already on)
+04-02 16:59:10.303  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.304  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 2 lines
+04-02 16:59:10.305  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.310  2076  2076 D eglCodecCommon: allocate: Ask for block of size 0x8e6200
+04-02 16:59:10.310  2076  2076 D eglCodecCommon: allocate: ioctl allocate returned offset 0x3f8122000 size 0x8e8000
+04-02 16:59:10.317  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.333  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 4 lines
+04-02 16:59:10.335  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.347 15298 15298 I chnology.salut: Unquickening 13 vdex files!
+04-02 16:59:10.348  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.349  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.349 15298 15298 W chnology.salut: Unexpected CPU variant for X86 using defaults: x86
+04-02 16:59:10.352  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.354  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.359 23932 29860 I Icing   : IndexChimeraService.getServiceInterface callingPackage=com.google.android.gms componentName=null serviceId=36
+04-02 16:59:10.361 23932 22066 I Icing   : IndexChimeraService.getServiceInterface callingPackage=com.google.android.googlequicksearchbox componentName=null serviceId=36
+04-02 16:59:10.362 11386 11423 I StreamController: registerScope: nowcards-15-d5fb537-ac72
+04-02 16:59:10.364  2148  2209 I adbd    : jdwp connection from 15298
+04-02 16:59:10.364  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.382  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 4 lines
+04-02 16:59:10.384  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_10 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_4 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_11 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_9 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_5 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_2 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_7 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_6 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_3 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_8 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_10 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_4 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_11 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_9 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_5 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_2 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_7 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_6 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_3 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  2308  3443 W InputReader: Device virtio_input_multi_touch_8 is associated with display ADISPLAY_ID_NONE.
+04-02 16:59:10.388  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.407  2308  2308 W ActivityManager: Unable to start service Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } U=0: not found
+04-02 16:59:10.407  2308  2308 W RemoteContentCaptureService: could not bind to Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } using flags 67108865
+04-02 16:59:10.401  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 4 lines
+04-02 16:59:10.403  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.424 23932  8642 I GmsCoreXrpcWrapper: Returning a channel provider with trafficStatsTag=12803
+04-02 16:59:10.430  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.460  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 9 lines
+04-02 16:59:10.466  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.467  2770  3202 D EGL_emulation: eglMakeCurrent: 0xf069eee0: ver 3 0 (tinfo 0xf0735a10)
+04-02 16:59:10.470 15298 15298 W ActivityThread: Application com.chesapeaketechnology.salute is waiting for the debugger on port 8100...
+04-02 16:59:10.471  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.471  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.472 15298 15298 I System.out: Sending WAIT chunk
+04-02 16:59:10.483  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.484  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 1 line
+04-02 16:59:10.498  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.507 11386 11627 D EGL_emulation: eglMakeCurrent: 0xf06841b0: ver 3 0 (tinfo 0xb8e083f0)
+04-02 16:59:10.511  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.515 15326 15327 I cmd     : oneway function results will be dropped but finished with status OK and parcel size 4
+04-02 16:59:10.516  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.517  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.519 11386 13402 W LocationOracle: No location history returned by ContextManager
+04-02 16:59:10.531  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.534 11386 11423 I MicroDetectionState: Should stop hotword detection immediately - false
+04-02 16:59:10.544 11386 11423 I chatty  : uid=10102(com.google.android.googlequicksearchbox) EventBus0 identical 1 line
+04-02 16:59:10.546 11386 11423 I MicroDetectionState: Should stop hotword detection immediately - false
+04-02 16:59:10.551  2308  5989 D HostConnection: HostConnection::get() New Host Connection established 0xbb82f890, tid 5989
+04-02 16:59:10.552  2308  5989 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_native_sync_v3 ANDROID_EMU_native_sync_v4 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_YUV_Cache ANDROID_EMU_async_unmap_buffer GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_gles_max_version_3_0 
+04-02 16:59:10.555  2308  5989 W OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+04-02 16:59:10.555  2308  5989 D EGL_emulation: eglCreateContext: 0xf06a4f20: maj 3 min 0 rcv 3
+04-02 16:59:10.557 11386 11423 I MicroDetectionState: Should stop hotword detection immediately - false
+04-02 16:59:10.559  2308  5989 D EGL_emulation: eglMakeCurrent: 0xf06a4f20: ver 3 0 (tinfo 0xb57e8610)
+04-02 16:59:10.561 11386 11423 E MicroDetectionWorker: Stale runnable..ignoring
+04-02 16:59:10.564  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.573 23932 29860 I Icing   : IndexChimeraService.getServiceInterface callingPackage=com.google.android.gms componentName=null serviceId=30
+04-02 16:59:10.585  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.587  2076  2076 D eglCodecCommon: allocate: Ask for block of size 0x353f40
+04-02 16:59:10.587  2076  2076 D eglCodecCommon: allocate: ioctl allocate returned offset 0x3fca70000 size 0x355000
+04-02 16:59:10.601  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.602  2308  5989 D EGL_emulation: eglMakeCurrent: 0xf06a4f20: ver 3 0 (tinfo 0xb57e8610)
+04-02 16:59:10.603  2076  2076 D eglCodecCommon: allocate: Ask for block of size 0x353f40
+04-02 16:59:10.603  2076  2076 D eglCodecCommon: allocate: ioctl allocate returned offset 0x3f7dcd000 size 0x355000
+04-02 16:59:10.607  2076  2144 D eglCodecCommon: allocate: Ask for block of size 0x353f40
+04-02 16:59:10.607  2076  2144 D eglCodecCommon: allocate: ioctl allocate returned offset 0x3f7a78000 size 0x355000
+04-02 16:59:10.615  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.620  2840 14967 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:10.632  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.652  2308  2323 W Looper  : Slow dispatch took 132ms android.ui h=android.view.Choreographer$FrameHandler c=android.view.Choreographer$FrameDisplayEventReceiver@e8c57e0 m=0
+04-02 16:59:10.649  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 1 line
+04-02 16:59:10.649  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.653  2840  2840 I GeofencerStateMachine: removeGeofences: removeRequest=RemoveGeofencingRequest[REMOVE_BY_PENDING_INTENT pendingIntent=PendingIntent[creatorPackage=com.google.android.gms], packageName=com.google.android.gms]
+04-02 16:59:10.655  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.655  2840  2840 I GeofencerStateMachine: removeGeofences: removeRequest=RemoveGeofencingRequest[REMOVE_BY_PENDING_INTENT pendingIntent=PendingIntent[creatorPackage=com.google.android.gms], packageName=com.google.android.gms]
+04-02 16:59:10.660  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.665  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 2 lines
+04-02 16:59:10.667  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.667  2840  2840 I GeofencerStateMachine: removeGeofences: removeRequest=RemoveGeofencingRequest[REMOVE_BY_PENDING_INTENT pendingIntent=PendingIntent[creatorPackage=com.google.android.gms], packageName=com.google.android.gms]
+04-02 16:59:10.681  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.684  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.684  2840 15243 W ctxmgr  : [AclManager] No 3 for (accnt=account#1043286173#, com.google.android.gms(10103):UserVelocityProducer, vrsn=200616040, 0, 3pPkg = null ,  3pMdlId = null ,  pid = 2840). Was: 2 for 1, account#1043286173# [CONTEXT service_id=47 ]
+04-02 16:59:10.702  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.703  2840 14967 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:10.711 23932  8642 I Icing   : Usage reports ok 1, Failed Usage reports 0, indexed 0, rejected 0
+04-02 16:59:10.719  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.720  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.721 23932  8642 I GmsCoreXrpcWrapper: Returning a channel provider with trafficStatsTag=12803
+04-02 16:59:10.722  2473  2473 D ImageWallpaper: wallpaper visibility changes: false
+04-02 16:59:10.732  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.742 23932  8642 I Icing   : Usage reports ok 0, Failed Usage reports 0, indexed 0, rejected 0
+04-02 16:59:10.758  2308  5355 W AppOps  : Noting op not finished: uid 10103 pkg com.google.android.gms code 79 startTime of in progress event=1585861150745
+04-02 16:59:10.759  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.766  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.769 23932  8642 I GmsCoreXrpcWrapper: Returning a channel provider with trafficStatsTag=12803
+04-02 16:59:10.772  2308  3806 W AppOps  : Noting op not finished: uid 10103 pkg com.google.android.gms code 79 startTime of in progress event=1585861150745
+04-02 16:59:10.777  2840  2840 I GeofencerStateMachine: removeGeofences: removeRequest=RemoveGeofencingRequest[REMOVE_BY_PENDING_INTENT pendingIntent=PendingIntent[creatorPackage=com.google.android.gms], packageName=com.google.android.gms]
+04-02 16:59:10.782  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.787  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.788  2840  2840 I GeofencerStateMachine: removeGeofences: removeRequest=RemoveGeofencingRequest[REMOVE_BY_PENDING_INTENT pendingIntent=PendingIntent[creatorPackage=com.google.android.gms], packageName=com.google.android.gms]
+04-02 16:59:10.792  2840 15243 I ctxmgr  : [ProducerStatusImpl] updateStateForNewContextData: inactive, contextName=7 [CONTEXT service_id=47 ]
+04-02 16:59:10.795 23932  8642 I Icing   : Usage reports ok 0, Failed Usage reports 0, indexed 0, rejected 0
+04-02 16:59:10.795  2840 15333 I PlaceInferenceEngine: [anon] Changed inference mode: 0
+04-02 16:59:10.795  2840 15231 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:10.795  2840 15231 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:10.798  2840 15334 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:10.800  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.802  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.807  2840 15333 I PlaceInferenceEngine: [account#1043286173] Changed inference mode: 0
+04-02 16:59:10.818  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.820  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.824  2840 13696 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:10.829  2840 13696 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:10.833  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.851  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 3 lines
+04-02 16:59:10.866  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.871  2840 13696 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:10.872  2308  8457 W AppOps  : Noting op not finished: uid 10103 pkg com.google.android.gms code 79 startTime of in progress event=1585861150872
+04-02 16:59:10.873  2148  2148 W adbd    : timeout expired while flushing socket, closing
+04-02 16:59:10.877  2840 15243 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:10.881  2308  3443 W AppOps  : Noting op not finished: uid 10103 pkg com.google.android.gms code 79 startTime of in progress event=1585861150872
+04-02 16:59:10.879  2840 15243 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:10.894  2840  2868 I .gms.persisten: Waiting for a blocking GC ProfileSaver
+04-02 16:59:10.894  2840 15333 I Places  : ?: PlacesBleScanner start() with priority 2
+04-02 16:59:10.894  2840 15333 I PlaceInferenceEngine: [anon] Changed inference mode: 1
+04-02 16:59:10.894  2840 15333 I PlaceInferenceEngine: [account#1043286173] Changed inference mode: 1
+04-02 16:59:10.901  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.904  2840  2840 E BeaconBle: Missing BluetoothAdapter
+04-02 16:59:10.904  2840  2840 I BeaconBle: BLE 'KK+' software access layer enabled
+04-02 16:59:10.912  2840 15333 I Places  : Converted 0 out of 1 WiFi scans
+04-02 16:59:10.918  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.919  2308  3806 W AppOps  : Noting op not finished: uid 10103 pkg com.google.android.gms code 79 startTime of in progress event=1585861150872
+04-02 16:59:10.921  2840 15333 I PlaceInferenceEngine: [account#1043286173] Changed inference mode: 1
+04-02 16:59:10.921  2840 15333 I PlaceInferenceEngine: [anon] Changed inference mode: 1
+04-02 16:59:10.922  2840 15335 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:10.922  2840 15243 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:10.923  2840 13696 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:10.926  2840  2840 I BeaconBle: Client requested scan, settings=BleSettings [scanMode=ZERO_POWER, callbackType=ALL_MATCHES, reportDelayMillis=0, 1 filters, 0 clients, callingClientName=Places]
+04-02 16:59:10.926  2840  2840 I BeaconBle: Scan : No clients left, canceling alarm.
+04-02 16:59:10.927  2840  2840 E BeaconBle: Scan couldn't start for Places
+04-02 16:59:10.927  2840  2840 W Places  : BLE failure while scanning - code 5
+04-02 16:59:10.921  2308  3806 W AppOps  : Noting op not finished: uid 10103 pkg com.google.android.gms code 79 startTime of in progress event=1585861150872
+04-02 16:59:10.930  2308  3436 W AppOps  : Noting op not finished: uid 10103 pkg com.google.android.gms code 79 startTime of in progress event=1585861150872
+04-02 16:59:10.934  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.936  2840 15231 I PlaceInferenceEngine: No beacon scan available - ignoring candidates.
+04-02 16:59:10.938  2840 15243 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:10.949  2840 15231 I PlaceInferenceEngine: No beacon scan available - ignoring candidates.
+04-02 16:59:10.951  2840 15243 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:10.951  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.966  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:10.973  2840 15231 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:10.983  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:11.050  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 4 lines
+04-02 16:59:11.067  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:11.075  2840  2855 I .gms.persisten: Background concurrent copying GC freed 132744(5944KB) AllocSpace objects, 65(3424KB) LOS objects, 49% free, 11MB/22MB, paused 1.689ms total 244.670ms
+04-02 16:59:11.075  2840  2868 I .gms.persisten: WaitForGcToComplete blocked ProfileSaver on HeapTrim for 181.225ms
+04-02 16:59:11.084  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:11.340  2308  2762 W AppOps  : Noting op not finished: uid 10103 pkg com.google.android.gms code 79 startTime of in progress event=1585861150872
+04-02 16:59:11.345  2308  2762 W AppOps  : Noting op not finished: uid 10103 pkg com.google.android.gms code 79 startTime of in progress event=1585861151341
+04-02 16:59:11.352  2308  8457 W AppOps  : Noting op not finished: uid 10103 pkg com.google.android.gms code 79 startTime of in progress event=1585861151341
+04-02 16:59:11.358  2308  5355 W AppOps  : Noting op not finished: uid 10103 pkg com.google.android.gms code 79 startTime of in progress event=1585861151341
+04-02 16:59:11.360  2308  5355 W AppOps  : Noting op not finished: uid 10102 pkg com.google.android.googlequicksearchbox code 79 startTime of in progress event=1585861044338
+04-02 16:59:11.467  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 31 lines
+04-02 16:59:11.468  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:11.478 15298 15298 I System.out: Debugger has connected
+04-02 16:59:11.478 15298 15298 I System.out: waiting for debugger to settle...
+04-02 16:59:11.481  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:11.667  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 28 lines
+04-02 16:59:11.668  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:11.679 15298 15298 I System.out: waiting for debugger to settle...
+04-02 16:59:11.682  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:11.870  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 29 lines
+04-02 16:59:11.882  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:11.883 15298 15298 I System.out: waiting for debugger to settle...
+04-02 16:59:11.886  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:12.071  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 34 lines
+04-02 16:59:12.082  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:12.084 15298 15298 I System.out: waiting for debugger to settle...
+04-02 16:59:12.085  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:12.249  2308  2331 W BroadcastQueue: Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.stats.service.DropBoxEntryAddedReceiver
+04-02 16:59:12.249  2308  2331 W BroadcastQueue: Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.chimera.GmsIntentOperationService$PersistentTrustedReceiver
+04-02 16:59:12.270  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 41 lines
+04-02 16:59:12.280  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:12.285 15298 15298 I System.out: waiting for debugger to settle...
+04-02 16:59:12.295  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:12.414  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 17 lines
+04-02 16:59:12.423  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:12.488 15298 15298 I System.out: waiting for debugger to settle...
+04-02 16:59:12.690 15298 15298 I System.out: waiting for debugger to settle...
+04-02 16:59:12.891 15298 15298 I System.out: debugger has settled (1415)
+04-02 16:59:12.905 15298 15298 I chnology.salut: The ClassLoaderContext is a special shared library.
+04-02 16:59:12.910  2308  5989 D EGL_emulation: eglMakeCurrent: 0xf06a4f20: ver 3 0 (tinfo 0xb57e8610)
+04-02 16:59:12.918 15298 15298 I chnology.salut: The ClassLoaderContext is a special shared library.
+04-02 16:59:12.919  2308  2403 W InputDispatcher: channel '60727b5 Waiting For Debugger: com.chesapeaketechnology.salute (server)' ~ Consumer closed input channel or an error occurred.  events=0x9
+04-02 16:59:12.919  2308  2403 E InputDispatcher: channel '60727b5 Waiting For Debugger: com.chesapeaketechnology.salute (server)' ~ Channel is unrecoverably broken and will be disposed!
+04-02 16:59:12.920  2308  2323 W InputDispatcher: Attempted to unregister already unregistered input channel '60727b5 Waiting For Debugger: com.chesapeaketechnology.salute (server)'
+04-02 16:59:12.922  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:12.934  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:12.938 15298 15298 I chnology.salut: The ClassLoaderContext is a special shared library.
+04-02 16:59:12.949  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:12.951 15298 15298 I chnology.salut: The ClassLoaderContext is a special shared library.
+04-02 16:59:12.965  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:13.103  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 9 lines
+04-02 16:59:13.118  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:13.245 15298 15298 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+04-02 16:59:13.266 15298 15298 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+04-02 16:59:13.316 15298 15349 D libEGL  : loaded /vendor/lib/egl/libEGL_emulation.so
+04-02 16:59:13.318 15298 15349 D libEGL  : loaded /vendor/lib/egl/libGLESv1_CM_emulation.so
+04-02 16:59:13.321 15298 15349 D libEGL  : loaded /vendor/lib/egl/libGLESv2_emulation.so
+04-02 16:59:13.662 15298 15298 W chnology.salut: Accessing hidden method Landroid/view/View;->computeFitSystemWindows(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z (greylist, reflection, allowed)
+04-02 16:59:13.662 15298 15298 W chnology.salut: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (greylist, reflection, allowed)
+04-02 16:59:15.264  2151  2151 I perfetto: probes_producer.cc:336  Producer stop (id=228)
+04-02 16:59:15.264  2163 15293 D iorapd  : PerfettoConsumer::ReadTrace(handle=228)
+04-02 16:59:15.265  2153  2153 I perfetto: ng_service_impl.cc:1833 Tracing session 228 ended, total sessions:3
+04-02 16:59:15.266  2151  2151 I perfetto: ftrace_procfs.cc:183    disabled ftrace
+04-02 16:59:15.414  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:15.561  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 2 lines
+04-02 16:59:15.565  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:15.588 15298 15347 D HostConnection: HostConnection::get() New Host Connection established 0xf06294d0, tid 15347
+04-02 16:59:15.597 15298 15347 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_native_sync_v3 ANDROID_EMU_native_sync_v4 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_YUV_Cache ANDROID_EMU_async_unmap_buffer GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_gles_max_version_3_0 
+04-02 16:59:15.634 15298 15347 W OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+04-02 16:59:15.635 15298 15347 D EGL_emulation: eglCreateContext: 0xf06a7ae0: maj 3 min 0 rcv 3
+04-02 16:59:15.638 15298 15347 D EGL_emulation: eglMakeCurrent: 0xf06a7ae0: ver 3 0 (tinfo 0xc1811db0)
+04-02 16:59:15.646  2076  2076 D eglCodecCommon: allocate: Ask for block of size 0x8e6200
+04-02 16:59:15.646  2076  2076 D eglCodecCommon: allocate: ioctl allocate returned offset 0x3fb688000 size 0x8e8000
+04-02 16:59:15.658  1849  1849 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device manifest.
+04-02 16:59:15.659 15298 15347 I Gralloc4: mapper 4.x is not supported
+04-02 16:59:15.661 15298 15347 D HostConnection: createUnique: call
+04-02 16:59:15.667 15298 15347 D HostConnection: HostConnection::get() New Host Connection established 0xf0628450, tid 15347
+04-02 16:59:15.667 15298 15347 D eglCodecCommon: allocate: Ask for block of size 0x100
+04-02 16:59:15.667 15298 15347 D eglCodecCommon: allocate: ioctl allocate returned offset 0x3f9df2000 size 0x2000
+04-02 16:59:15.676 15298 15347 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_native_sync_v3 ANDROID_EMU_native_sync_v4 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_YUV_Cache ANDROID_EMU_async_unmap_buffer GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_gles_max_version_3_0 
+04-02 16:59:15.677  2076  2076 D eglCodecCommon: allocate: Ask for block of size 0x8e6200
+04-02 16:59:15.677  2076  2076 D eglCodecCommon: allocate: ioctl allocate returned offset 0x3fada0000 size 0x8e8000
+04-02 16:59:15.684  2076  2144 D eglCodecCommon: allocate: Ask for block of size 0x8e6200
+04-02 16:59:15.684  2076  2144 D eglCodecCommon: allocate: ioctl allocate returned offset 0x3f50a9000 size 0x8e8000
+04-02 16:59:16.196 15298 15347 D EGL_emulation: eglMakeCurrent: 0xf06a7ae0: ver 3 0 (tinfo 0xc1811db0)
+04-02 16:59:16.260  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:16.265 15298 15298 I Choreographer: Skipped 49 frames!  The application may be doing too much work on its main thread.
+04-02 16:59:16.266  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:16.269  2308  2325 E EventSequenceValidator: onActivityLaunchFinished during UNKNOWN.
+04-02 16:59:16.270  2308  2325 I EventSequenceValidator: dec AccIntentStartedEvents to 1
+04-02 16:59:16.275  2308  2403 W InputDispatcher: channel 'fc376df Splash Screen com.chesapeaketechnology.salute (server)' ~ Consumer closed input channel or an error occurred.  events=0x9
+04-02 16:59:16.275  2308  2403 E InputDispatcher: channel 'fc376df Splash Screen com.chesapeaketechnology.salute (server)' ~ Channel is unrecoverably broken and will be disposed!
+04-02 16:59:16.275  2308  2331 I DropBoxManagerService: add tag=system_server_wtf isTagEnabled=true flags=0x2
+04-02 16:59:16.276  2308  2330 I ActivityTaskManager: Displayed com.chesapeaketechnology.salute/.MainActivity: +6s57ms
+04-02 16:59:16.276  2308  2326 W InputDispatcher: Attempted to unregister already unregistered input channel 'fc376df Splash Screen com.chesapeaketechnology.salute (server)'
+04-02 16:59:16.277  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:16.285  2163 15290 I iorapd  : Perfetto TraceBuffer saved to file: /data/misc/iorapd/com.chesapeaketechnology.salute/1/com.chesapeaketechnology.salute.MainActivity/raw_traces/1585861156285687000.perfetto_trace.pb
+04-02 16:59:16.293  2163 15290 D iorapd  : Deleted raw trace for com.chesapeaketechnology.salute/com.chesapeaketechnology.salute.MainActivity@1 at /data/misc/iorapd/com.chesapeaketechnology.salute/1/com.chesapeaketechnology.salute.MainActivity/raw_traces/1585858891162522000.perfetto_trace.pb
+04-02 16:59:16.365  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 10 lines
+04-02 16:59:16.382  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:16.391 11386 14856 I PBSessionCacheImpl: Deleted sessionId[50077742807453027] from persistence.
+04-02 16:59:16.394 11386 11423 W SearchServiceCore: Abort, client detached.
+04-02 16:59:16.394 11386 11423 I StreamController: cleanUpControllerScope(nowcards-15-d5fb537-ac72)
+04-02 16:59:16.397  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:16.400 11386 11423 I MicroDetectionState: Should stop hotword detection immediately - false
+04-02 16:59:16.400  2308  2308 W ActivityManager: Unable to start service Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } U=0: not found
+04-02 16:59:16.400  2308  2308 W RemoteContentCaptureService: could not bind to Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } using flags 67108865
+04-02 16:59:16.400  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:18.283  2308  2331 W BroadcastQueue: Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.stats.service.DropBoxEntryAddedReceiver
+04-02 16:59:18.283  2308  2331 W BroadcastQueue: Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.chimera.GmsIntentOperationService$PersistentTrustedReceiver
+04-02 16:59:21.484  2308  3443 W AppOps  : Noting op not finished: uid 10103 pkg com.google.android.gms code 79 startTime of in progress event=1585861156369
+04-02 16:59:16.449  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 4 lines
+04-02 16:59:16.467  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:21.485  2840 14967 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:21.498  2840 15333 I Places  : ?: PlacesBleScanner stop()
+04-02 16:59:21.499  2840  2840 I BeaconBle: Scan : No clients left, canceling alarm.
+04-02 16:59:21.500  2840  2840 I BeaconBle: Scan canceled successfully.
+04-02 16:59:21.501  2840 15333 I PlaceInferenceEngine: [anon] Changed inference mode: 0
+04-02 16:59:21.501  2840 15333 I PlaceInferenceEngine: [account#1043286173] Changed inference mode: 0
+04-02 16:59:21.502  2840 15354 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:21.520  2840 15353 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:21.521  2840 15356 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:21.528  2840 15231 I Places  : ?: Couldn't find platform key file.
+04-02 16:59:21.539  2840  2840 I GeofencerStateMachine: removeGeofences: removeRequest=RemoveGeofencingRequest[REMOVE_BY_PENDING_INTENT pendingIntent=PendingIntent[creatorPackage=com.google.android.gms], packageName=com.google.android.gms]
+04-02 16:59:21.543  2840  4263 W MessageQueue: Handler (adwv) {e4225a7} sending message to a Handler on a dead thread
+04-02 16:59:21.543  2840  4263 W MessageQueue: java.lang.IllegalStateException: Handler (adwv) {e4225a7} sending message to a Handler on a dead thread
+04-02 16:59:21.543  2840  4263 W MessageQueue: 	at android.os.MessageQueue.enqueueMessage(MessageQueue.java:559)
+04-02 16:59:21.543  2840  4263 W MessageQueue: 	at android.os.Handler.enqueueMessage(Handler.java:778)
+04-02 16:59:21.543  2840  4263 W MessageQueue: 	at android.os.Handler.sendMessageAtTime(Handler.java:727)
+04-02 16:59:21.543  2840  4263 W MessageQueue: 	at adwv.sendMessageAtTime(:com.google.android.gms@200616040@20.06.16 (120700-296104215):0)
+04-02 16:59:21.543  2840  4263 W MessageQueue: 	at android.os.Handler.sendMessageDelayed(Handler.java:697)
+04-02 16:59:21.543  2840  4263 W MessageQueue: 	at android.os.Handler.post(Handler.java:427)
+04-02 16:59:21.543  2840  4263 W MessageQueue: 	at baix.execute(:com.google.android.gms@200616040@20.06.16 (120700-296104215):0)
+04-02 16:59:21.543  2840  4263 W MessageQueue: 	at aacm.execute(:com.google.android.gms@200616040@20.06.16 (120700-296104215):0)
+04-02 16:59:21.543  2840  4263 W MessageQueue: 	at atnl.a(:com.google.android.gms@200616040@20.06.16 (120700-296104215):1)
+04-02 16:59:21.543  2840  4263 W MessageQueue: 	at atnz.a(:com.google.android.gms@200616040@20.06.16 (120700-296104215):5)
+04-02 16:59:21.543  2840  4263 W MessageQueue: 	at atog.a(:com.google.android.gms@200616040@20.06.16 (120700-296104215):33)
+04-02 16:59:21.543  2840  4263 W MessageQueue: 	at atob.a(:com.google.android.gms@200616040@20.06.16 (120700-296104215):2)
+04-02 16:59:21.543  2840  4263 W MessageQueue: 	at rqu.a(:com.google.android.gms@200616040@20.06.16 (120700-296104215):3)
+04-02 16:59:21.543  2840  4263 W MessageQueue: 	at rqu.a(:com.google.android.gms@200616040@20.06.16 (120700-296104215):2)
+04-02 16:59:21.543  2840  4263 W MessageQueue: 	at afku.a(:com.google.android.gms@200616040@20.06.16 (120700-296104215):0)
+04-02 16:59:21.543  2840  4263 W MessageQueue: 	at rpk.a(:com.google.android.gms@200616040@20.06.16 (120700-296104215):0)
+04-02 16:59:21.543  2840  4263 W MessageQueue: 	at cjc.onTransact(:com.google.android.gms@200616040@20.06.16 (120700-296104215):9)
+04-02 16:59:21.543  2840  4263 W MessageQueue: 	at android.os.Binder.execTransactInternal(Binder.java:1138)
+04-02 16:59:21.543  2840  4263 W MessageQueue: 	at android.os.Binder.execTransact(Binder.java:1102)
+04-02 16:59:26.512  2840  2840 I BeaconBle: Scan : No clients left, canceling alarm.
+04-02 16:59:27.837  2308  3806 D WifiNl80211Manager: Scan result ready event
+04-02 16:59:27.838  2308  3806 D WifiNative: Scan result ready event
+04-02 16:59:30.619 11386 11423 I WorkerManager: dispose()
+04-02 16:59:30.620 11386 11423 W ThreadPoolDumper: Queue length for executor EventBus is now 11. Perhaps some tasks are too long, or the pool is too small.
+04-02 16:59:36.498  2308  2316 I system_server: Background young concurrent copying GC freed 469828(19MB) AllocSpace objects, 58(2016KB) LOS objects, 36% free, 39MB/61MB, paused 823us total 672.778ms
+04-02 16:59:36.534  2308  2318 W System  : A resource failed to call release. 
+04-02 16:59:36.534  2308  2318 W System  : A resource failed to call release. 
+04-02 16:59:36.536  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:36.540  2308  2318 W System  : A resource failed to call release. 
+04-02 16:59:36.556  2308  2318 I chatty  : uid=1000(system) FinalizerDaemon identical 6 lines
+04-02 16:59:36.556  2308  2318 W System  : A resource failed to call release. 
+04-02 16:59:36.556  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:45.597  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 8 lines
+04-02 16:59:45.601  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:45.602  2308  3443 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+04-02 16:59:45.603  2308  3806 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+04-02 16:59:45.604  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:45.614  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 1 line
+04-02 16:59:45.616  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:45.620 19688 19718 W audio_hw_generic: Not supplying enough data to HAL, expected position 34101738 , only wrote 34101651
+04-02 16:59:45.623  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:45.780  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 28 lines
+04-02 16:59:45.783  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:45.786  2165  2165 D AudioAnalytics: (key=audio.track.8) Track latencyMs:49.617500 startupMs:79.913000 detected on port:8 device:
+04-02 16:59:45.820  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:45.834  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:45.852  2308  3443 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+04-02 16:59:46.018  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:46.020  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 1 line
+04-02 16:59:46.033  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:46.040  2076  2144 D eglCodecCommon: allocate: Ask for block of size 0x3cdd40
+04-02 16:59:46.040  2076  2144 D eglCodecCommon: allocate: ioctl allocate returned offset 0x3fc9f6000 size 0x3cf000
+04-02 16:59:46.051  2076  2144 D eglCodecCommon: allocate: Ask for block of size 0x3cdd40
+04-02 16:59:46.051  2076  2144 D eglCodecCommon: allocate: ioctl allocate returned offset 0x3fa9d1000 size 0x3cf000
+04-02 16:59:46.056  2076  2076 D eglCodecCommon: allocate: Ask for block of size 0x3cdd40
+04-02 16:59:46.056  2076  2076 D eglCodecCommon: allocate: ioctl allocate returned offset 0x3f7227000 size 0x3cf000
+04-02 16:59:46.140 15298 15347 D EGL_emulation: eglMakeCurrent: 0xf06a7ae0: ver 3 0 (tinfo 0xc1811db0)
+04-02 16:59:46.150  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:46.159 15298 15347 D EGL_emulation: eglMakeCurrent: 0xf06a7ae0: ver 3 0 (tinfo 0xc1811db0)
+04-02 16:59:46.163  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:46.173  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 4 lines
+04-02 16:59:46.183  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:46.199 15298 15347 D EGL_emulation: eglMakeCurrent: 0xf06a7ae0: ver 3 0 (tinfo 0xc1811db0)
+04-02 16:59:46.200  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:46.215  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 3 lines
+04-02 16:59:46.216  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:46.220 15298 15347 D EGL_emulation: eglMakeCurrent: 0xf06a7ae0: ver 3 0 (tinfo 0xc1811db0)
+04-02 16:59:46.220  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:21.488  2308  3443 W AppOps  : Noting op not finished: uid 10103 pkg com.google.android.gms code 79 startTime of in progress event=1585861156369
+04-02 16:59:46.251  2308  3443 E InputMethodManagerService: SOFT_INPUT_STATE_VISIBLE is ignored because there is no focused view that also returns true from View#onCheckIsTextEditor()
+04-02 16:59:46.249  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 4 lines
+04-02 16:59:46.253  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:46.261 15298 15347 D EGL_emulation: eglMakeCurrent: 0xf06a7ae0: ver 3 0 (tinfo 0xc1811db0)
+04-02 16:59:46.263  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:46.266  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:46.266 15298 15347 D EGL_emulation: eglMakeCurrent: 0xf06a7ae0: ver 3 0 (tinfo 0xc1811db0)
+04-02 16:59:46.270  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:46.348  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 12 lines
+04-02 16:59:46.367  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:47.437 15298 15347 D EGL_emulation: eglMakeCurrent: 0xf06a7ae0: ver 3 0 (tinfo 0xc1811db0)
+04-02 16:59:47.441  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:47.601  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 13 lines
+04-02 16:59:47.646  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:47.683 15298 15298 I AssistStructure: Flattened final assist data: 3100 bytes, containing 2 windows, 23 views
+04-02 16:59:47.685  2308  2762 D ContentCapturePerUserService: Notified activity assist data for activity: Token{217b3ef ActivityRecord{59ce3da u0 com.chesapeaketechnology.salute/.MainActivity t235}} without a session Id
+04-02 16:59:47.685  2308  2308 W ActivityManager: Unable to start service Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } U=0: not found
+04-02 16:59:47.685  2308  2308 W RemoteContentCaptureService: could not bind to Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } using flags 67108865
+04-02 16:59:47.697  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:47.703  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:47.706  3041  3041 I KeyboardViewUtil: KeyboardViewUtil.getKeyboardHeightRatio():128 systemKeyboardHeightRatio:1.000000; userKeyboardHeightRatio:1.000000.
+04-02 16:59:47.706  3041  3041 I AndroidIME: AbstractIme.onActivate():83 LatinIme.onActivate() : EditorInfo = Package = com.chesapeaketechnology.salute : Type = Text : Learning = Enable : Suggestion = Show : AutoCorrection = Enable : Microphone = Show : NoPersonalizedLearning = Disable, IncognitoMode = false
+04-02 16:59:47.706  2840  2840 W ljg     : Pending fill request while another request in the same session was triggered. [CONTEXT service_id=177 ]
+04-02 16:59:47.706  3041  3041 I Delight5Facilitator: Delight5Facilitator.initializeForIme():572 initializeForIme() : Locale = [en_US], layout = qwerty
+04-02 16:59:47.707  3041  3041 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.cancelShutdown():54 cancelShutdown()
+04-02 16:59:47.707  3041  3041 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.syncLanguagePacks():66 syncLanguagePacks()
+04-02 16:59:47.712  3041  9978 I SpeechFactory: SpeechRecognitionFactory.maybeScheduleAutoPackDownloadForFallback():155 maybeScheduleAutoPackDownloadForFallback()
+04-02 16:59:47.714  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:47.716  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:47.724  3041  3041 I KeyboardWrapper: KeyboardWrapper.consumeEvent():264 Skip consuming an event as current keyboard is deactivated (state=0, keyboard existence=true)
+04-02 16:59:47.728  2308  3806 I AssistStructure: Flattened final assist data: 3028 bytes, containing 2 windows, 23 views
+04-02 16:59:47.736  2840 12240 W lep     : Infinite Data has no result for com.chesapeaketechnology.salute [CONTEXT service_id=177 ]
+04-02 16:59:47.737  2840 13708 W lep     : Infinite Data has no result for com.chesapeaketechnology.salute [CONTEXT service_id=177 ]
+04-02 16:59:47.745  2840 15367 W lep     : Infinite Data has no result for com.chesapeaketechnology.salute [CONTEXT service_id=177 ]
+04-02 16:59:47.754  2308  2308 E RemoteAugmentedAutofillService: Bad service name for flags 1048704: com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiAugmentedAutofillService
+04-02 16:59:47.748  2840 15367 W lep     : Infinite Data has no result for com.chesapeaketechnology.salute [CONTEXT service_id=177 ]
+04-02 16:59:47.759  3041  3041 W KeyboardModeManager: KeyboardModeManager.setInputView():359 setInputView() : inputView = com.google.android.apps.inputmethod.libs.framework.core.InputView{cf9cfb V.E...... ......ID 0,0-1080,1962}
+04-02 16:59:47.760  3041  3041 I ConversationToQueryExtension: ConversationToQueryExtension.isEnabledForHostApp():254 Conv2Query not enabled due to current app [com.chesapeaketechnology.salute] not in whitelist
+04-02 16:59:47.760  3041  3041 I ConversationToQueryExtension: ConversationToQueryExtension.onActivate():165 onActivate() : Disabled by unsupported host app
+04-02 16:59:47.807  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:47.870  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 10 lines
+04-02 16:59:47.872  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:47.879  3041  3041 I ShortcutsDataManager: ShortcutsDataManager.onContentChanged():89 onContentChanged()
+04-02 16:59:47.881  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.100  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 45 lines
+04-02 16:59:48.115  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.118 15298 15347 D EGL_emulation: eglMakeCurrent: 0xf06a7ae0: ver 3 0 (tinfo 0xc1811db0)
+04-02 16:59:48.124  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.126 15298 15347 D EGL_emulation: eglMakeCurrent: 0xf06a7ae0: ver 3 0 (tinfo 0xc1811db0)
+04-02 16:59:48.131  3041  3041 W InputConnectionWrapper: InputConnectionWrapper.recordDuration():1416 IPC IC_GET_TEXT_AFTER_CURSOR took 176 ms
+04-02 16:59:48.131  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.132  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 2 lines
+04-02 16:59:48.135  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.140 15298 15347 D EGL_emulation: eglMakeCurrent: 0xf06a7ae0: ver 3 0 (tinfo 0xc1811db0)
+04-02 16:59:48.143  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.145 15298 15347 D EGL_emulation: eglMakeCurrent: 0xf06a7ae0: ver 3 0 (tinfo 0xc1811db0)
+04-02 16:59:48.150  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.152  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.157 15298 15347 D EGL_emulation: eglMakeCurrent: 0xf06a7ae0: ver 3 0 (tinfo 0xc1811db0)
+04-02 16:59:48.161  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.163 15298 15347 D EGL_emulation: eglMakeCurrent: 0xf06a7ae0: ver 3 0 (tinfo 0xc1811db0)
+04-02 16:59:48.166  3041  3582 W native  : neural_spatial_model.cc:390 Output symbol table doesn't contain symbol: @
+04-02 16:59:48.167  3041  3582 W native  : neural_spatial_model.cc:390 Output symbol table doesn't contain symbol: !
+04-02 16:59:48.167  3041  3582 W native  : neural_spatial_model.cc:390 Output symbol table doesn't contain symbol: #
+04-02 16:59:48.167  3041  3582 W native  : neural_spatial_model.cc:390 Output symbol table doesn't contain symbol: %
+04-02 16:59:48.167  3041  3582 W native  : neural_spatial_model.cc:390 Output symbol table doesn't contain symbol: &
+04-02 16:59:48.167  3041  3582 W native  : neural_spatial_model.cc:390 Output symbol table doesn't contain symbol: *
+04-02 16:59:48.168  3041  3582 W native  : neural_spatial_model.cc:390 Output symbol table doesn't contain symbol: +
+04-02 16:59:48.168  3041  3582 W native  : neural_spatial_model.cc:390 Output symbol table doesn't contain symbol: /
+04-02 16:59:48.168  3041  3582 W native  : neural_spatial_model.cc:390 Output symbol table doesn't contain symbol: =
+04-02 16:59:48.168  3041  3582 W native  : neural_spatial_model.cc:390 Output symbol table doesn't contain symbol: ?
+04-02 16:59:48.168  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.168  3041  3582 W native  : neural_spatial_model.cc:390 Output symbol table doesn't contain symbol: ^
+04-02 16:59:48.168  3041  3582 W native  : neural_spatial_model.cc:390 Output symbol table doesn't contain symbol: _
+04-02 16:59:48.168  3041  3582 W native  : neural_spatial_model.cc:390 Output symbol table doesn't contain symbol: `
+04-02 16:59:48.168  3041  3582 W native  : neural_spatial_model.cc:390 Output symbol table doesn't contain symbol: {
+04-02 16:59:48.168  3041  3582 W native  : neural_spatial_model.cc:390 Output symbol table doesn't contain symbol: |
+04-02 16:59:48.168  3041  3582 W native  : neural_spatial_model.cc:390 Output symbol table doesn't contain symbol: }
+04-02 16:59:48.168  3041  3582 W native  : neural_spatial_model.cc:390 Output symbol table doesn't contain symbol: ~
+04-02 16:59:48.170  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.181  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.192  3041  3582 I native  : dynamic-oov-words.cc:213 AddPendingWords: 43 -> 0 3 ms
+04-02 16:59:48.215  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.231  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 1 line
+04-02 16:59:48.238  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.239 15298 15347 D EGL_emulation: eglMakeCurrent: 0xf06a7ae0: ver 3 0 (tinfo 0xc1811db0)
+04-02 16:59:48.242  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.249  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 1 line
+04-02 16:59:48.256  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.257 15298 15347 D EGL_emulation: eglMakeCurrent: 0xf06a7ae0: ver 3 0 (tinfo 0xc1811db0)
+04-02 16:59:48.260  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.268  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 2 lines
+04-02 16:59:48.284  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.285  3041  3582 I native  : input-context-store.cc:174 Ignoring stale client request for FetchSuggestions
+04-02 16:59:48.298  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.618  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 16 lines
+04-02 16:59:48.636  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.768 19688 19692 W audio_hw_generic: Not supplying enough data to HAL, expected position 34378081 , only wrote 34240461
+04-02 16:59:48.772  2308  3443 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+04-02 16:59:48.833  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:48.848  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 2 lines
+04-02 16:59:48.856  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.182  2235  2235 E netmgr  : Failed to open QEMU pipe 'qemud:network': Invalid argument
+04-02 16:59:49.275  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.301  2308  3443 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+04-02 16:59:49.302  2308  3443 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+04-02 16:59:49.304  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.305 19688 19718 W audio_hw_generic: Not supplying enough data to HAL, expected position 34240550 , only wrote 34240461
+04-02 16:59:49.321  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.335 15298 15347 D EGL_emulation: eglMakeCurrent: 0xf06a7ae0: ver 3 0 (tinfo 0xc1811db0)
+04-02 16:59:49.337 15298 15347 D OpenGLRenderer: endAllActiveAnimators on 0xf012f790 (RippleDrawable) with handle 0xc1822f10
+04-02 16:59:49.338  2308  2403 W InputDispatcher: channel 'ae0a15d com.chesapeaketechnology.salute/com.chesapeaketechnology.salute.MainActivity (server)' ~ Consumer closed input channel or an error occurred.  events=0x9
+04-02 16:59:49.338  2308  2403 E InputDispatcher: channel 'ae0a15d com.chesapeaketechnology.salute/com.chesapeaketechnology.salute.MainActivity (server)' ~ Channel is unrecoverably broken and will be disposed!
+04-02 16:59:49.338  2308  5355 W InputDispatcher: Attempted to unregister already unregistered input channel 'ae0a15d com.chesapeaketechnology.salute/com.chesapeaketechnology.salute.MainActivity (server)'
+04-02 16:59:49.339  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.349  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 1 line
+04-02 16:59:49.365  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.368 15298 15347 D EGL_emulation: eglMakeCurrent: 0xf06a7ae0: ver 3 0 (tinfo 0xc1811db0)
+04-02 16:59:49.378  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.449  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 7 lines
+04-02 16:59:49.467  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.467  2165  2345 D AudioAnalytics: (key=audio.track.9) Track latencyMs:53.696333 startupMs:52.929000 detected on port:9 device:
+04-02 16:59:49.481  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.498  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 1 line
+04-02 16:59:49.520  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.521  2308  3443 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+04-02 16:59:49.533  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.570  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 4 lines
+04-02 16:59:49.584  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.586  3041  3041 I KeyboardWrapper: KeyboardWrapper.consumeEvent():264 Skip consuming an event as current keyboard is deactivated (state=0, keyboard existence=true)
+04-02 16:59:49.586  3041  3041 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.shutdown():76 shutdown()
+04-02 16:59:49.586  3041  3041 I AndroidIME: AbstractIme.onDeactivate():145 LatinIme.onDeactivate()
+04-02 16:59:49.588  3041  3041 I ShortcutsDataManager: AbstractContentDataManager.startImportContentTask():208 startImportContentTask()
+04-02 16:59:49.591  2308  3806 W WindowManager: Failed looking up window callers=com.android.server.wm.WindowManagerService.windowForClientLocked:5358 com.android.server.wm.Session.insetsModified:462 android.view.IWindowSession$Stub.onTransact:1210 
+04-02 16:59:49.597  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.618  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 5 lines
+04-02 16:59:49.627  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.643 15298 15298 I AssistStructure: Flattened final assist data: 1980 bytes, containing 1 windows, 10 views
+04-02 16:59:49.643  2308  3806 D ContentCapturePerUserService: Notified activity assist data for activity: Token{217b3ef ActivityRecord{59ce3da u0 com.chesapeaketechnology.salute/.MainActivity t235}} without a session Id
+04-02 16:59:49.644  2308  2308 W ActivityManager: Unable to start service Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } U=0: not found
+04-02 16:59:49.644  2308  2308 W RemoteContentCaptureService: could not bind to Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } using flags 67108865
+04-02 16:59:49.647  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.651  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 1 line
+04-02 16:59:49.653  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.655  2840  2840 W ljg     : Pending fill request while another request in the same session was triggered. [CONTEXT service_id=177 ]
+04-02 16:59:49.659  2308  3806 I AssistStructure: Flattened final assist data: 1916 bytes, containing 1 windows, 10 views
+04-02 16:59:49.660  2840 15367 W lep     : Infinite Data has no result for com.chesapeaketechnology.salute [CONTEXT service_id=177 ]
+04-02 16:59:49.662  2840 13708 W lep     : Infinite Data has no result for com.chesapeaketechnology.salute [CONTEXT service_id=177 ]
+04-02 16:59:49.664  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.671  2308  2308 E RemoteAugmentedAutofillService: Bad service name for flags 1048704: com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiAugmentedAutofillService
+04-02 16:59:49.683  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 4 lines
+04-02 16:59:49.685  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.715  3041  3041 I KeyboardViewUtil: KeyboardViewUtil.getKeyboardHeightRatio():128 systemKeyboardHeightRatio:1.000000; userKeyboardHeightRatio:1.000000.
+04-02 16:59:49.716  3041  3041 I AndroidIME: AbstractIme.onActivate():83 LatinIme.onActivate() : EditorInfo = Package = com.chesapeaketechnology.salute : Type = Text : Learning = Enable : Suggestion = Show : AutoCorrection = Enable : Microphone = Show : NoPersonalizedLearning = Disable, IncognitoMode = false
+04-02 16:59:49.716  3041  3041 I Delight5Facilitator: Delight5Facilitator.initializeForIme():572 initializeForIme() : Locale = [en_US], layout = qwerty
+04-02 16:59:49.716  3041  3041 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.cancelShutdown():54 cancelShutdown()
+04-02 16:59:49.716  3041  3041 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.syncLanguagePacks():66 syncLanguagePacks()
+04-02 16:59:49.716  3041  9978 I SpeechFactory: SpeechRecognitionFactory.maybeScheduleAutoPackDownloadForFallback():155 maybeScheduleAutoPackDownloadForFallback()
+04-02 16:59:49.718  3041  3041 I KeyboardWrapper: KeyboardWrapper.consumeEvent():264 Skip consuming an event as current keyboard is deactivated (state=0, keyboard existence=true)
+04-02 16:59:49.720  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.733  3041  3041 W KeyboardModeManager: KeyboardModeManager.setInputView():359 setInputView() : inputView = com.google.android.apps.inputmethod.libs.framework.core.InputView{cf9cfb V.E...... ......ID 0,0-1080,1962}
+04-02 16:59:49.734  3041  3041 I ConversationToQueryExtension: ConversationToQueryExtension.isEnabledForHostApp():254 Conv2Query not enabled due to current app [com.chesapeaketechnology.salute] not in whitelist
+04-02 16:59:49.734  3041  3041 I ConversationToQueryExtension: ConversationToQueryExtension.onActivate():165 onActivate() : Disabled by unsupported host app
+04-02 16:59:49.740  3041  3441 I ShortcutsDataManager: AbstractContentDataManager$ImportContentTask.doInBackground():222 doInBackground()
+04-02 16:59:49.741  3041  3441 I PersonalDictionaryDataHandler: PersonalDictionaryDataHandler.beginProcess():112 LanguageTags = [en-US]
+04-02 16:59:49.741  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.787 11386 11386 I PublicSearchService: Creating pss binder().
+04-02 16:59:49.790  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.796 11386 16239 I PublicSearchService: Calling beginBinderSession().
+04-02 16:59:49.797 11386 16239 I PublicSearchService: beginBinderSession(): calling binder
+04-02 16:59:49.798  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.799  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:49.799 11386 16239 V AIEngines: #process
+04-02 16:59:49.800 11386 18536 V AIEngineUtils: #sendCallbackAsIntent
+04-02 16:59:49.800 11386 18536 V AIEngineUtils: #sendCallbackAsIntent: EXTRA_CALLBACK_EVENT
+04-02 16:59:49.808 11386 18536 V AIEngines: #process: done
+04-02 16:59:49.809  3041 18524 W AIClientCbStub: #onUpdate(): unrecognized callback event.
+04-02 16:59:49.825  3041  3441 I ShortcutsDataManager: AbstractContentDataManager.importRecords():312 importRecords() : Success : Count = 0
+04-02 16:59:49.830  3041  3441 I ShortcutsDataManager: AbstractContentDataManager.importContentData():262 importContentData() : Ending import process
+04-02 16:59:49.852  3041  3441 I PersonalLanguageModelUpdater: PersonalLanguageModelUpdater$UpdateOperation.performInternal():160 run() : Added 0 words and 0 shortcuts
+04-02 16:59:49.852  3041  3441 I DynamicLanguageModelOperation: DynamicLanguageModelOperation.perform():37 perform() : 4 : cjf : Completed
+04-02 16:59:49.852  3041  3582 I Delight5Decoder: Delight5DecoderWrapper.loadLanguageModel():551 loadLanguageModel() : 4, version [n/a]
+04-02 16:59:49.853  3041  3582 I Delight5Decoder: Delight5DecoderWrapper.loadLanguageModel():589 Loaded dynamic LM 4.en
+04-02 16:59:49.853  3041  3041 I ShortcutsDataManager: AbstractContentDataManager$ImportContentTask.onPostExecute():233 onPostExecute() : Result = [2,0]
+04-02 16:59:49.853  3041  3041 I ShortcutsDataManager: ShortcutsDataManager.onImportFinished():99 onImportFinished() : Result = 2 : Count = 0
+04-02 16:59:50.088  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:51.606  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 3 lines
+04-02 16:59:52.104  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:52.424 19688 19692 W audio_hw_generic: Not supplying enough data to HAL, expected position 34514614 , only wrote 34377949
+04-02 16:59:52.427  2308  3806 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+04-02 16:59:52.612  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:53.621  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 2 lines
+04-02 16:59:53.845  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:53.850  2308  3806 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+04-02 16:59:53.852 19688 19718 W audio_hw_generic: Not supplying enough data to HAL, expected position 34377989 , only wrote 34377949
+04-02 16:59:53.853  2308  3806 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+04-02 16:59:53.869  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:54.001  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 17 lines
+04-02 16:59:54.003  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:54.012  2165  2165 D AudioAnalytics: (key=audio.track.8) Track latencyMs:44.783833 startupMs:59.434000 detected on port:8 device:
+04-02 16:59:54.015  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:54.048  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 6 lines
+04-02 16:59:54.051  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:54.061  2308  2762 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+04-02 16:59:54.062  3041  3041 I KeyboardWrapper: KeyboardWrapper.consumeEvent():264 Skip consuming an event as current keyboard is deactivated (state=0, keyboard existence=true)
+04-02 16:59:54.063  3041  3041 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.shutdown():76 shutdown()
+04-02 16:59:54.063  3041  3041 I AndroidIME: AbstractIme.onDeactivate():145 LatinIme.onDeactivate()
+04-02 16:59:54.073  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:54.086 15298 15298 I AssistStructure: Flattened final assist data: 2244 bytes, containing 1 windows, 10 views
+04-02 16:59:54.086  2308  3443 D ContentCapturePerUserService: Notified activity assist data for activity: Token{217b3ef ActivityRecord{59ce3da u0 com.chesapeaketechnology.salute/.MainActivity t235}} without a session Id
+04-02 16:59:54.086  2308  2308 W ActivityManager: Unable to start service Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } U=0: not found
+04-02 16:59:54.086  2308  2308 W RemoteContentCaptureService: could not bind to Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } using flags 67108865
+04-02 16:59:54.091  3041  3041 I KeyboardViewUtil: KeyboardViewUtil.getKeyboardHeightRatio():128 systemKeyboardHeightRatio:1.000000; userKeyboardHeightRatio:1.000000.
+04-02 16:59:54.092  3041  3041 I AndroidIME: AbstractIme.onActivate():83 LatinIme.onActivate() : EditorInfo = Package = com.chesapeaketechnology.salute : Type = Text : Learning = Enable : Suggestion = Show : AutoCorrection = Enable : Microphone = Show : NoPersonalizedLearning = Disable, IncognitoMode = false
+04-02 16:59:54.092  3041  3041 I Delight5Facilitator: Delight5Facilitator.initializeForIme():572 initializeForIme() : Locale = [en_US], layout = qwerty
+04-02 16:59:54.092  3041  3041 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.cancelShutdown():54 cancelShutdown()
+04-02 16:59:54.092  3041  3041 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.syncLanguagePacks():66 syncLanguagePacks()
+04-02 16:59:54.093  3041  9978 I SpeechFactory: SpeechRecognitionFactory.maybeScheduleAutoPackDownloadForFallback():155 maybeScheduleAutoPackDownloadForFallback()
+04-02 16:59:54.095  3041  3041 I KeyboardWrapper: KeyboardWrapper.consumeEvent():264 Skip consuming an event as current keyboard is deactivated (state=0, keyboard existence=true)
+04-02 16:59:54.099  2840  2840 W ljg     : Pending fill request while another request in the same session was triggered. [CONTEXT service_id=177 ]
+04-02 16:59:54.105  2308  2762 I AssistStructure: Flattened final assist data: 2172 bytes, containing 1 windows, 10 views
+04-02 16:59:54.106  2840 15367 W lep     : Infinite Data has no result for com.chesapeaketechnology.salute [CONTEXT service_id=177 ]
+04-02 16:59:54.107  2840 12240 W lep     : Infinite Data has no result for com.chesapeaketechnology.salute [CONTEXT service_id=177 ]
+04-02 16:59:54.111  2840 13708 W lep     : Infinite Data has no result for com.chesapeaketechnology.salute [CONTEXT service_id=177 ]
+04-02 16:59:54.112  2840 13708 W lep     : Infinite Data has no result for com.chesapeaketechnology.salute [CONTEXT service_id=177 ]
+04-02 16:59:54.119  3041  3041 W KeyboardModeManager: KeyboardModeManager.setInputView():359 setInputView() : inputView = com.google.android.apps.inputmethod.libs.framework.core.InputView{cf9cfb V.E...... ......ID 0,0-1080,1962}
+04-02 16:59:54.120  3041  3041 I ConversationToQueryExtension: ConversationToQueryExtension.isEnabledForHostApp():254 Conv2Query not enabled due to current app [com.chesapeaketechnology.salute] not in whitelist
+04-02 16:59:54.120  3041  3041 I ConversationToQueryExtension: ConversationToQueryExtension.onActivate():165 onActivate() : Disabled by unsupported host app
+04-02 16:59:54.133  2308  2308 E RemoteAugmentedAutofillService: Bad service name for flags 1048704: com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiAugmentedAutofillService
+04-02 16:59:54.135  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:54.135 11386 11386 I PublicSearchService: Creating pss binder().
+04-02 16:59:54.146 11386 16239 I PublicSearchService: Calling beginBinderSession().
+04-02 16:59:54.146 11386 16239 I PublicSearchService: beginBinderSession(): calling binder
+04-02 16:59:54.150 11386 16243 V AIEngines: #process
+04-02 16:59:54.151 11386 18538 V AIEngineUtils: #sendCallbackAsIntent
+04-02 16:59:54.151 11386 18538 V AIEngineUtils: #sendCallbackAsIntent: EXTRA_CALLBACK_EVENT
+04-02 16:59:54.152 11386 18538 V AIEngines: #process: done
+04-02 16:59:54.157  3041 18524 W AIClientCbStub: #onUpdate(): unrecognized callback event.
+04-02 16:59:54.473  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:54.792  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:54.800  2308  3443 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+04-02 16:59:54.803  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:54.898  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 8 lines
+04-02 16:59:54.900  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:54.916  2165  2165 D AudioAnalytics: (key=audio.track.8) Track latencyMs:58.774500 startupMs:5.888000 detected on port:8 device:
+04-02 16:59:54.935  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:54.952  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 1 line
+04-02 16:59:54.972  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:54.978  2308  3443 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+04-02 16:59:54.981  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:55.014  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 6 lines
+04-02 16:59:55.017  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:55.017  3041  3041 I KeyboardWrapper: KeyboardWrapper.consumeEvent():264 Skip consuming an event as current keyboard is deactivated (state=0, keyboard existence=true)
+04-02 16:59:55.018  3041  3041 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.shutdown():76 shutdown()
+04-02 16:59:55.018  3041  3041 I AndroidIME: AbstractIme.onDeactivate():145 LatinIme.onDeactivate()
+04-02 16:59:55.027  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:55.031  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 1 line
+04-02 16:59:55.034  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:55.045 15298 15298 I AssistStructure: Flattened final assist data: 2152 bytes, containing 1 windows, 11 views
+04-02 16:59:55.046  2308  3443 D ContentCapturePerUserService: Notified activity assist data for activity: Token{217b3ef ActivityRecord{59ce3da u0 com.chesapeaketechnology.salute/.MainActivity t235}} without a session Id
+04-02 16:59:55.046  2308  2308 W ActivityManager: Unable to start service Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } U=0: not found
+04-02 16:59:55.048  2308  2308 W RemoteContentCaptureService: could not bind to Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } using flags 67108865
+04-02 16:59:55.055  3041  3041 I KeyboardViewUtil: KeyboardViewUtil.getKeyboardHeightRatio():128 systemKeyboardHeightRatio:1.000000; userKeyboardHeightRatio:1.000000.
+04-02 16:59:55.055  3041  3041 I AndroidIME: AbstractIme.onActivate():83 LatinIme.onActivate() : EditorInfo = Package = com.chesapeaketechnology.salute : Type = Text : Learning = Enable : Suggestion = Show : AutoCorrection = Enable : Microphone = Show : NoPersonalizedLearning = Disable, IncognitoMode = false
+04-02 16:59:55.055  3041  3041 I Delight5Facilitator: Delight5Facilitator.initializeForIme():572 initializeForIme() : Locale = [en_US], layout = qwerty
+04-02 16:59:55.055  3041  3041 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.cancelShutdown():54 cancelShutdown()
+04-02 16:59:55.055  3041  3041 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.syncLanguagePacks():66 syncLanguagePacks()
+04-02 16:59:55.056  3041  9978 I SpeechFactory: SpeechRecognitionFactory.maybeScheduleAutoPackDownloadForFallback():155 maybeScheduleAutoPackDownloadForFallback()
+04-02 16:59:55.057  3041  3041 I KeyboardWrapper: KeyboardWrapper.consumeEvent():264 Skip consuming an event as current keyboard is deactivated (state=0, keyboard existence=true)
+04-02 16:59:55.058  2840  2840 W ljg     : Pending fill request while another request in the same session was triggered. [CONTEXT service_id=177 ]
+04-02 16:59:55.066  2308  2762 I AssistStructure: Flattened final assist data: 2084 bytes, containing 1 windows, 11 views
+04-02 16:59:55.066  2840 13708 W lep     : Infinite Data has no result for com.chesapeaketechnology.salute [CONTEXT service_id=177 ]
+04-02 16:59:55.073  3041  3041 W KeyboardModeManager: KeyboardModeManager.setInputView():359 setInputView() : inputView = com.google.android.apps.inputmethod.libs.framework.core.InputView{cf9cfb V.E...... ......ID 0,0-1080,1962}
+04-02 16:59:55.073  3041  3041 I ConversationToQueryExtension: ConversationToQueryExtension.isEnabledForHostApp():254 Conv2Query not enabled due to current app [com.chesapeaketechnology.salute] not in whitelist
+04-02 16:59:55.073  3041  3041 I ConversationToQueryExtension: ConversationToQueryExtension.onActivate():165 onActivate() : Disabled by unsupported host app
+04-02 16:59:55.079  2840 12240 W lep     : Infinite Data has no result for com.chesapeaketechnology.salute [CONTEXT service_id=177 ]
+04-02 16:59:55.084  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:55.090 11386 11386 I PublicSearchService: Creating pss binder().
+04-02 16:59:55.093  2308  2308 E RemoteAugmentedAutofillService: Bad service name for flags 1048704: com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiAugmentedAutofillService
+04-02 16:59:55.098  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:55.098  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:55.103 11386 16243 I PublicSearchService: Calling beginBinderSession().
+04-02 16:59:55.103 11386 16243 I PublicSearchService: beginBinderSession(): calling binder
+04-02 16:59:55.104 11386 16243 V AIEngines: #process
+04-02 16:59:55.104 11386 18501 V AIEngineUtils: #sendCallbackAsIntent
+04-02 16:59:55.105 11386 18501 V AIEngineUtils: #sendCallbackAsIntent: EXTRA_CALLBACK_EVENT
+04-02 16:59:55.117 11386 18501 V AIEngines: #process: done
+04-02 16:59:55.118  3041 18570 W AIClientCbStub: #onUpdate(): unrecognized callback event.
+04-02 16:59:55.438  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:56.956  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 3 lines
+04-02 16:59:57.454  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:57.901 19688 19692 W audio_hw_generic: Not supplying enough data to HAL, expected position 34733563 , only wrote 34556419
+04-02 16:59:57.903  2308  5355 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+04-02 16:59:57.954  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 16:59:59.470  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 3 lines
+04-02 16:59:59.972  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:00:00.018  2473  2831 D EGL_emulation: eglMakeCurrent: 0xf06ad030: ver 3 0 (tinfo 0xf073b230)
+04-02 17:00:00.021  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:00:07.539  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 15 lines
+04-02 17:00:08.038  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:00:08.064  2265  2265 E wifi_forwarder: RemoteConnection failed to initialize: RemoteConnection failed to open pipe
+04-02 17:00:08.539  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:00:48.339  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 81 lines
+04-02 17:00:48.841  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:00:49.198  2235  2235 E netmgr  : Failed to open QEMU pipe 'qemud:network': Invalid argument
+04-02 17:00:49.355  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:01:07.468  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 41 lines
+04-02 17:01:07.970  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:01:08.083  2265  2265 E wifi_forwarder: RemoteConnection failed to initialize: RemoteConnection failed to open pipe
+04-02 17:01:08.488  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:01:22.482  2308  2330 D AppStandbyController:    Checking idle state for com.android.printspooler special=false
+04-02 17:01:22.482  2308  2330 D AppIdleHistory: com.android.printspooler lastUsedScreen=-26569 lastUsedElapsed=-22225
+04-02 17:01:22.482  2308  2330 D AppIdleHistory: com.android.printspooler screenOn=227545397, elapsed=253943689
+04-02 17:01:22.482  2308  2330 D AppStandbyController: Evaluated AOSP newBucket = 40
+04-02 17:01:22.482  2308  2330 D AppStandbyController:     Keeping at ACTIVE due to min timeout
+04-02 17:01:22.482  2308  2330 D AppStandbyController:      Old bucket=10, newBucket=10
+04-02 17:01:23.621  2308  2330 D AppStandbyController:    Checking idle state for com.google.android.gms special=true
+04-02 17:01:23.621  2308  2330 D AppIdleHistory: Moved com.google.android.gms to bucket=5, reason=0x0100
+04-02 17:01:23.621  2308  2330 D AppStandbyController:    Checking idle state for com.google.android.gm special=false
+04-02 17:01:23.621  2308  2330 D AppIdleHistory: com.google.android.gm lastUsedScreen=-26569 lastUsedElapsed=-22225
+04-02 17:01:23.621  2308  2330 D AppIdleHistory: com.google.android.gm screenOn=227546536, elapsed=253944828
+04-02 17:01:23.621  2308  2330 D AppStandbyController: Evaluated AOSP newBucket = 40
+04-02 17:01:23.621  2308  2330 D AppStandbyController:     Keeping at ACTIVE due to min timeout
+04-02 17:01:23.621  2308  2330 D AppStandbyController:      Old bucket=10, newBucket=10
+04-02 17:01:23.622  2308  2330 D AppStandbyController:    Checking idle state for com.google.android.gms special=true
+04-02 17:01:23.622  2308  2330 D AppIdleHistory: Moved com.google.android.gms to bucket=5, reason=0x0100
+04-02 17:01:48.238  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 79 lines
+04-02 17:01:48.753  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:01:49.216  2235  2235 E netmgr  : Failed to open QEMU pipe 'qemud:network': Invalid argument
+04-02 17:01:49.254  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:02:07.388  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 37 lines
+04-02 17:02:07.888  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:02:08.143  2265  2265 E wifi_forwarder: RemoteConnection failed to initialize: RemoteConnection failed to open pipe
+04-02 17:02:08.387  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:02:25.521  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 34 lines
+04-02 17:02:26.021  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:02:26.063  2308  5355 D WifiNl80211Manager: Scan result ready event
+04-02 17:02:26.064  2308  5355 D WifiNative: Scan result ready event
+04-02 17:02:26.519  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:02:35.071  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 17 lines
+04-02 17:02:35.568  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:02:35.778  2840  1744 E WakeLock: GCM_HB_ALARM release without a matched acquire!
+04-02 17:02:35.837 15137 15137 W GrowthKit: Failed to initialize SyncGcoreGcmTaskService
+04-02 17:02:35.837 15137 15137 W GrowthKit: java.lang.NullPointerException: Unable to get GrowthKit Component from host app.
+04-02 17:02:35.837 15137 15137 W GrowthKit: 	at com.google.android.libraries.internal.growth.growthkit.inject.GrowthKit.get(GrowthKit.java:43)
+04-02 17:02:35.837 15137 15137 W GrowthKit: 	at com.google.android.libraries.internal.growth.growthkit.internal.jobs.impl.GrowthKitJobService.onCreate(GrowthKitJobService.java:66)
+04-02 17:02:35.837 15137 15137 W GrowthKit: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:4089)
+04-02 17:02:35.837 15137 15137 W GrowthKit: 	at android.app.ActivityThread.access$1500(ActivityThread.java:229)
+04-02 17:02:35.837 15137 15137 W GrowthKit: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1904)
+04-02 17:02:35.837 15137 15137 W GrowthKit: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+04-02 17:02:35.837 15137 15137 W GrowthKit: 	at android.os.Looper.loop(Looper.java:216)
+04-02 17:02:35.837 15137 15137 W GrowthKit: 	at android.app.ActivityThread.main(ActivityThread.java:7464)
+04-02 17:02:35.837 15137 15137 W GrowthKit: 	at java.lang.reflect.Method.invoke(Native Method)
+04-02 17:02:35.837 15137 15137 W GrowthKit: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:549)
+04-02 17:02:35.837 15137 15137 W GrowthKit: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:955)
+04-02 17:02:35.970 23932  7332 I Checkin : [EventLogChimeraService] Opted in for usage reporting: false
+04-02 17:02:35.970 23932  7332 I Checkin : [EventLogChimeraService] Aggregate from 1585859435803 (log), 1585859435803 (data)
+04-02 17:02:36.015  2308  5355 I DropBoxManagerService: add tag=event_data isTagEnabled=true flags=0x2
+04-02 17:02:36.020  2308  2331 W BroadcastQueue: Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.stats.service.DropBoxEntryAddedReceiver
+04-02 17:02:36.020  2308  2331 W BroadcastQueue: Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.chimera.GmsIntentOperationService$PersistentTrustedReceiver
+04-02 17:02:36.067  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:02:48.652  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 25 lines
+04-02 17:02:49.171  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:02:49.233  2235  2235 E netmgr  : Failed to open QEMU pipe 'qemud:network': Invalid argument
+04-02 17:02:49.670  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:03:01.754  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 25 lines
+04-02 17:03:02.252  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:03:02.253  8583  8631 I Finsky  : [4394] kcd.run(3): Stats for Executor: BlockingExecutor keb@244a768[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 55]
+04-02 17:03:02.254  8583  8631 I Finsky  : [4394] kcd.run(3): Stats for Executor: LightweightExecutor keb@4ad2781[Running, pool size = 3, active threads = 0, queued tasks = 0, completed tasks = 72]
+04-02 17:03:02.752  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:03:03.031  8583  8631 I Finsky  : [4394] kcd.run(3): Stats for Executor: bgExecutor keb@e895026[Running, pool size = 4, active threads = 0, queued tasks = 0, completed tasks = 178]
+04-02 17:03:03.252  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:03:03.921  2308  2330 D AppStandbyController:    Checking idle state for com.google.android.calendar special=false
+04-02 17:03:03.921  2308  2330 D AppIdleHistory: com.google.android.calendar lastUsedScreen=-26569 lastUsedElapsed=-22225
+04-02 17:03:03.921  2308  2330 D AppIdleHistory: com.google.android.calendar screenOn=227646836, elapsed=254045128
+04-02 17:03:03.921  2308  2330 D AppStandbyController: Evaluated AOSP newBucket = 40
+04-02 17:03:03.921  2308  2330 D AppStandbyController:     Keeping at ACTIVE due to min timeout
+04-02 17:03:03.921  2308  2330 D AppStandbyController:      Old bucket=10, newBucket=10
+04-02 17:03:03.921  2308  2330 D AppStandbyController:    Checking idle state for com.google.android.gm special=false
+04-02 17:03:03.922  2308  2330 D AppIdleHistory: com.google.android.gm lastUsedScreen=-26569 lastUsedElapsed=-22225
+04-02 17:03:03.922  2308  2330 D AppIdleHistory: com.google.android.gm screenOn=227646837, elapsed=254045129
+04-02 17:03:03.922  2308  2330 D AppStandbyController: Evaluated AOSP newBucket = 40
+04-02 17:03:03.922  2308  2330 D AppStandbyController:     Keeping at ACTIVE due to min timeout
+04-02 17:03:03.922  2308  2330 D AppStandbyController:      Old bucket=10, newBucket=10
+04-02 17:03:07.268  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 8 lines
+04-02 17:03:07.786  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:03:08.199  2265  2265 E wifi_forwarder: RemoteConnection failed to initialize: RemoteConnection failed to open pipe
+04-02 17:03:08.287  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:03:34.934  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 53 lines
+04-02 17:03:35.434  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:03:35.778  2840  2840 W GCM     : Heartbeat timeout, GCM connection reset -4
+04-02 17:03:35.802  2840 15389 E WakeLock: GCM_HB_ALARM release without a matched acquire!
+04-02 17:03:35.802  2840 15389 W WakeLock: GCM_HB_ALARM counter does not exist
+04-02 17:03:35.806  2308  2434 D ConnectivityService: reportNetworkConnectivity(101, false) by 10103
+04-02 17:03:35.811  2573  3662 D NetworkMonitor/101: Forcing reevaluation for UID 10103. Dns signal count: 0
+04-02 17:03:35.934  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:03:36.048  2840 15400 E WakeLock: GCM_CONN_ALARM release without a matched acquire!
+04-02 17:03:36.436  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:03:36.868  2573 15394 D NetworkMonitor/101: PROBE_DNS www.google.com 1047ms OK 172.253.63.147,172.253.63.103,172.253.63.105,172.253.63.104,172.253.63.99,172.253.63.106,2607:f8b0:4004:800::2004
+04-02 17:03:36.871  2573 15395 D NetworkMonitor/101: PROBE_DNS connectivitycheck.gstatic.com 1049ms OK 172.217.15.99,2607:f8b0:4002:c09::5e
+04-02 17:03:36.934  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:03:36.987  2573 15395 D NetworkMonitor/101: PROBE_HTTP http://connectivitycheck.gstatic.com/generate_204 time=112ms ret=204 request={Connection=[close], User-Agent=[Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36]} headers={null=[HTTP/1.1 204 No Content], Connection=[close], Content-Length=[0], Date=[Thu, 02 Apr 2020 21:03:37 GMT], X-Android-Received-Millis=[1585861416986], X-Android-Response-Source=[NETWORK 204], X-Android-Selected-Protocol=[http/1.1], X-Android-Sent-Millis=[1585861416932]}
+04-02 17:03:37.050  2573 15394 D NetworkMonitor/101: PROBE_HTTPS https://www.google.com/generate_204 time=177ms ret=204 request={Connection=[close], User-Agent=[Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36]} headers={null=[HTTP/1.1 204 No Content], Alt-Svc=[quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,h3-T050=":443"; ma=2592000], Connection=[close], Content-Length=[0], Date=[Thu, 02 Apr 2020 21:03:37 GMT], X-Android-Received-Millis=[1585861417049], X-Android-Response-Source=[NETWORK 204], X-Android-Selected-Protocol=[http/1.1], X-Android-Sent-Millis=[1585861417010]}
+04-02 17:03:37.054  2573 15393 D NetworkMonitor/101: isCaptivePortal: isSuccessful()=true isPortal()=false RedirectUrl=null isPartialConnectivity()=false Time=1235ms
+04-02 17:03:37.057  2308  2434 D ConnectivityService: [101 WIFI] validation passed
+04-02 17:03:37.437  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:03:48.483  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 22 lines
+04-02 17:03:48.983  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:03:49.243  2235  2235 E netmgr  : Failed to open QEMU pipe 'qemud:network': Invalid argument
+04-02 17:03:49.485  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:07.570  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 37 lines
+04-02 17:04:08.069  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:08.232  2265  2265 E wifi_forwarder: RemoteConnection failed to initialize: RemoteConnection failed to open pipe
+04-02 17:04:08.584  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:48.268  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 81 lines
+04-02 17:04:48.768  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:49.248  2235  2235 E netmgr  : Failed to open QEMU pipe 'qemud:network': Invalid argument
+04-02 17:04:49.269  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:49.546  2308  2331 I ActivityManager: Killing 12681:com.android.chrome/u0a119 (adj 700): excessive cpu 13310 during 300021 dur=1120277 limit=2
+04-02 17:04:49.559  2308  2333 I libprocessgroup: Successfully killed process cgroup uid 10119 pid 12681 in 0ms
+04-02 17:04:49.719  2308  2403 W InputDispatcher: channel '8401500 com.android.chrome/com.google.android.apps.chrome.Main (server)' ~ Consumer closed input channel or an error occurred.  events=0x9
+04-02 17:04:49.719  2308  2403 E InputDispatcher: channel '8401500 com.android.chrome/com.google.android.apps.chrome.Main (server)' ~ Channel is unrecoverably broken and will be disposed!
+04-02 17:04:49.721  2308  8457 I WindowManager: WIN DEATH: Window{8401500 u0 com.android.chrome/com.google.android.apps.chrome.Main}
+04-02 17:04:49.722  2308  8457 W InputDispatcher: Attempted to unregister already unregistered input channel '8401500 com.android.chrome/com.google.android.apps.chrome.Main (server)'
+04-02 17:04:49.723  2308  3806 D ConnectivityService: ConnectivityService NetworkRequestInfo binderDied(NetworkRequest [ LISTEN id=192, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&FOREGROUND Uid: 10119 RequestorUid: 10119 RequestorPackageName: com.android.chrome] ], android.os.BinderProxy@5a839d4)
+04-02 17:04:49.723  2308  3178 D ConnectivityService: ConnectivityService NetworkRequestInfo binderDied(NetworkRequest [ TRACK_DEFAULT id=185, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10119 RequestorUid: 10119 RequestorPackageName: com.android.chrome] ], android.os.BinderProxy@7201327)
+04-02 17:04:49.724  2308  5396 D ConnectivityService: ConnectivityService NetworkRequestInfo binderDied(NetworkRequest [ TRACK_DEFAULT id=189, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10119 RequestorUid: 10119 RequestorPackageName: com.android.chrome] ], android.os.BinderProxy@837677d)
+04-02 17:04:49.724  2308  2434 D ConnectivityService: releasing NetworkRequest [ TRACK_DEFAULT id=185, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10119 RequestorUid: 10119 RequestorPackageName: com.android.chrome] ] (release request)
+04-02 17:04:49.725  2308  2434 D ConnectivityService: releasing NetworkRequest [ TRACK_DEFAULT id=189, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10119 RequestorUid: 10119 RequestorPackageName: com.android.chrome] ] (release request)
+04-02 17:04:49.727  2308 10560 D ConnectivityService: ConnectivityService NetworkRequestInfo binderDied(NetworkRequest [ LISTEN id=190, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&FOREGROUND Uid: 10119 RequestorUid: 10119 RequestorPackageName: com.android.chrome] ], android.os.BinderProxy@8cd5672)
+04-02 17:04:49.727  2308  5890 D ConnectivityService: ConnectivityService NetworkRequestInfo binderDied(NetworkRequest [ LISTEN id=186, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&FOREGROUND Uid: 10119 RequestorUid: 10119 RequestorPackageName: com.android.chrome] ], android.os.BinderProxy@df0bac3)
+04-02 17:04:49.730  2308  2762 D ConnectivityService: ConnectivityService NetworkRequestInfo binderDied(NetworkRequest [ TRACK_DEFAULT id=191, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10119 RequestorUid: 10119 RequestorPackageName: com.android.chrome] ], android.os.BinderProxy@e391f40)
+04-02 17:04:49.731  2308  2434 D ConnectivityService: releasing NetworkRequest [ TRACK_DEFAULT id=191, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED Uid: 10119 RequestorUid: 10119 RequestorPackageName: com.android.chrome] ] (release request)
+04-02 17:04:49.737  2063  2063 I Zygote  : Process 12681 exited due to signal 9 (Killed)
+04-02 17:04:49.738  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:49.759  2308  3436 E ProcessStats: Executing service ServiceState{157fe79 org.chromium.content.app.SandboxedProcessService0 pkg=com.android.chrome proc=604e111} without owner
+04-02 17:04:49.770  2308  2331 I DropBoxManagerService: add tag=system_server_wtf isTagEnabled=true flags=0x2
+04-02 17:04:49.747  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:49.770  2646  2646 D Telephony: isEmergencyPreferredAccount: subId=1, activeData=1
+04-02 17:04:49.772  2473  2831 D EGL_emulation: eglMakeCurrent: 0xf06ad030: ver 3 0 (tinfo 0xf073b230)
+04-02 17:04:49.774  2646  2646 D Telephony: isEmergencyPreferredAccount: Device does not require preference.
+04-02 17:04:49.774  2646  2646 D Telephony: isEmergencyPreferredAccount: subId=1, activeData=1
+04-02 17:04:49.774  2646  2646 D Telephony: isEmergencyPreferredAccount: Device does not require preference.
+04-02 17:04:49.774  2646  2646 D Telephony: isEmergencyPreferredAccount: subId=1, activeData=1
+04-02 17:04:49.774  2646  2646 D Telephony: isEmergencyPreferredAccount: Device does not require preference.
+04-02 17:04:49.777  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:49.786  2308  3436 W ActivityManager: Exception when unbinding service com.android.chrome/org.chromium.content.app.SandboxedProcessService0:22
+04-02 17:04:49.786  2308  3436 W ActivityManager: android.os.DeadObjectException
+04-02 17:04:49.786  2308  3436 W ActivityManager: 	at android.os.BinderProxy.transactNative(Native Method)
+04-02 17:04:49.786  2308  3436 W ActivityManager: 	at android.os.BinderProxy.transact(BinderProxy.java:529)
+04-02 17:04:49.786  2308  3436 W ActivityManager: 	at android.app.IApplicationThread$Stub$Proxy.scheduleUnbindService(IApplicationThread.java:1624)
+04-02 17:04:49.786  2308  3436 W ActivityManager: 	at com.android.server.am.ActiveServices.removeConnectionLocked(ActiveServices.java:3497)
+04-02 17:04:49.786  2308  3436 W ActivityManager: 	at com.android.server.am.ActiveServices.killServicesLocked(ActiveServices.java:3898)
+04-02 17:04:49.786  2308  3436 W ActivityManager: 	at com.android.server.am.ActivityManagerService.cleanUpApplicationRecordLocked(ActivityManagerService.java:14463)
+04-02 17:04:49.786  2308  3436 W ActivityManager: 	at com.android.server.am.ActivityManagerService.handleAppDiedLocked(ActivityManagerService.java:3668)
+04-02 17:04:49.786  2308  3436 W ActivityManager: 	at com.android.server.am.ActivityManagerService.appDiedLocked(ActivityManagerService.java:3822)
+04-02 17:04:49.786  2308  3436 W ActivityManager: 	at com.android.server.am.ActivityManagerService$AppDeathRecipient.binderDied(ActivityManagerService.java:1574)
+04-02 17:04:49.786  2308  3436 W ActivityManager: 	at android.os.IBinder$DeathRecipient.binderDied(IBinder.java:305)
+04-02 17:04:49.786  2308  3436 W ActivityManager: 	at android.os.BinderProxy.sendDeathNotice(BinderProxy.java:643)
+04-02 17:04:49.787  2308  3436 E ProcessStats: Executing service ServiceState{157fe79 org.chromium.content.app.SandboxedProcessService0 pkg=com.android.chrome proc=604e111} without owner
+04-02 17:04:49.788  2308  3436 E ProcessStats: Foregrounding service ServiceState{157fe79 org.chromium.content.app.SandboxedProcessService0 pkg=com.android.chrome proc=604e111} without owner
+04-02 17:04:49.788  2308  3436 E ProcessStats: Binding service ServiceState{157fe79 org.chromium.content.app.SandboxedProcessService0 pkg=com.android.chrome proc=604e111} without owner
+04-02 17:04:49.788  2308  3436 E ProcessStats: Starting service ServiceState{157fe79 org.chromium.content.app.SandboxedProcessService0 pkg=com.android.chrome proc=604e111} without owner
+04-02 17:04:49.781  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 1 line
+04-02 17:04:49.784  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:49.790 12728 12728 I Zygote  : Process 12738 exited cleanly (0)
+04-02 17:04:49.791  2308  2331 I DropBoxManagerService: add tag=system_server_wtf isTagEnabled=true flags=0x2
+04-02 17:04:49.791  2308  3436 E ProcessStats: Executing service ServiceState{157fe79 org.chromium.content.app.SandboxedProcessService0 pkg=com.android.chrome proc=604e111} without owner
+04-02 17:04:49.792  2308  3436 E ProcessStats: Foregrounding service ServiceState{157fe79 org.chromium.content.app.SandboxedProcessService0 pkg=com.android.chrome proc=604e111} without owner
+04-02 17:04:49.800  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:49.802  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:49.803  2473  2473 V KeyguardUpdateMonitor: onSubscriptionInfoChanged()
+04-02 17:04:49.806  2308  2331 I DropBoxManagerService: add tag=system_server_wtf isTagEnabled=true flags=0x2
+04-02 17:04:49.807  2473  2473 V KeyguardUpdateMonitor: SubInfo:{id=1 iccId=890141032[****] simSlotIndex=0 carrierId=1 displayName=T-Mobile carrierName=T-Mobile nameSource=3 iconTint=-16746133 mNumber=[****] dataRoaming=0 iconBitmap=android.graphics.Bitmap@9abe74 mcc 310 mnc 260mCountryIso=us isEmbedded false nativeAccessRules null cardString=890141032[****] cardId=-1 isOpportunistic=false mGroupUUID=null mIsGroupDisabled=false profileClass=-1 ehplmns=null hplmns=null subscriptionType=0 mGroupOwner=null carrierConfigAccessRules=null mAreUiccApplicationsEnabled=true}
+04-02 17:04:49.810  2308  3436 W ActivityManager: Exception when unbinding service com.android.chrome/org.chromium.content.app.PrivilegedProcessService0
+04-02 17:04:49.810  2308  3436 W ActivityManager: android.os.DeadObjectException
+04-02 17:04:49.810  2308  3436 W ActivityManager: 	at android.os.BinderProxy.transactNative(Native Method)
+04-02 17:04:49.810  2308  3436 W ActivityManager: 	at android.os.BinderProxy.transact(BinderProxy.java:529)
+04-02 17:04:49.810  2308  3436 W ActivityManager: 	at android.app.IApplicationThread$Stub$Proxy.scheduleUnbindService(IApplicationThread.java:1624)
+04-02 17:04:49.810  2308  3436 W ActivityManager: 	at com.android.server.am.ActiveServices.removeConnectionLocked(ActiveServices.java:3497)
+04-02 17:04:49.810  2308  3436 W ActivityManager: 	at com.android.server.am.ActiveServices.killServicesLocked(ActiveServices.java:3898)
+04-02 17:04:49.810  2308  3436 W ActivityManager: 	at com.android.server.am.ActivityManagerService.cleanUpApplicationRecordLocked(ActivityManagerService.java:14463)
+04-02 17:04:49.810  2308  3436 W ActivityManager: 	at com.android.server.am.ActivityManagerService.handleAppDiedLocked(ActivityManagerService.java:3668)
+04-02 17:04:49.810  2308  3436 W ActivityManager: 	at com.android.server.am.ActivityManagerService.appDiedLocked(ActivityManagerService.java:3822)
+04-02 17:04:49.810  2308  3436 W ActivityManager: 	at com.android.server.am.ActivityManagerService$AppDeathRecipient.binderDied(ActivityManagerService.java:1574)
+04-02 17:04:49.810  2308  3436 W ActivityManager: 	at android.os.IBinder$DeathRecipient.binderDied(IBinder.java:305)
+04-02 17:04:49.810  2308  3436 W ActivityManager: 	at android.os.BinderProxy.sendDeathNotice(BinderProxy.java:643)
+04-02 17:04:49.810  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:49.811  2308  2331 I DropBoxManagerService: add tag=system_server_wtf isTagEnabled=true flags=0x2
+04-02 17:04:49.811  2308  3436 E ProcessStats: Executing service ServiceState{157fe79 org.chromium.content.app.SandboxedProcessService0 pkg=com.android.chrome proc=604e111} without owner
+04-02 17:04:49.813  2308  3436 W ActivityManager: Exception when unbinding service com.android.chrome/org.chromium.content.app.SandboxedProcessService0:0
+04-02 17:04:49.813  2308  3436 W ActivityManager: android.os.DeadObjectException
+04-02 17:04:49.813  2308  3436 W ActivityManager: 	at android.os.BinderProxy.transactNative(Native Method)
+04-02 17:04:49.813  2308  3436 W ActivityManager: 	at android.os.BinderProxy.transact(BinderProxy.java:529)
+04-02 17:04:49.813  2308  3436 W ActivityManager: 	at android.app.IApplicationThread$Stub$Proxy.scheduleUnbindService(IApplicationThread.java:1624)
+04-02 17:04:49.813  2308  3436 W ActivityManager: 	at com.android.server.am.ActiveServices.removeConnectionLocked(ActiveServices.java:3497)
+04-02 17:04:49.813  2308  3436 W ActivityManager: 	at com.android.server.am.ActiveServices.killServicesLocked(ActiveServices.java:3898)
+04-02 17:04:49.813  2308  3436 W ActivityManager: 	at com.android.server.am.ActivityManagerService.cleanUpApplicationRecordLocked(ActivityManagerService.java:14463)
+04-02 17:04:49.813  2308  3436 W ActivityManager: 	at com.android.server.am.ActivityManagerService.handleAppDiedLocked(ActivityManagerService.java:3668)
+04-02 17:04:49.813  2308  3436 W ActivityManager: 	at com.android.server.am.ActivityManagerService.appDiedLocked(ActivityManagerService.java:3822)
+04-02 17:04:49.813  2308  3436 W ActivityManager: 	at com.android.server.am.ActivityManagerService$AppDeathRecipient.binderDied(ActivityManagerService.java:1574)
+04-02 17:04:49.813  2308  3436 W ActivityManager: 	at android.os.IBinder$DeathRecipient.binderDied(IBinder.java:305)
+04-02 17:04:49.813  2308  3436 W ActivityManager: 	at android.os.BinderProxy.sendDeathNotice(BinderProxy.java:643)
+04-02 17:04:49.812  2473  2473 V KeyguardUpdateMonitor: onSubscriptionInfoChanged()
+04-02 17:04:49.813  2308  3436 E ProcessStats: Executing service ServiceState{157fe79 org.chromium.content.app.SandboxedProcessService0 pkg=com.android.chrome proc=604e111} without owner
+04-02 17:04:49.813  1847  1847 W lowmemorykiller: Failed to open /proc/12738/oom_score_adj; errno=2: process 12738 might have been killed
+04-02 17:04:49.814  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:49.814  2473  2473 V KeyguardUpdateMonitor: SubInfo:{id=1 iccId=890141032[****] simSlotIndex=0 carrierId=1 displayName=T-Mobile carrierName=T-Mobile nameSource=3 iconTint=-16746133 mNumber=[****] dataRoaming=0 iconBitmap=android.graphics.Bitmap@9a29f9d mcc 310 mnc 260mCountryIso=us isEmbedded false nativeAccessRules null cardString=890141032[****] cardId=-1 isOpportunistic=false mGroupUUID=null mIsGroupDisabled=false profileClass=-1 ehplmns=null hplmns=null subscriptionType=0 mGroupOwner=null carrierConfigAccessRules=null mAreUiccApplicationsEnabled=true}
+04-02 17:04:49.815  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:49.815  2308  3436 E ProcessStats: Foregrounding service ServiceState{157fe79 org.chromium.content.app.SandboxedProcessService0 pkg=com.android.chrome proc=604e111} without owner
+04-02 17:04:49.816  2308  3436 E ProcessStats: Binding service ServiceState{157fe79 org.chromium.content.app.SandboxedProcessService0 pkg=com.android.chrome proc=604e111} without owner
+04-02 17:04:49.817  2308  3436 E ProcessStats: Starting service ServiceState{157fe79 org.chromium.content.app.SandboxedProcessService0 pkg=com.android.chrome proc=604e111} without owner
+04-02 17:04:49.818  2308  3436 E ProcessStats: Executing service ServiceState{157fe79 org.chromium.content.app.SandboxedProcessService0 pkg=com.android.chrome proc=604e111} without owner
+04-02 17:04:49.817  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:49.818  1847  1847 W lowmemorykiller: Failed to open /proc/12738/oom_score_adj; errno=2: process 12738 might have been killed
+04-02 17:04:49.818  2308  2331 I DropBoxManagerService: add tag=system_server_wtf isTagEnabled=true flags=0x2
+04-02 17:04:49.819  2308  3436 E ProcessStats: Foregrounding service ServiceState{157fe79 org.chromium.content.app.SandboxedProcessService0 pkg=com.android.chrome proc=604e111} without owner
+04-02 17:04:49.821  2473  2473 V KeyguardUpdateMonitor: onSubscriptionInfoChanged()
+04-02 17:04:49.822  2473  2473 V KeyguardUpdateMonitor: SubInfo:{id=1 iccId=890141032[****] simSlotIndex=0 carrierId=1 displayName=T-Mobile carrierName=T-Mobile nameSource=3 iconTint=-16746133 mNumber=[****] dataRoaming=0 iconBitmap=android.graphics.Bitmap@74dfc12 mcc 310 mnc 260mCountryIso=us isEmbedded false nativeAccessRules null cardString=890141032[****] cardId=-1 isOpportunistic=false mGroupUUID=null mIsGroupDisabled=false profileClass=-1 ehplmns=null hplmns=null subscriptionType=0 mGroupOwner=null carrierConfigAccessRules=null mAreUiccApplicationsEnabled=true}
+04-02 17:04:49.822  2308  3436 I ActivityManager: Killing 12738:com.android.chrome:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u0a119i-9000 (adj 920): isolated not needed
+04-02 17:04:49.822  1847  1847 W lowmemorykiller: Failed to open /proc/12738/oom_score_adj; errno=2: process 12738 might have been killed
+04-02 17:04:49.822  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:49.823  2308  3436 I ActivityManager: Killing 13357:com.android.chrome:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:22/u0a119i-8978 (adj 930): isolated not needed
+04-02 17:04:49.823  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:49.824  2308  2333 I libprocessgroup: Successfully killed process cgroup uid 90000 pid 12738 in 0ms
+04-02 17:04:49.825  2308  2333 I libprocessgroup: Successfully killed process cgroup uid 90022 pid 13357 in 0ms
+04-02 17:04:49.825 12728 12728 I Zygote  : Process 13357 exited cleanly (0)
+04-02 17:04:49.825  2308  2325 W ActivityManager: setHasOverlayUi called on unknown pid: 12681
+04-02 17:04:49.830  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:49.851  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 7 lines
+04-02 17:04:49.852  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:49.854  2063  2063 I Zygote  : Process 12768 exited cleanly (0)
+04-02 17:04:49.867  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:49.870  2308  3806 I ActivityManager: Process com.android.chrome:privileged_process0 (pid 12768) has died: cch+10 CACC
+04-02 17:04:49.871  2308  2333 I libprocessgroup: Successfully killed process cgroup uid 10119 pid 12768 in 0ms
+04-02 17:04:49.876  2308  2308 W ActivityManager: Unable to start service Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } U=0: not found
+04-02 17:04:49.876  2308  2308 W RemoteContentCaptureService: could not bind to Intent { act=android.service.contentcapture.ContentCaptureService cmp=com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService } using flags 67108865
+04-02 17:04:49.882  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:51.784  2308  2331 W BroadcastQueue: Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.stats.service.DropBoxEntryAddedReceiver
+04-02 17:04:51.784  2308  2331 W BroadcastQueue: Background execution not allowed: receiving Intent { act=android.intent.action.DROPBOX_ENTRY_ADDED flg=0x10 (has extras) } to com.google.android.gms/.chimera.GmsIntentOperationService$PersistentTrustedReceiver
+04-02 17:04:51.785  2308  2331 I ActivityManager: Killing 10187:com.android.keychain/1000 (adj 965): empty for 1800s
+04-02 17:04:51.301  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 51 lines
+04-02 17:04:51.804  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:51.829  2308  2333 I libprocessgroup: Successfully killed process cgroup uid 1000 pid 10187 in 36ms
+04-02 17:04:51.873  2063  2063 I Zygote  : Process 10187 exited due to signal 9 (Killed)
+04-02 17:04:52.322  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:54.319  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 4 lines
+04-02 17:04:54.817  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:54.863  2308  2331 I Process : Sending signal. PID: 12728 SIG: 9
+04-02 17:04:54.908  2063  2063 I Zygote  : Process 12728 exited due to signal 9 (Killed)
+04-02 17:04:55.316  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:04:59.335  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 8 lines
+04-02 17:04:59.851  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:05:00.027  2473  2831 D EGL_emulation: eglMakeCurrent: 0xf06ad030: ver 3 0 (tinfo 0xf073b230)
+04-02 17:05:00.031  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:05:07.388  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 15 lines
+04-02 17:05:07.885  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:05:08.293  2265  2265 E wifi_forwarder: RemoteConnection failed to initialize: RemoteConnection failed to open pipe
+04-02 17:05:08.385  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:05:26.002  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 35 lines
+04-02 17:05:26.503  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:05:26.662  2308  3436 D WifiNl80211Manager: Scan result ready event
+04-02 17:05:26.662  2308  3436 D WifiNative: Scan result ready event
+04-02 17:05:27.002  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:05:48.636  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 43 lines
+04-02 17:05:49.136  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:05:49.312  2235  2235 E netmgr  : Failed to open QEMU pipe 'qemud:network': Invalid argument
+04-02 17:05:49.637  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:06:07.746  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 37 lines
+04-02 17:06:08.235  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:06:08.356  2265  2265 E wifi_forwarder: RemoteConnection failed to initialize: RemoteConnection failed to open pipe
+04-02 17:06:08.736  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:06:48.468  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 79 lines
+04-02 17:06:48.967  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:06:49.320  2235  2235 E netmgr  : Failed to open QEMU pipe 'qemud:network': Invalid argument
+04-02 17:06:49.467  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:07:07.589  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 41 lines
+04-02 17:07:08.085  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:07:08.380  2265  2265 E wifi_forwarder: RemoteConnection failed to initialize: RemoteConnection failed to open pipe
+04-02 17:07:08.585  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:07:12.716  2308  2330 D AppStandbyController:    Checking idle state for com.google.android.calendar special=false
+04-02 17:07:12.716  2308  2330 D AppIdleHistory: com.google.android.calendar lastUsedScreen=-26569 lastUsedElapsed=-22225
+04-02 17:07:12.716  2308  2330 D AppIdleHistory: com.google.android.calendar screenOn=227895630, elapsed=254293922
+04-02 17:07:12.716  2308  2330 D AppStandbyController: Evaluated AOSP newBucket = 40
+04-02 17:07:12.716  2308  2330 D AppStandbyController:      Old bucket=10, newBucket=40
+04-02 17:07:12.716  2308  2330 D AppIdleHistory: Moved com.google.android.calendar to bucket=40, reason=0x0200
+04-02 17:07:12.717  2308  2330 D AppStandbyController: Standby bucket for com.google.android.calendar=40
+04-02 17:07:12.720  2308  2330 D AppStandbyController:    Checking idle state for com.google.android.gm special=false
+04-02 17:07:12.721  2308  2330 D AppIdleHistory: com.google.android.gm lastUsedScreen=-26569 lastUsedElapsed=-22225
+04-02 17:07:12.721  2308  2330 D AppIdleHistory: com.google.android.gm screenOn=227895635, elapsed=254293927
+04-02 17:07:12.721  2308  2330 D AppStandbyController: Evaluated AOSP newBucket = 40
+04-02 17:07:12.721  2308  2330 D AppStandbyController:     Keeping at WORKING_SET due to min timeout
+04-02 17:07:12.721  2308  2330 D AppStandbyController:      Old bucket=10, newBucket=20
+04-02 17:07:12.721  2308  2330 D AppIdleHistory: Moved com.google.android.gm to bucket=20, reason=0x0307
+04-02 17:07:12.721  2308  2330 D AppStandbyController: Standby bucket for com.google.android.gm=20
+04-02 17:07:12.101  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 7 lines
+04-02 17:07:12.601  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:07:12.757  2062  2062 I netd    : firewallSetUidRule(2, 10123, 2) <22.13ms>
+04-02 17:07:13.102  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:07:48.818  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 75 lines
+04-02 17:07:49.318  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:07:49.381  2235  2235 E netmgr  : Failed to open QEMU pipe 'qemud:network': Invalid argument
+04-02 17:07:49.818  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:08:07.418  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 36 lines
+04-02 17:08:07.928  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:08:08.407  2265  2265 E wifi_forwarder: RemoteConnection failed to initialize: RemoteConnection failed to open pipe
+04-02 17:08:08.419  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:08:26.517  1848  1848 I chatty  : uid=1000(system) /system/bin/servicemanager identical 36 lines
+04-02 17:08:27.018  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.
+04-02 17:08:27.242  2308  3806 D WifiNl80211Manager: Scan result ready event
+04-02 17:08:27.242  2308  3806 D WifiNative: Scan result ready event
+04-02 17:08:27.517  1848  1848 E servicemanager: Could not find android.hardware.power.IPower/default in the VINTF manifest.

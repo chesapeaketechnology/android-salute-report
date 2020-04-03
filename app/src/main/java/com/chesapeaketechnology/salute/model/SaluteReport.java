@@ -35,6 +35,12 @@ public class SaluteReport implements Serializable
     @SerializedName("Location")
     private String location;
 
+    @SerializedName("Latitude")
+    private Double latitude;
+
+    @SerializedName("Longitude")
+    private Double longitude;
+
     @SerializedName("Unit")
     private String unit;
 
@@ -88,6 +94,16 @@ public class SaluteReport implements Serializable
     public void setLocation(String location)
     {
         this.location = location;
+    }
+
+    public void setLatitude(double latitude)
+    {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(double longitude)
+    {
+        this.longitude = longitude;
     }
 
     public void setUnit(String unit)
@@ -153,6 +169,32 @@ public class SaluteReport implements Serializable
     public String getLocation()
     {
         return location;
+    }
+
+    public double getLatitude()
+    {
+        return latitude;
+    }
+
+    public double getLongitude()
+    {
+        return longitude;
+    }
+
+    /**
+     * Either returns location string user entered or formats (lat, lon) as a string
+     * @return Formatted string
+     */
+    public String getLocationString()
+    {
+        if (location != null && !location.isEmpty())
+        {
+            return location;
+        } else if (latitude != null && longitude != null)
+        {
+            return latitude + ", " + longitude;
+        }
+        return null;
     }
 
     public String getUnit()

@@ -50,7 +50,7 @@ public class ReportDetailsFragment extends Fragment
         reportLabel.setText(stringOrNA(saluteReport.getReportName()));
         size.setText(stringOrNA(saluteReport.getSize()));
         activity.setText(stringOrNA(saluteReport.getActivity()));
-        location.setText(stringOrNA(saluteReport.getLocation()));
+        location.setText(stringOrNA(saluteReport.getLocationString()));
         unit.setText(stringOrNA(saluteReport.getUnit()));
         time.setText(SaluteAppUtils.formatReportTime(saluteReport));
         equipment.setText(stringOrNA(saluteReport.getEquipment()));

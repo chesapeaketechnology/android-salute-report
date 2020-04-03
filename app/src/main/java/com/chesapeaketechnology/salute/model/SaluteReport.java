@@ -1,10 +1,13 @@
 package com.chesapeaketechnology.salute.model;
 
+import androidx.annotation.Nullable;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.io.File;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Represents a single Salute Report.  This class can be serialized and deserialized to/from JSON.
@@ -34,6 +37,12 @@ public class SaluteReport implements Serializable
 
     @SerializedName("Location")
     private String location;
+
+    @SerializedName("Latitude")
+    private Double latitude;
+
+    @SerializedName("Longitude")
+    private Double longitude;
 
     @SerializedName("Unit")
     private String unit;
@@ -88,6 +97,16 @@ public class SaluteReport implements Serializable
     public void setLocation(String location)
     {
         this.location = location;
+    }
+
+    public void setLatitude(double latitude)
+    {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(double longitude)
+    {
+        this.longitude = longitude;
     }
 
     public void setUnit(String unit)
@@ -153,6 +172,47 @@ public class SaluteReport implements Serializable
     public String getLocation()
     {
         return location;
+    }
+
+    /**
+     * Getter for latitude.
+     *
+     * @return Latitude of selected location. Will return null if location was manually entered.
+     */
+    @Nullable
+    public Double getLatitude()
+    {
+        return latitude;
+    }
+
+    /**
+     * Getter for longitude.
+     *
+     * @return Longitude of selected location. Will return null if location was manually entered.
+     */
+    @Nullable
+    public Double getLongitude()
+    {
+        return longitude;
+    }
+
+    /**
+     * Either returns location string user entered or formats (lat, lon) as a string.
+     *
+     * @return Either the manually entered string or the latitude and longitude separated
+     * by a comma. Will return null if none of the fields are set.
+     */
+    @Nullable
+    public String getLocationString()
+    {
+        if (location != null && !location.isEmpty())
+        {
+            return location;
+        } else if (latitude != null && longitude != null)
+        {
+            return String.format(Locale.getDefault(), "%.5f, %.5f", latitude, longitude);
+        }
+        return null;
     }
 
     public String getUnit()

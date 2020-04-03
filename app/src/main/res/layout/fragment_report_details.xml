@@ -1,147 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="@dimen/medium_margin"
-    android:orientation="vertical"
-    tools:context=".ReportDetailsFragment">
-
-    <TextView
-        android:id="@+id/reportLabel"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent"
+        tools:context=".ReportDetailsFragment">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/medium_margin">
 
         <TextView
-            android:id="@+id/sizeLabel"
-            style="@style/ReportDetailsLabel"
-            android:text="@string/size_label" />
+                android:id="@+id/reportLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/size"
-            style="@style/ReportDetailsValueText" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/sizeLabel"
+                    style="@style/ReportDetailsLabel"
+                    android:text="@string/size_label" />
+
+            <TextView
+                    android:id="@+id/size"
+                    style="@style/ReportDetailsValueText" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/activityLabel"
+                    style="@style/ReportDetailsLabel"
+                    android:text="@string/activity_label" />
+
+
+            <TextView
+                    android:id="@+id/activity"
+                    style="@style/ReportDetailsValueText" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/locationLabel"
+                    style="@style/ReportDetailsLabel"
+                    android:text="@string/location_label" />
+
+            <TextView
+                    android:id="@+id/location"
+                    style="@style/ReportDetailsValueText" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/unitLabel"
+                    style="@style/ReportDetailsLabel"
+                    android:text="@string/unit_label" />
+
+            <TextView
+                    android:id="@+id/unit"
+                    style="@style/ReportDetailsValueText" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/timeLabel"
+                    style="@style/ReportDetailsLabel"
+                    android:text="@string/time_label" />
+
+            <TextView
+                    android:id="@+id/time"
+                    style="@style/ReportDetailsValueText" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/equipmentLabel"
+                    style="@style/ReportDetailsLabel"
+                    android:text="@string/equipment_label" />
+
+            <TextView
+                    android:id="@+id/equipment"
+                    style="@style/ReportDetailsValueText" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/remarksLabel"
+                    style="@style/ReportDetailsLabel"
+                    android:text="@string/remarks_label" />
+
+            <TextView
+                    android:id="@+id/remarks"
+                    style="@style/ReportDetailsValueText" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/createdLabel"
+                    style="@style/ReportDetailsLabel"
+                    android:text="@string/created_label" />
+
+            <TextView
+                    android:id="@+id/created"
+                    style="@style/ReportDetailsValueText" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/activityLabel"
-            style="@style/ReportDetailsLabel"
-            android:text="@string/activity_label" />
-
-
-        <TextView
-            android:id="@+id/activity"
-            style="@style/ReportDetailsValueText" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/locationLabel"
-            style="@style/ReportDetailsLabel"
-            android:text="@string/location_label" />
-
-        <TextView
-            android:id="@+id/location"
-            style="@style/ReportDetailsValueText" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/unitLabel"
-            style="@style/ReportDetailsLabel"
-            android:text="@string/unit_label" />
-
-        <TextView
-            android:id="@+id/unit"
-            style="@style/ReportDetailsValueText" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/timeLabel"
-            style="@style/ReportDetailsLabel"
-            android:text="@string/time_label" />
-
-        <TextView
-            android:id="@+id/time"
-            style="@style/ReportDetailsValueText" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/equipmentLabel"
-            style="@style/ReportDetailsLabel"
-            android:text="@string/equipment_label" />
-
-        <TextView
-            android:id="@+id/equipment"
-            style="@style/ReportDetailsValueText" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/remarksLabel"
-            style="@style/ReportDetailsLabel"
-            android:text="@string/remarks_label" />
-
-        <TextView
-            android:id="@+id/remarks"
-            style="@style/ReportDetailsValueText" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/createdLabel"
-            style="@style/ReportDetailsLabel"
-            android:text="@string/created_label" />
-
-        <TextView
-            android:id="@+id/created"
-            style="@style/ReportDetailsValueText" />
-
-    </LinearLayout>
-
-</LinearLayout>
+</ScrollView>

@@ -4,9 +4,21 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
+/**
+ * The main activity for the Salute Report app.  The Salute Report app allows for users to create SALUTE Reports that
+ * are saved to a JSON file and then shared to Sync Monkey.
+ *
+ * @since 0.1.0
+ */
 public class MainActivity extends AppCompatActivity
 {
+    private AppBarConfiguration appBarConfiguration;
+    public NavController navController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -15,31 +27,26 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-    }
 
-    /* Delete me
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+        setupNavigation();
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
+    public boolean onSupportNavigateUp()
     {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        return NavigationUI.navigateUp(navController, appBarConfiguration) || super.onSupportNavigateUp();
+    }
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings)
-        {
-            return true;
-        }
+    /**
+     * Configure navigation so toolbar back button works properly.
+     *
+     * @since 0.1.0
+     */
+    private void setupNavigation()
+    {
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        appBarConfiguration = new AppBarConfiguration.Builder(R.id.HomeFragment).build();
 
-        return super.onOptionsItemSelected(item);
-    }*/
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+    }
 }

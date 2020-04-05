@@ -20,6 +20,22 @@
         <action
             android:id="@+id/action_create_salute_report"
             app:destination="@id/FirstFragmentSize" />
+
+        <action
+            android:id="@+id/action_view_salute_report"
+            app:destination="@id/ReportDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ReportDetailsFragment"
+        android:name="com.chesapeaketechnology.salute.ReportDetailsFragment"
+        android:label="@string/report_details_fragment_label"
+        tools:layout="@layout/fragment_report_details">
+
+        <argument
+            android:name="saluteReport"
+            app:argType="com.chesapeaketechnology.salute.model.SaluteReport"
+            app:nullable="true" />
     </fragment>
 
     <fragment

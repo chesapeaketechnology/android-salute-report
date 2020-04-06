@@ -124,6 +124,7 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
         uiSettings.setZoomControlsEnabled(true);
         uiSettings.setZoomGesturesEnabled(true);
         uiSettings.setMyLocationButtonEnabled(true);
+        uiSettings.setMapToolbarEnabled(false);
 
         map.setOnMapClickListener((point) -> {
             if (mapMarker == null)

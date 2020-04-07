@@ -17,7 +17,7 @@ Install Android Studio to work on this code.
 
 ## Changelog
 
-##### [0.1.0]() - 2020-03-31
+##### [0.1.0](https://code.ctic-inc.com/android-salute-report/files/fa2ccc5bddaf096177aeaa1fde7818cef94b18c4/?at=v0.1.0) - 2020-04-03
  * Initial cut of the SALUTE Report Android App
 
 ## Contact

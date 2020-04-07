@@ -3,6 +3,9 @@ package com.chesapeaketechnology.salute;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -23,6 +26,13 @@ public class ReportDetailsFragment extends Fragment
     private static final String LOG_TAG = ReportDetailsFragment.class.getSimpleName();
 
     private SaluteReport saluteReport;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -59,9 +69,22 @@ public class ReportDetailsFragment extends Fragment
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState)
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater)
     {
-        super.onActivityCreated(savedInstanceState);
+        inflater.inflate(R.menu.menu_report_details, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    {
+        int id = item.getItemId();
+        if (id == R.id.share_button)
+        {
+            SaluteAppUtils.openShareSaluteReportDialog(saluteReport, requireContext());
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     /**

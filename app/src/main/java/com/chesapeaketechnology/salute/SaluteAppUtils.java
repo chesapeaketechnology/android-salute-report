@@ -1,8 +1,12 @@
 package com.chesapeaketechnology.salute;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
 
 import com.chesapeaketechnology.salute.model.SaluteReport;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,6 +22,8 @@ public final class SaluteAppUtils
     // TODO: change to DateTimeFormatter when minimum API is 26
     @SuppressLint("SimpleDateFormat")
     private static SimpleDateFormat militaryFormat = new SimpleDateFormat("yyyy/MM/dd HHmm zzz");
+
+    private static Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
 
     /**
      * Get the name of a file without the file extension or period.
@@ -80,5 +86,21 @@ public final class SaluteAppUtils
             return "Ongoing";
         }
         return formatDate(report.getTime());
+    }
+
+    /**
+     * Serializes a provided salute report object as JSON and opens
+     * the standard Android share dialog.
+     *
+     * @param report SaluteReport object to share
+     * @param context Android application context
+     */
+    public static void openShareSaluteReportDialog(SaluteReport report, Context context)
+    {
+        String shareBody = gson.toJson(report);
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.setType("text/json");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+        context.startActivity(Intent.createChooser(sharingIntent, null));
     }
 }

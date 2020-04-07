@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="com.chesapeaketechnology.salute.MainActivity">
+
+    <item
+            android:id="@+id/share_button"
+            android:icon="@android:drawable/ic_menu_share"
+            android:orderInCategory="100"
+            android:title="@string/share_button_title"
+            app:showAsAction="ifRoom" />
+
+</menu>

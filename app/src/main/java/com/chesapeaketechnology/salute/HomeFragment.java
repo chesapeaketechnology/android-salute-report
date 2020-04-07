@@ -65,6 +65,15 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(new MySaluteReportRecyclerViewAdapter(saluteReports, this));
 
+//        SelectionTracker tracker = new SelectionTracker.Builder<>(
+//                "my-selection-id",
+//                recyclerView,
+//                new StableIdKeyProvider(recyclerView),
+//                new MyDetailsLookup(recyclerView),
+//                StorageStrategy.createLongStorage())
+//                .withOnItemActivatedListener(myItemActivatedListener)
+//                .build();
+
         final FloatingActionButton fab = view.findViewById(R.id.fab);
         fab.setOnClickListener(view1 -> startSaluteReportWizard(null));
 

@@ -105,10 +105,10 @@
     </style>
 
     <style name="ReportDetailsLabel">
-        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_weight">1</item>
         <item name="android:padding">@dimen/x_small_margin</item>
+        <item name="android:layout_marginEnd">@dimen/small_margin</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/illiniTextColorPrimaryInverse</item>
@@ -118,7 +118,7 @@
     <style name="ReportDetailsValueText">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_weight">2.3</item>
+        <item name="android:layout_weight">1</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/darkGunmetal_87</item>
         <item name="android:padding">@dimen/x_small_margin</item>

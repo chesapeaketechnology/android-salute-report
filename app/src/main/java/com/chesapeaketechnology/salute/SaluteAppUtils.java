@@ -10,6 +10,7 @@ import com.google.gson.GsonBuilder;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * A collection of utilities for use throughout the Sync Monkey app.
@@ -98,6 +99,22 @@ public final class SaluteAppUtils
     public static void openShareSaluteReportDialog(SaluteReport report, Context context)
     {
         String shareBody = gson.toJson(report);
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.setType("text/json");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+        context.startActivity(Intent.createChooser(sharingIntent, null));
+    }
+
+    /**
+     * Serializes a provided list of salute report objects
+     * as JSON and opens the standard Android share dialog.
+     *
+     * @param reports List of SaluteReport objects to share
+     * @param context Android application context
+     */
+    public static void openShareSaluteReportDialog(List<SaluteReport> reports, Context context)
+    {
+        String shareBody = gson.toJson(reports);
         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
         sharingIntent.setType("text/json");
         sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);

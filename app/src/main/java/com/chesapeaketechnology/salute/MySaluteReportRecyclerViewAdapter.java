@@ -1,11 +1,13 @@
 package com.chesapeaketechnology.salute;
 
 import android.app.AlertDialog;
+import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.chesapeaketechnology.salute.model.SaluteReport;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -29,6 +33,11 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
 
     private final List<SaluteReport> mValues;
     private final SaluteReportInteractionListener mListener;
+
+    /**
+     * Indicates if the list of reports is in selection mode
+     */
+    private boolean selectionModeActive = false;
 
     MySaluteReportRecyclerViewAdapter(List<SaluteReport> items, SaluteReportInteractionListener listener)
     {
@@ -55,17 +64,144 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
                 SaluteAppUtils.formatDate(holder.saluteReport.getReportCreationTime()));
         holder.mTimeView.setText(SaluteAppUtils.formatReportTime(holder.saluteReport));
 
+        holder.mCheckBox.setVisibility(selectionModeActive ? View.VISIBLE : View.INVISIBLE);
+
+        // De-select all reports once on exit selection mode
+        if (!selectionModeActive) setItemSelected(holder, false);
+
         holder.mView.setOnClickListener(v -> {
-            if (null != mListener) mListener.onReportSelected(holder.saluteReport);
+            if (selectionModeActive)
+            {
+                toggleItemSelected(holder);
+            } else if (mListener != null)
+            {
+                mListener.onReportSelected(holder.saluteReport);
+            }
         });
 
-        holder.mDeleteButton.setOnClickListener(v -> deleteReport(holder, position));
+        holder.mView.setOnLongClickListener(v -> {
+            setSelectionModeActive(true);
+            toggleItemSelected(holder);
+            return true;
+        });
+
+        holder.mCheckBox.setOnClickListener(v -> toggleItemSelected(holder));
     }
 
     @Override
     public int getItemCount()
     {
         return mValues.size();
+    }
+
+    /**
+     * Allows the user to select multiple reports, or turns off selection,
+     * and updates styles and state accordingly.
+     *
+     * @param active State to set selection mode
+     */
+    public void setSelectionModeActive(boolean active)
+    {
+        selectionModeActive = active;
+        notifyDataSetChanged();
+
+        if (mListener != null) mListener.onReportsSelectionModeChanged(active);
+    }
+
+    /**
+     * Indicates if selection mode is active or not.
+     *
+     * @return Bool indicating if selection mode is on
+     */
+    public boolean getSelectionModeActive()
+    {
+        return selectionModeActive;
+    }
+
+    /**
+     * Updates fields and styles when the user selects a report
+     * in multiple-selection mode.
+     *
+     * @param holder   ViewHolder of the report
+     * @param selected Indicates if report is selected or not
+     */
+    private void setItemSelected(ViewHolder holder, boolean selected)
+    {
+        if (null != mListener) mListener.onReportLongClick(holder.saluteReport);
+        holder.saluteReport.setSelected(selected);
+
+        if (selected)
+        {
+            holder.mView.setBackgroundColor(Color.LTGRAY);
+            holder.mCheckBox.setChecked(true);
+        } else
+        {
+            holder.mView.setBackgroundColor(Color.TRANSPARENT);
+            holder.mCheckBox.setChecked(false);
+        }
+    }
+
+    /**
+     * Toggles selection of a report.
+     *
+     * @param holder ViewHolder for report
+     */
+    private void toggleItemSelected(ViewHolder holder)
+    {
+        setItemSelected(holder, !holder.saluteReport.getSelected());
+    }
+
+    /**
+     * Prompts and then deletes every report currently selected by the user.
+     * Will turn  off selection mode after the report(s) have been deleted.
+     *
+     * @param context Android application context
+     */
+    public void deleteAllSelectedReports(Context context)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle(R.string.delete_report_dialog_title)
+                .setMessage(R.string.delete_report_dialog_message)
+                .setPositiveButton(android.R.string.yes, (dialog, which) -> {
+                    Iterator<SaluteReport> iterator = mValues.iterator();
+
+                    while (iterator.hasNext())
+                    {
+                        SaluteReport report = iterator.next();
+                        if (report.getSelected())
+                        {
+                            File file = report.getFile();
+                            if (file != null)
+                            {
+                                file.delete();
+                            } else
+                            {
+                                Log.wtf(LOG_TAG, "Salute report has a null file.");
+                            }
+                            iterator.remove();
+                        }
+                    }
+
+                    setSelectionModeActive(false);
+                    notifyDataSetChanged();
+                })
+                .setNegativeButton(android.R.string.no, null)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
+    }
+
+    /**
+     * Serializes the provided salute reports objects as
+     * JSON and opens the standard Android share dialog.
+     *
+     * @param context Android application context
+     */
+    public void shareAllSelectedReports(Context context)
+    {
+        List<SaluteReport> selectedReports = new ArrayList<>(mValues);
+        selectedReports.removeIf(r -> !r.getSelected());
+        SaluteAppUtils.openShareSaluteReportDialog(selectedReports, context);
+        notifyDataSetChanged();
     }
 
     /**
@@ -82,34 +218,6 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
     }
 
     /**
-     * Delete report from list and filesystem.
-     *
-     * @param position index of report
-     */
-    private void deleteReport(ViewHolder holder, int position)
-    {
-        AlertDialog.Builder builder = new AlertDialog.Builder(holder.mView.getContext());
-        builder.setTitle(R.string.delete_report_dialog_title)
-                .setMessage(R.string.delete_report_dialog_message)
-                .setPositiveButton(android.R.string.yes, (dialog, which) -> {
-                    File file = mValues.get(position).getFile();
-                    if (file != null)
-                    {
-                        file.delete();
-                    } else
-                    {
-                        Log.wtf(LOG_TAG, "Salute report has a null file.");
-                    }
-                    mValues.remove(position);
-                    notifyItemRemoved(position);
-                    notifyItemRangeChanged(position, mValues.size());
-                })
-                .setNegativeButton(android.R.string.no, null)
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .show();
-    }
-
-    /**
      * The representation for a single salute report in the recycler view.  This class holds the view elements for the
      * report.
      */
@@ -120,7 +228,7 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
         final TextView mContentView;
         final TextView mTimeView;
         final TextView mCreatedView;
-        final ImageButton mDeleteButton;
+        final CheckBox mCheckBox;
         SaluteReport saluteReport;
 
         ViewHolder(View view)
@@ -131,7 +239,7 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
             mContentView = view.findViewById(R.id.content);
             mTimeView = view.findViewById(R.id.time);
             mCreatedView = view.findViewById(R.id.created);
-            mDeleteButton = view.findViewById(R.id.deleteButton);
+            mCheckBox = view.findViewById(R.id.selected_checkbox);
         }
 
         @NonNull

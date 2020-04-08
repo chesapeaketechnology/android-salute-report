@@ -11,7 +11,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -43,12 +42,6 @@ public class SeventhFragmentRemarks extends Fragment
         extractSaluteReport();
 
         view.findViewById(R.id.button_next).setOnClickListener(view1 -> sendSaluteReportToHomeFragment(view));
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState)
-    {
-        super.onActivityCreated(savedInstanceState);
     }
 
     /**

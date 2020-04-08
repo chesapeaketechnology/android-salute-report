@@ -62,8 +62,8 @@
     <string name="equipment_label">Equipment:</string>
     <string name="remarks_label">Remarks:</string>
     <string name="created_label">Created:</string>
-    <string name="delete_report_dialog_title">Delete report?</string>
-    <string name="delete_report_dialog_message">Are you sure you want to delete this SALUTE report?</string>
+    <string name="delete_report_dialog_title">Delete report(s)?</string>
+    <string name="delete_report_dialog_message">Are you sure you want to delete these SALUTE reports?</string>
     <string name="get_from_map_switch_text">Get from Map</string>
 
     <!-- Location Fragment Strings -->

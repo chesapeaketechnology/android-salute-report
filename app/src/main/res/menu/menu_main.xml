@@ -2,10 +2,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.chesapeaketechnology.salute.MainActivity">
+
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+            android:id="@+id/action_delete"
+            android:orderInCategory="100"
+            android:title="Delete"
+            android:visible="false"
+            app:showAsAction="always" />
+
+    <item
+	        android:id="@+id/action_share"
+	        android:orderInCategory="100"
+	        android:title="Share"
+            android:visible="false"
+	        app:showAsAction="always" />
+
+	<item
+	        android:id="@+id/action_deselect"
+	        android:orderInCategory="100"
+	        android:title="Deselect"
+            android:visible="false"
+	        app:showAsAction="always" />
+
+    <item
+	        android:id="@+id/action_select"
+	        android:orderInCategory="100"
+	        android:title="Select"
+            android:visible="true"
+	        app:showAsAction="ifRoom" />
 
 </menu>

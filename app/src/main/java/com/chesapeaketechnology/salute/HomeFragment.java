@@ -10,6 +10,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -45,12 +47,13 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
     private static final String LOG_TAG = HomeFragment.class.getSimpleName();
 
     private final List<SaluteReport> saluteReports = new ArrayList<>();
+    private RecyclerView recyclerView;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-
+        setHasOptionsMenu(true);
         findAndAddSaluteReports();
     }
 
@@ -59,20 +62,11 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
     {
         final View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        final RecyclerView recyclerView = view.findViewById(R.id.list);
+        recyclerView = view.findViewById(R.id.list);
         final Context context = view.getContext();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(new MySaluteReportRecyclerViewAdapter(saluteReports, this));
-
-//        SelectionTracker tracker = new SelectionTracker.Builder<>(
-//                "my-selection-id",
-//                recyclerView,
-//                new StableIdKeyProvider(recyclerView),
-//                new MyDetailsLookup(recyclerView),
-//                StorageStrategy.createLongStorage())
-//                .withOnItemActivatedListener(myItemActivatedListener)
-//                .build();
 
         final FloatingActionButton fab = view.findViewById(R.id.fab);
         fab.setOnClickListener(view1 -> startSaluteReportWizard(null));
@@ -96,17 +90,43 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState)
-    {
-        super.onActivityCreated(savedInstanceState);
-    }
-
-    @Override
     public void onDestroyView()
     {
         super.onDestroyView();
         Bundle arguments = getArguments();
         if (arguments != null) arguments.clear();
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater)
+    {
+        inflater.inflate(R.menu.menu_main, menu);
+
+        MySaluteReportRecyclerViewAdapter adapter
+                = (MySaluteReportRecyclerViewAdapter) recyclerView.getAdapter();
+
+        menu.findItem(R.id.action_deselect).setOnMenuItemClickListener(m -> {
+            if (adapter != null) adapter.setSelectionModeActive(false);
+            return true;
+        });
+
+        menu.findItem(R.id.action_select).setOnMenuItemClickListener(m -> {
+            if (adapter != null) adapter.setSelectionModeActive(true);
+            return true;
+        });
+
+        menu.findItem(R.id.action_delete).setOnMenuItemClickListener(m -> {
+            if (adapter != null) adapter.deleteAllSelectedReports(requireContext());
+            return true;
+        });
+
+        menu.findItem(R.id.action_share).setOnMenuItemClickListener(m -> {
+            if (adapter != null) adapter.shareAllSelectedReports(requireContext());
+            return true;
+        });
+
+
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override
@@ -116,6 +136,41 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
                 HomeFragmentDirections.actionViewSaluteReport(report);
         NavHostFragment.findNavController(HomeFragment.this)
                 .navigate(actionViewSaluteReport);
+    }
+
+    @Override
+    public void onReportsSelectionModeChanged(boolean selectionModeActive)
+    {
+        requireActivity().invalidateOptionsMenu();
+    }
+
+    @Override
+    public void onPrepareOptionsMenu(@NonNull Menu menu)
+    {
+        MySaluteReportRecyclerViewAdapter adapter
+                = (MySaluteReportRecyclerViewAdapter) recyclerView.getAdapter();
+
+        if (adapter != null)
+        {
+            if (adapter.getSelectionModeActive())
+            {
+                menu.findItem(R.id.action_delete).setVisible(true);
+                menu.findItem(R.id.action_share).setVisible(true);
+                menu.findItem(R.id.action_deselect).setVisible(true);
+                menu.findItem(R.id.action_select).setVisible(false);
+            } else
+            {
+                menu.findItem(R.id.action_delete).setVisible(false);
+                menu.findItem(R.id.action_share).setVisible(false);
+                menu.findItem(R.id.action_deselect).setVisible(false);
+                menu.findItem(R.id.action_select).setVisible(true);
+            }
+        } else
+        {
+            Log.wtf(LOG_TAG, "RecyclerViewAdapter is null");
+        }
+
+        super.onPrepareOptionsMenu(menu);
     }
 
     /**

@@ -64,9 +64,15 @@
     <string name="created_label">Created:</string>
     <string name="delete_report_dialog_title">Delete report(s)?</string>
     <string name="delete_report_dialog_message">Are you sure you want to delete these SALUTE reports?</string>
+    <string name="none_selected_dialog_title">Nothing selected</string>
+    <string name="none_selected_dialog_message">This action cannot be completed as there are no reports selected.</string>
     <string name="get_from_map_switch_text">Get from Map</string>
 
     <!-- Location Fragment Strings -->
     <string name="map_marker_title">Selected Location</string>
+    <string name="select_optionbar_text">Select</string>
+    <string name="delete_optionbar_title">Delete</string>
+    <string name="share_optionbar_title">Share</string>
+    <string name="deselect_optionbar_title">Deselect</string>
 
 </resources>

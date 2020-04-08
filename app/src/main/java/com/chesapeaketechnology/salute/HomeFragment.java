@@ -125,7 +125,6 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
             return true;
         });
 
-
         super.onCreateOptionsMenu(menu, inflater);
     }
 

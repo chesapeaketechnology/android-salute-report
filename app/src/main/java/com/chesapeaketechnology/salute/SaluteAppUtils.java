@@ -22,9 +22,9 @@ public final class SaluteAppUtils
 {
     // TODO: change to DateTimeFormatter when minimum API is 26
     @SuppressLint("SimpleDateFormat")
-    private static SimpleDateFormat militaryFormat = new SimpleDateFormat("yyyy/MM/dd HHmm zzz");
+    private static final SimpleDateFormat militaryFormat = new SimpleDateFormat("yyyy/MM/dd HHmm zzz");
 
-    private static Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
+    private static final Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
 
     /**
      * Get the name of a file without the file extension or period.
@@ -93,7 +93,7 @@ public final class SaluteAppUtils
      * Serializes a provided salute report object as JSON and opens
      * the standard Android share dialog.
      *
-     * @param report SaluteReport object to share
+     * @param report  SaluteReport object to share
      * @param context Android application context
      */
     public static void openShareSaluteReportDialog(SaluteReport report, Context context)

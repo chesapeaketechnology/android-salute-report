@@ -71,7 +71,10 @@ public class SeventhFragmentRemarks extends Fragment
         if (context != null)
         {
             final InputMethodManager inputMethodManager = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
-            if (inputMethodManager != null) inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            if (inputMethodManager != null)
+            {
+                inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
         }
 
         NavHostFragment.findNavController(SeventhFragmentRemarks.this)

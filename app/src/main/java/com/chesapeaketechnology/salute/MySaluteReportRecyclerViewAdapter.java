@@ -127,7 +127,6 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
      */
     private void setItemSelected(ViewHolder holder, boolean selected)
     {
-        if (null != mListener) mListener.onReportLongClick(holder.saluteReport);
         holder.saluteReport.setSelected(selected);
 
         if (selected)
@@ -159,27 +158,30 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
      */
     public void deleteAllSelectedReports(Context context)
     {
+        List<SaluteReport> selectedReports = getSelectedReports();
+        if (selectedReports.size() <= 0)
+        {
+            warnNoSelectedReports(context);
+            return;
+        }
+
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle(R.string.delete_report_dialog_title)
                 .setMessage(R.string.delete_report_dialog_message)
                 .setPositiveButton(android.R.string.yes, (dialog, which) -> {
-                    Iterator<SaluteReport> iterator = mValues.iterator();
-
+                    Iterator<SaluteReport> iterator = selectedReports.iterator();
                     while (iterator.hasNext())
                     {
                         SaluteReport report = iterator.next();
-                        if (report.getSelected())
+                        File file = report.getFile();
+                        if (file != null)
                         {
-                            File file = report.getFile();
-                            if (file != null)
-                            {
-                                file.delete();
-                            } else
-                            {
-                                Log.wtf(LOG_TAG, "Salute report has a null file.");
-                            }
-                            iterator.remove();
+                            file.delete();
+                        } else
+                        {
+                            Log.wtf(LOG_TAG, "Salute report has a null file.");
                         }
+                        mValues.remove(report);
                     }
 
                     setSelectionModeActive(false);
@@ -198,10 +200,33 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
      */
     public void shareAllSelectedReports(Context context)
     {
-        List<SaluteReport> selectedReports = new ArrayList<>(mValues);
-        selectedReports.removeIf(r -> !r.getSelected());
-        SaluteAppUtils.openShareSaluteReportDialog(selectedReports, context);
-        notifyDataSetChanged();
+        List<SaluteReport> selectedReports = getSelectedReports();
+
+        if (selectedReports.size() > 0)
+        {
+            SaluteAppUtils.openShareSaluteReportDialog(selectedReports, context);
+            notifyDataSetChanged();
+        } else
+        {
+            warnNoSelectedReports(context);
+        }
+    }
+
+    /**
+     * Shows alert warning user that they attempted
+     * to perform action without any selected reports
+     *
+     * @param context Android application context
+     */
+    private void warnNoSelectedReports(Context context)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle(R.string.none_selected_dialog_title)
+                .setMessage(R.string.none_selected_dialog_message)
+                .setPositiveButton(android.R.string.yes, null)
+                .setNegativeButton(android.R.string.no, null)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 
     /**
@@ -215,6 +240,18 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
     {
         if (description.length() <= length) return description;
         return description.substring(0, length) + "...";
+    }
+
+    /**
+     * Returns list of selected reports.
+     *
+     * @return List of selected reports.
+     */
+    private List<SaluteReport> getSelectedReports()
+    {
+        List<SaluteReport> selectedReports = new ArrayList<>(mValues);
+        selectedReports.removeIf(r -> !r.getSelected());
+        return selectedReports;
     }
 
     /**

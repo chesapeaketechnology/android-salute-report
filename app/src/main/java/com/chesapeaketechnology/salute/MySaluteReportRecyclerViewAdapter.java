@@ -2,7 +2,6 @@ package com.chesapeaketechnology.salute;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,9 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.chesapeaketechnology.salute.model.SaluteReport;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link SaluteReport} and makes a call to the
@@ -100,7 +98,7 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
      *
      * @param active State to set selection mode
      */
-    public void setSelectionModeActive(boolean active)
+    void setSelectionModeActive(boolean active)
     {
         selectionModeActive = active;
         notifyDataSetChanged();
@@ -109,11 +107,9 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
     }
 
     /**
-     * Indicates if selection mode is active or not.
-     *
-     * @return Bool indicating if selection mode is on
+     * @return Boolean indicating if selection mode is on
      */
-    public boolean getSelectionModeActive()
+    boolean isSelectionModeActive()
     {
         return selectionModeActive;
     }
@@ -128,16 +124,8 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
     private void setItemSelected(ViewHolder holder, boolean selected)
     {
         holder.saluteReport.setSelected(selected);
-
-        if (selected)
-        {
-            holder.mView.setBackgroundColor(Color.LTGRAY);
-            holder.mCheckBox.setChecked(true);
-        } else
-        {
-            holder.mView.setBackgroundColor(Color.TRANSPARENT);
-            holder.mCheckBox.setChecked(false);
-        }
+        holder.mView.setActivated(selected);
+        holder.mCheckBox.setChecked(selected);
     }
 
     /**
@@ -147,7 +135,7 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
      */
     private void toggleItemSelected(ViewHolder holder)
     {
-        setItemSelected(holder, !holder.saluteReport.getSelected());
+        setItemSelected(holder, !holder.saluteReport.isSelected());
     }
 
     /**
@@ -156,7 +144,7 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
      *
      * @param context Android application context
      */
-    public void deleteAllSelectedReports(Context context)
+    void deleteAllSelectedReports(Context context)
     {
         List<SaluteReport> selectedReports = getSelectedReports();
         if (selectedReports.size() <= 0)
@@ -169,10 +157,8 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
         builder.setTitle(R.string.delete_report_dialog_title)
                 .setMessage(R.string.delete_report_dialog_message)
                 .setPositiveButton(android.R.string.yes, (dialog, which) -> {
-                    Iterator<SaluteReport> iterator = selectedReports.iterator();
-                    while (iterator.hasNext())
+                    for (SaluteReport report : selectedReports)
                     {
-                        SaluteReport report = iterator.next();
                         File file = report.getFile();
                         if (file != null)
                         {
@@ -198,7 +184,7 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
      *
      * @param context Android application context
      */
-    public void shareAllSelectedReports(Context context)
+    void shareAllSelectedReports(Context context)
     {
         List<SaluteReport> selectedReports = getSelectedReports();
 
@@ -223,8 +209,7 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle(R.string.none_selected_dialog_title)
                 .setMessage(R.string.none_selected_dialog_message)
-                .setPositiveButton(android.R.string.yes, null)
-                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.ok, null)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
     }
@@ -249,9 +234,7 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
      */
     private List<SaluteReport> getSelectedReports()
     {
-        List<SaluteReport> selectedReports = new ArrayList<>(mValues);
-        selectedReports.removeIf(r -> !r.getSelected());
-        return selectedReports;
+        return mValues.stream().filter(SaluteReport::isSelected).collect(Collectors.toList());
     }
 
     /**

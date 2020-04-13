@@ -151,19 +151,11 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
 
         if (adapter != null)
         {
-            if (adapter.getSelectionModeActive())
-            {
-                menu.findItem(R.id.action_delete).setVisible(true);
-                menu.findItem(R.id.action_share).setVisible(true);
-                menu.findItem(R.id.action_deselect).setVisible(true);
-                menu.findItem(R.id.action_select).setVisible(false);
-            } else
-            {
-                menu.findItem(R.id.action_delete).setVisible(false);
-                menu.findItem(R.id.action_share).setVisible(false);
-                menu.findItem(R.id.action_deselect).setVisible(false);
-                menu.findItem(R.id.action_select).setVisible(true);
-            }
+            final boolean selectionModeActive = adapter.isSelectionModeActive();
+            menu.findItem(R.id.action_delete).setVisible(selectionModeActive);
+            menu.findItem(R.id.action_share).setVisible(selectionModeActive);
+            menu.findItem(R.id.action_deselect).setVisible(selectionModeActive);
+            menu.findItem(R.id.action_select).setVisible(!selectionModeActive);
         } else
         {
             Log.wtf(LOG_TAG, "RecyclerViewAdapter is null");

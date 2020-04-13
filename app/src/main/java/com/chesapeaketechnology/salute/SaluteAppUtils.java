@@ -3,14 +3,17 @@ package com.chesapeaketechnology.salute;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 
 import com.chesapeaketechnology.salute.model.SaluteReport;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * A collection of utilities for use throughout the Sync Monkey app.
@@ -24,7 +27,7 @@ public final class SaluteAppUtils
     @SuppressLint("SimpleDateFormat")
     private static final SimpleDateFormat militaryFormat = new SimpleDateFormat("yyyy/MM/dd HHmm zzz");
 
-    private static final Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
+    private static final String shareMimeType = "application/json";
 
     /**
      * Get the name of a file without the file extension or period.
@@ -89,20 +92,38 @@ public final class SaluteAppUtils
         return formatDate(report.getTime());
     }
 
+    private static void openShareSaluteReportDialog(Intent sharingIntent, Context context)
+    {
+        sharingIntent.setType(shareMimeType);
+        context.startActivity(Intent.createChooser(sharingIntent, null));
+    }
+
+    /**
+     * Returns the Uri for a file, granting permissions if necessary.
+     *
+     * @param file    The File object
+     * @param context Android application context
+     * @return File Uri object
+     */
+    private static Uri getFileUri(File file, Context context)
+    {
+        Uri uri = FileProvider.getUriForFile(context, SaluteAppConstants.AUTHORITY, file);
+        context.grantUriPermission(context.getPackageName(), uri,
+                Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        return uri;
+    }
+
     /**
      * Serializes a provided salute report object as JSON and opens
-     * the standard Android share dialog.
+     * the standard Android share dialog. Alias for openShareSaluteReportDialog
+     * called with a list of one report.
      *
      * @param report  SaluteReport object to share
      * @param context Android application context
      */
     public static void openShareSaluteReportDialog(SaluteReport report, Context context)
     {
-        String shareBody = gson.toJson(report);
-        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-        sharingIntent.setType("text/json");
-        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
-        context.startActivity(Intent.createChooser(sharingIntent, null));
+        openShareSaluteReportDialog(Arrays.asList(report), context);
     }
 
     /**
@@ -114,10 +135,19 @@ public final class SaluteAppUtils
      */
     public static void openShareSaluteReportDialog(List<SaluteReport> reports, Context context)
     {
-        String shareBody = gson.toJson(reports);
-        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-        sharingIntent.setType("text/json");
-        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+        Intent sharingIntent = new Intent();
+        sharingIntent.setType(shareMimeType);
+        sharingIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        sharingIntent.setType(shareMimeType);
+
+        ArrayList<Uri> reportUris = reports
+                .stream()
+                .map(r -> getFileUri(r.getFile(), context))
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        sharingIntent.setAction(Intent.ACTION_SEND_MULTIPLE);
+        sharingIntent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, reportUris);
+
         context.startActivity(Intent.createChooser(sharingIntent, null));
     }
 }

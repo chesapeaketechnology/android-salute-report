@@ -252,7 +252,7 @@ public class SaluteReport implements Serializable
         return file;
     }
 
-    public boolean getSelected()
+    public boolean isSelected()
     {
         return selected;
     }

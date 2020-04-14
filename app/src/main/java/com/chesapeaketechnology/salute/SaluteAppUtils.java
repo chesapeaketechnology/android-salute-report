@@ -138,15 +138,21 @@ public final class SaluteAppUtils
         Intent sharingIntent = new Intent();
         sharingIntent.setType(shareMimeType);
         sharingIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-        sharingIntent.setType(shareMimeType);
 
-        ArrayList<Uri> reportUris = reports
-                .stream()
-                .map(r -> getFileUri(r.getFile(), context))
-                .collect(Collectors.toCollection(ArrayList::new));
+        if (reports.size() > 1)
+        {
+            ArrayList<Uri> reportUris = reports
+                    .stream()
+                    .map(r -> getFileUri(r.getFile(), context))
+                    .collect(Collectors.toCollection(ArrayList::new));
 
-        sharingIntent.setAction(Intent.ACTION_SEND_MULTIPLE);
-        sharingIntent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, reportUris);
+            sharingIntent.setAction(Intent.ACTION_SEND_MULTIPLE);
+            sharingIntent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, reportUris);
+        } else
+        {
+            sharingIntent.setAction(Intent.ACTION_SEND);
+            sharingIntent.putExtra(Intent.EXTRA_STREAM, getFileUri(reports.get(0).getFile(), context));
+        }
 
         context.startActivity(Intent.createChooser(sharingIntent, null));
     }

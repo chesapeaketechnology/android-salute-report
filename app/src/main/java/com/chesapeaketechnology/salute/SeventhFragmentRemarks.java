@@ -11,7 +11,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -45,12 +44,6 @@ public class SeventhFragmentRemarks extends Fragment
         view.findViewById(R.id.button_next).setOnClickListener(view1 -> sendSaluteReportToHomeFragment(view));
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState)
-    {
-        super.onActivityCreated(savedInstanceState);
-    }
-
     /**
      * Pull the Salute Report from the fragment's arguments and set it as an instance variable.
      */
@@ -78,7 +71,10 @@ public class SeventhFragmentRemarks extends Fragment
         if (context != null)
         {
             final InputMethodManager inputMethodManager = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
-            if (inputMethodManager != null) inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            if (inputMethodManager != null)
+            {
+                inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
         }
 
         NavHostFragment.findNavController(SeventhFragmentRemarks.this)

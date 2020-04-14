@@ -1,152 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/HomeFragment">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nav_graph"
+        app:startDestination="@id/HomeFragment">
 
     <fragment
-        android:id="@+id/HomeFragment"
-        android:name="com.chesapeaketechnology.salute.HomeFragment"
-        android:label="@string/home_fragment_label"
-        tools:layout="@layout/fragment_home">
+            android:id="@+id/HomeFragment"
+            android:name="com.chesapeaketechnology.salute.HomeFragment"
+            android:label="@string/home_fragment_label"
+            tools:layout="@layout/fragment_home">
 
         <argument
-            android:name="saluteReport"
-            android:defaultValue="@null"
-            app:argType="com.chesapeaketechnology.salute.model.SaluteReport"
-            app:nullable="true" />
+                android:name="saluteReport"
+                android:defaultValue="@null"
+                app:argType="com.chesapeaketechnology.salute.model.SaluteReport"
+                app:nullable="true" />
 
         <action
-            android:id="@+id/action_create_salute_report"
-            app:destination="@id/FirstFragmentSize" />
+                android:id="@+id/action_create_salute_report"
+                app:destination="@id/FirstFragmentSize" />
 
         <action
-            android:id="@+id/action_view_salute_report"
-            app:destination="@id/ReportDetailsFragment" />
+                android:id="@+id/action_view_salute_report"
+                app:destination="@id/ReportDetailsFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/ReportDetailsFragment"
-        android:name="com.chesapeaketechnology.salute.ReportDetailsFragment"
-        android:label="@string/report_details_fragment_label"
-        tools:layout="@layout/fragment_report_details">
+            android:id="@+id/ReportDetailsFragment"
+            android:name="com.chesapeaketechnology.salute.ReportDetailsFragment"
+            android:label="@string/report_details_fragment_label"
+            tools:layout="@layout/fragment_report_details">
 
         <argument
-            android:name="saluteReport"
-            app:argType="com.chesapeaketechnology.salute.model.SaluteReport"
-            app:nullable="true" />
+                android:name="saluteReport"
+                app:argType="com.chesapeaketechnology.salute.model.SaluteReport"
+                app:nullable="true" />
     </fragment>
 
     <fragment
-        android:id="@+id/FirstFragmentSize"
-        android:name="com.chesapeaketechnology.salute.FirstFragmentSize"
-        android:label="@string/size_title"
-        tools:layout="@layout/fragment_first_size">
+            android:id="@+id/FirstFragmentSize"
+            android:name="com.chesapeaketechnology.salute.FirstFragmentSize"
+            android:label="@string/size_title"
+            tools:layout="@layout/fragment_first_size">
 
         <argument
-            android:name="saluteReport"
-            app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
-
-        <action
-            android:id="@+id/action_Size_to_Activity"
-            app:destination="@id/SecondFragmentActivity" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/SecondFragmentActivity"
-        android:name="com.chesapeaketechnology.salute.SecondFragmentActivity"
-        android:label="@string/activity_title"
-        tools:layout="@layout/fragment_second_activity">
-
-        <argument
-            android:name="saluteReport"
-            app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
-
-        <action
-            android:id="@+id/action_Activity_to_Location"
-            app:destination="@id/ThirdFragmentLocation" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/ThirdFragmentLocation"
-        android:name="com.chesapeaketechnology.salute.ThirdFragmentLocation"
-        android:label="@string/location_title"
-        tools:layout="@layout/fragment_third_location">
-
-        <argument
-            android:name="saluteReport"
-            app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
-
-        <action
-            android:id="@+id/action_Location_to_Unit"
-            app:destination="@id/FourthFragmentUnit" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/FourthFragmentUnit"
-        android:name="com.chesapeaketechnology.salute.FourthFragmentUnit"
-        android:label="@string/unit_title"
-        tools:layout="@layout/fragment_fourth_unit">
-
-        <argument
-            android:name="saluteReport"
-            app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
-
-        <action
-            android:id="@+id/action_Unit_to_Time"
-            app:destination="@id/FifthFragmentTime" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/FifthFragmentTime"
-        android:name="com.chesapeaketechnology.salute.FifthFragmentTime"
-        android:label="@string/time_title"
-        tools:layout="@layout/fragment_fifth_time">
-
-        <argument
-            android:name="saluteReport"
-            app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
-
-        <action
-            android:id="@+id/action_Time_to_Equipment"
-            app:destination="@id/SixthFragmentEquipment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/SixthFragmentEquipment"
-        android:name="com.chesapeaketechnology.salute.SixthFragmentEquipment"
-        android:label="@string/equipment_title"
-        tools:layout="@layout/fragment_sixth_equipment">
-
-        <argument
-            android:name="saluteReport"
-            app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
-
-        <action
-            android:id="@+id/action_Equipment_to_Remarks"
-            app:destination="@id/SeventhFragmentRemarks" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/SeventhFragmentRemarks"
-        android:name="com.chesapeaketechnology.salute.SeventhFragmentRemarks"
-        android:label="@string/remarks_title"
-        tools:layout="@layout/fragment_seventh_remarks">
-
-        <argument
-            android:name="saluteReport"
-            app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
-
-        <action
-            android:id="@+id/action_Submit"
-            app:destination="@id/HomeFragment"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/HomeFragment"
-            app:popUpToInclusive="true">
-            <argument
                 android:name="saluteReport"
                 app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
+
+        <action
+                android:id="@+id/action_Size_to_Activity"
+                app:destination="@id/SecondFragmentActivity" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/SecondFragmentActivity"
+            android:name="com.chesapeaketechnology.salute.SecondFragmentActivity"
+            android:label="@string/activity_title"
+            tools:layout="@layout/fragment_second_activity">
+
+        <argument
+                android:name="saluteReport"
+                app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
+
+        <action
+                android:id="@+id/action_Activity_to_Location"
+                app:destination="@id/ThirdFragmentLocation" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/ThirdFragmentLocation"
+            android:name="com.chesapeaketechnology.salute.ThirdFragmentLocation"
+            android:label="@string/location_title"
+            tools:layout="@layout/fragment_third_location">
+
+        <argument
+                android:name="saluteReport"
+                app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
+
+        <action
+                android:id="@+id/action_Location_to_Unit"
+                app:destination="@id/FourthFragmentUnit" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/FourthFragmentUnit"
+            android:name="com.chesapeaketechnology.salute.FourthFragmentUnit"
+            android:label="@string/unit_title"
+            tools:layout="@layout/fragment_fourth_unit">
+
+        <argument
+                android:name="saluteReport"
+                app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
+
+        <action
+                android:id="@+id/action_Unit_to_Time"
+                app:destination="@id/FifthFragmentTime" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/FifthFragmentTime"
+            android:name="com.chesapeaketechnology.salute.FifthFragmentTime"
+            android:label="@string/time_title"
+            tools:layout="@layout/fragment_fifth_time">
+
+        <argument
+                android:name="saluteReport"
+                app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
+
+        <action
+                android:id="@+id/action_Time_to_Equipment"
+                app:destination="@id/SixthFragmentEquipment" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/SixthFragmentEquipment"
+            android:name="com.chesapeaketechnology.salute.SixthFragmentEquipment"
+            android:label="@string/equipment_title"
+            tools:layout="@layout/fragment_sixth_equipment">
+
+        <argument
+                android:name="saluteReport"
+                app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
+
+        <action
+                android:id="@+id/action_Equipment_to_Remarks"
+                app:destination="@id/SeventhFragmentRemarks" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/SeventhFragmentRemarks"
+            android:name="com.chesapeaketechnology.salute.SeventhFragmentRemarks"
+            android:label="@string/remarks_title"
+            tools:layout="@layout/fragment_seventh_remarks">
+
+        <argument
+                android:name="saluteReport"
+                app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
+
+        <action
+                android:id="@+id/action_Submit"
+                app:destination="@id/HomeFragment"
+                app:launchSingleTop="true"
+                app:popUpTo="@id/HomeFragment"
+                app:popUpToInclusive="true">
+            <argument
+                    android:name="saluteReport"
+                    app:argType="com.chesapeaketechnology.salute.model.SaluteReport" />
         </action>
     </fragment>
 </navigation>

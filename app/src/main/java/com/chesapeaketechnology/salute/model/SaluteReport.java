@@ -59,7 +59,9 @@ public class SaluteReport implements Serializable
     @SerializedName("Remarks")
     private String remarks;
 
+    // Fields for use inside the application, not serialized.
     private transient File file;
+    private transient boolean selected;
 
     /**
      * Constructor for GSON to create this class from the JSON string.
@@ -72,6 +74,25 @@ public class SaluteReport implements Serializable
     {
         this.reportCreationTime = new Date(reportCreationTime);
         this.reportName = reportName;
+    }
+
+    /**
+     * Either returns location string user entered or formats (lat, lon) as a string.
+     *
+     * @return Either the manually entered string or the latitude and longitude separated
+     * by a comma. Will return null if none of the fields are set.
+     */
+    @Nullable
+    public String getLocationString()
+    {
+        if (location != null && !location.isEmpty())
+        {
+            return location;
+        } else if (latitude != null && longitude != null)
+        {
+            return String.format(Locale.getDefault(), "%.5f, %.5f", latitude, longitude);
+        }
+        return null;
     }
 
     public void setTo(String to)
@@ -129,6 +150,21 @@ public class SaluteReport implements Serializable
         this.equipment = equipment;
     }
 
+    public void setRemarks(String remarks)
+    {
+        this.remarks = remarks;
+    }
+
+    public void setFile(File file)
+    {
+        this.file = file;
+    }
+
+    public void setSelected(boolean selected)
+    {
+        this.selected = selected;
+    }
+
     public String getTo()
     {
         return to;
@@ -147,16 +183,6 @@ public class SaluteReport implements Serializable
     public String getReportName()
     {
         return reportName;
-    }
-
-    public File getFile()
-    {
-        return file;
-    }
-
-    public void setFile(File file)
-    {
-        this.file = file;
     }
 
     public String getSize()
@@ -196,25 +222,6 @@ public class SaluteReport implements Serializable
         return longitude;
     }
 
-    /**
-     * Either returns location string user entered or formats (lat, lon) as a string.
-     *
-     * @return Either the manually entered string or the latitude and longitude separated
-     * by a comma. Will return null if none of the fields are set.
-     */
-    @Nullable
-    public String getLocationString()
-    {
-        if (location != null && !location.isEmpty())
-        {
-            return location;
-        } else if (latitude != null && longitude != null)
-        {
-            return String.format(Locale.getDefault(), "%.5f, %.5f", latitude, longitude);
-        }
-        return null;
-    }
-
     public String getUnit()
     {
         return unit;
@@ -240,8 +247,13 @@ public class SaluteReport implements Serializable
         return remarks;
     }
 
-    public void setRemarks(String remarks)
+    public File getFile()
     {
-        this.remarks = remarks;
+        return file;
+    }
+
+    public boolean isSelected()
+    {
+        return selected;
     }
 }

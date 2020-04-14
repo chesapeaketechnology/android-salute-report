@@ -279,7 +279,10 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
     private void hideKeyboard()
     {
         final InputMethodManager inputMethodManager = (InputMethodManager) requireContext().getSystemService(Activity.INPUT_METHOD_SERVICE);
-        if (inputMethodManager != null) inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        if (inputMethodManager != null)
+        {
+            inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 
     /**

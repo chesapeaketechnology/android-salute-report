@@ -61,7 +61,7 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
         holder.mCreatedView.setText(
                 SaluteAppUtils.formatDate(holder.saluteReport.getReportCreationTime()));
         holder.mTimeView.setText(SaluteAppUtils.formatReportTime(holder.saluteReport));
-        holder.mCheckBox.setVisibility(selectionModeActive ? View.VISIBLE : View.INVISIBLE);
+        holder.mCheckBox.setVisibility(selectionModeActive ? View.VISIBLE : View.GONE);
         holder.mView.setActivated(holder.saluteReport.isSelected());
         holder.mCheckBox.setChecked(holder.saluteReport.isSelected());
 

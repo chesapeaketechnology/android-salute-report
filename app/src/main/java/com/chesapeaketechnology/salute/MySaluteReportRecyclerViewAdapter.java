@@ -61,11 +61,9 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
         holder.mCreatedView.setText(
                 SaluteAppUtils.formatDate(holder.saluteReport.getReportCreationTime()));
         holder.mTimeView.setText(SaluteAppUtils.formatReportTime(holder.saluteReport));
-
         holder.mCheckBox.setVisibility(selectionModeActive ? View.VISIBLE : View.INVISIBLE);
-
-        // De-select all reports once on exit selection mode
-        if (!selectionModeActive) setItemSelected(holder, false);
+        holder.mView.setActivated(holder.saluteReport.isSelected());
+        holder.mCheckBox.setChecked(holder.saluteReport.isSelected());
 
         holder.mView.setOnClickListener(v -> {
             if (selectionModeActive)
@@ -100,6 +98,9 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
      */
     void setSelectionModeActive(boolean active)
     {
+        // Set every report to not-selected when selection mode is turned off
+        if (!active) mValues.forEach(r -> r.setSelected(false));
+
         selectionModeActive = active;
         notifyDataSetChanged();
 
@@ -124,8 +125,7 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
     private void setItemSelected(ViewHolder holder, boolean selected)
     {
         holder.saluteReport.setSelected(selected);
-        holder.mView.setActivated(selected);
-        holder.mCheckBox.setChecked(selected);
+        notifyDataSetChanged();
     }
 
     /**

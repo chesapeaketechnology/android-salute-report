@@ -57,12 +57,9 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
     {
         holder.saluteReport = mValues.get(position);
         holder.mIdView.setText(holder.saluteReport.getReportName());
-        holder.mContentView.setText(truncateDescription(holder.saluteReport.getActivity(), ACTIVITY_MAX_LENGTH));
-        holder.mCreatedView.setText(
-                SaluteAppUtils.formatDate(holder.saluteReport.getReportCreationTime()));
-        holder.mTimeView.setText(SaluteAppUtils.formatReportTime(holder.saluteReport));
-        holder.mCheckBox.setVisibility(selectionModeActive ? View.VISIBLE : View.GONE);
+        holder.mContentView.setText(holder.saluteReport.getActivity());
         holder.mView.setActivated(holder.saluteReport.isSelected());
+        holder.mCheckBox.setVisibility(selectionModeActive ? View.VISIBLE : View.GONE);
         holder.mCheckBox.setChecked(holder.saluteReport.isSelected());
 
         holder.mView.setOnClickListener(v -> {
@@ -246,8 +243,6 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
         final View mView;
         final TextView mIdView;
         final TextView mContentView;
-        final TextView mTimeView;
-        final TextView mCreatedView;
         final CheckBox mCheckBox;
         SaluteReport saluteReport;
 
@@ -257,8 +252,6 @@ public class MySaluteReportRecyclerViewAdapter extends RecyclerView.Adapter<MySa
             mView = view;
             mIdView = view.findViewById(R.id.report_name);
             mContentView = view.findViewById(R.id.content);
-            mTimeView = view.findViewById(R.id.time);
-            mCreatedView = view.findViewById(R.id.created);
             mCheckBox = view.findViewById(R.id.selected_checkbox);
         }
 

@@ -5,10 +5,10 @@
         android:layout_height="wrap_content"
         android:background="@drawable/selectable_report"
         android:orientation="vertical"
-        android:paddingHorizontal="@dimen/medium_margin">
+        android:paddingHorizontal="@dimen/x_small_margin">
 
     <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/small_margin">
 
@@ -20,85 +20,33 @@
                 android:visibility="gone" />
 
         <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-            <RelativeLayout
+            <TextView
+                    android:id="@+id/report_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/text_margin"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="@dimen/x_small_margin"
+                    android:textAlignment="center"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="Sample Report Title" />
+
+            <TextView
+                    android:id="@+id/content"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                <TextView
-                        android:id="@+id/report_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginLeft="@dimen/text_margin"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginRight="@dimen/text_margin"
-                        android:layout_marginBottom="@dimen/x_small_margin"
-                        android:textAlignment="center"
-                        android:textAppearance="?attr/textAppearanceListItem"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        tools:text="Sample Report Title" />
-
-            </RelativeLayout>
-
-            <TableLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                    <TextView
-                            android:id="@+id/activityDescTitle"
-                            style="@style/ReportListTitle"
-                            android:text="@string/activity_title_text" />
-
-                    <TextView
-                            android:id="@+id/content"
-                            style="@style/ReportListValue"
-                            tools:text="Here is a sample activity desc.\nHere is line #2 of that description." />
-
-                </TableRow>
-
-                <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                    <TextView
-                            android:id="@+id/timeTitle"
-                            style="@style/ReportListTitle"
-                            android:text="@string/time_title_text" />
-
-                    <TextView
-                            android:id="@+id/time"
-                            style="@style/ReportListValue"
-                            tools:text="2020/03/25 1500 EDT" />
-
-
-                </TableRow>
-
-                <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                    <TextView
-                            android:id="@+id/createdTitle"
-                            style="@style/ReportListTitle"
-                            android:text="@string/created_title_text" />
-
-                    <TextView
-                            android:id="@+id/created"
-                            style="@style/ReportListValue"
-                            tools:text="2020/03/25 1500 EDT" />
-
-                </TableRow>
-
-            </TableLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/text_margin"
+                    android:layout_marginTop="0dp"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="Here is a sample activity desc.\nHere is line #2 of that description." />
 
         </LinearLayout>
 
@@ -108,7 +56,7 @@
             android:id="@+id/divider"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginTop="@dimen/x_small_margin"
             android:background="?android:attr/listDivider" />
 
 </LinearLayout>

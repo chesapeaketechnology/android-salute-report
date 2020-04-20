@@ -106,7 +106,7 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
     public void onDestroy()
     {
         super.onDestroy();
-        mapView.onDestroy();
+        if (mapView != null)  mapView.onDestroy();
     }
 
     @Override

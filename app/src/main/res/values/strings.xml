@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Salute Report</string>
+    <string name="app_name">SALUTE Report</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="home_fragment_label">SALUTE Reports</string>

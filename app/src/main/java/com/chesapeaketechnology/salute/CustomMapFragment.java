@@ -8,7 +8,7 @@ import com.google.android.gms.maps.GoogleMapOptions;
 import com.google.android.gms.maps.MapView;
 
 /**
- * Custom MapView which parents its parent view from scrolling while panning the map.
+ * Custom MapView which prevents its parent view from scrolling while panning the map.
  *
  * @since 0.1.1
  */
@@ -38,7 +38,7 @@ public class CustomMapFragment extends MapView
     @Override
     public boolean dispatchTouchEvent(MotionEvent e)
     {
-        // Prevent the outer scroll view scrolling when
+        // Prevent any outer scroll view from scrolling while interacting with map
         getParent().requestDisallowInterceptTouchEvent(true);
         return super.dispatchTouchEvent(e);
     }

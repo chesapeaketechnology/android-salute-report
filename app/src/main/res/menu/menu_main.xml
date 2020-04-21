@@ -32,10 +32,11 @@
 
     <item
             android:id="@+id/action_select"
+            android:icon="@drawable/ic_select"
             android:orderInCategory="100"
             android:title="@string/select_optionbar_text"
             android:visible="true"
-            app:showAsAction="never"
+            app:showAsAction="ifRoom"
             tools:ignore="AlwaysShowAction" />
 
 </menu>

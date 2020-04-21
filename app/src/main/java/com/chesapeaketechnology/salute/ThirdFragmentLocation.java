@@ -47,6 +47,7 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
 {
     private static final String LOG_TAG = ThirdFragmentLocation.class.getSimpleName();
     private static final int ACCESS_PERMISSION_REQUEST_ID = 1;
+    private static final String MAP_MARKER_POSITION_KEY = "MAP_MARKER_POSITION_KEY";
 
     private SaluteReport saluteReport;
     private View view;
@@ -55,15 +56,15 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
     private GoogleMap map;
     private Marker mapMarker;
 
+    private boolean permissionsCheckComplete = false;
+    private boolean mapReady = false;
+
+    private LatLng savedMarkerPosition;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         view = inflater.inflate(R.layout.fragment_third_location, container, false);
-
-        mapView = view.findViewById(R.id.map_view);
-        mapView.onCreate(savedInstanceState);
-        mapView.getMapAsync(this);
-
         return view;
     }
 
@@ -72,7 +73,16 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
     {
         super.onViewCreated(view, savedInstanceState);
 
+        if (savedInstanceState != null)
+        {
+            savedMarkerPosition = savedInstanceState.getParcelable(MAP_MARKER_POSITION_KEY);
+        }
+
         extractSaluteReport();
+
+        mapView = view.findViewById(R.id.map_view);
+        mapView.onCreate(savedInstanceState);
+        mapView.getMapAsync(this);
 
         view.findViewById(R.id.button_next).setOnClickListener(view1 -> updateSaluteReportAndPassOn());
 
@@ -117,8 +127,20 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
     }
 
     @Override
+    public void onSaveInstanceState(Bundle outState)
+    {
+        // Save marked location when view is temporarily destroyed (e.g. on rotation).
+        LatLng markedPosition = mapMarker.getPosition();
+        outState.putParcelable("MAP_MARKER_POSITION", markedPosition);
+
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
     public void onMapReady(GoogleMap googleMap)
     {
+        mapReady = true;
+
         map = googleMap;
         UiSettings uiSettings = map.getUiSettings();
         uiSettings.setZoomControlsEnabled(true);
@@ -126,14 +148,52 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
         uiSettings.setMyLocationButtonEnabled(true);
         uiSettings.setMapToolbarEnabled(false);
 
+        updateMapMarkerLocation();
+
         map.setOnMapClickListener((point) -> {
-            if (mapMarker == null)
-            {
-                mapMarker = map.addMarker(new MarkerOptions().position(point));
-                map.moveCamera(CameraUpdateFactory.newLatLng(point));
-            }
             mapMarker.setPosition(point);
         });
+    }
+
+    /**
+     * Get the location from the Android Location Manager and update the icon on the map.
+     */
+    @SuppressLint("MissingPermission")
+    private void updateMapMarkerLocation()
+    {
+        // Make sure that the map is ready and all permissions have been granted.
+        // The order in which these are called can vary depending on fragment lifecycle, device rotations etc.
+        if (!mapReady || !permissionsCheckComplete) return;
+
+        // If the fragment is restoring from a saved instance state, restore the marker the user previously had
+        if (savedMarkerPosition != null)
+        {
+            mapMarker = map.addMarker(new MarkerOptions().position(savedMarkerPosition));
+            map.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.fromLatLngZoom(savedMarkerPosition, 18)));
+            return;
+        }
+
+        final LocationManager locationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
+        if (locationManager == null)
+        {
+            Log.wtf(LOG_TAG, "Location manager is null.");
+            return;
+        }
+
+        final Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        if (location != null)
+        {
+            LatLng currentPosition = new LatLng(location.getLatitude(), location.getLongitude());
+
+            if (mapMarker == null)
+            {
+                mapMarker = map.addMarker(new MarkerOptions().position(currentPosition));
+                map.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.fromLatLngZoom(currentPosition, 18)));
+            } else
+            {
+                mapMarker.setPosition(currentPosition);
+            }
+        }
     }
 
     @Override
@@ -151,27 +211,13 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
                     {
                         checkLocationProvider();
                         updateMapMarkerLocation();
+                        permissionsCheckComplete = true;
                     } else
                     {
                         Log.w(LOG_TAG, "The ACCESS_FINE_LOCATION Permission was denied.");
                     }
                 }
             }
-        }
-    }
-
-    /**
-     * Pull the Salute Report from the fragment's arguments and set it as an instance variable.
-     */
-    private void extractSaluteReport()
-    {
-        final Bundle arguments = getArguments();
-        if (arguments == null)
-        {
-            Log.wtf(LOG_TAG, "The arguments bundle was null when creating the Location Fragment (Third Fragment)");
-        } else
-        {
-            saluteReport = ThirdFragmentLocationArgs.fromBundle(arguments).getSaluteReport();
         }
     }
 
@@ -187,6 +233,7 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
                     ACCESS_PERMISSION_REQUEST_ID);
         } else
         {
+            permissionsCheckComplete = true;
             checkLocationProvider();
             updateMapMarkerLocation();
         }
@@ -243,37 +290,6 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
     }
 
     /**
-     * Get the location from the Android Location Manager and update the icon on the map.
-     */
-    @SuppressLint("MissingPermission")
-    private void updateMapMarkerLocation()
-    {
-        final LocationManager locationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
-        if (locationManager == null)
-        {
-            Log.wtf(LOG_TAG, "Location manager is null.");
-            return;
-        }
-        final Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-
-        map.setMyLocationEnabled(true);
-
-        if (location != null)
-        {
-            LatLng currentPosition = new LatLng(location.getLatitude(), location.getLongitude());
-
-            if (mapMarker == null)
-            {
-                mapMarker = map.addMarker(new MarkerOptions().position(currentPosition));
-                map.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.fromLatLngZoom(currentPosition, 18)));
-            } else
-            {
-                mapMarker.setPosition(currentPosition);
-            }
-        }
-    }
-
-    /**
      * Hides the keyboard if it is open.
      */
     private void hideKeyboard()
@@ -282,6 +298,21 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
         if (inputMethodManager != null)
         {
             inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
+    }
+
+    /**
+     * Pull the Salute Report from the fragment's arguments and set it as an instance variable.
+     */
+    private void extractSaluteReport()
+    {
+        final Bundle arguments = getArguments();
+        if (arguments == null)
+        {
+            Log.wtf(LOG_TAG, "The arguments bundle was null when creating the Location Fragment (Third Fragment)");
+        } else
+        {
+            saluteReport = ThirdFragmentLocationArgs.fromBundle(arguments).getSaluteReport();
         }
     }
 

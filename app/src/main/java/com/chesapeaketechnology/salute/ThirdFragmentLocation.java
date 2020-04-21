@@ -116,7 +116,7 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
     public void onDestroy()
     {
         super.onDestroy();
-        if (mapView != null)  mapView.onDestroy();
+        if (mapView != null) mapView.onDestroy();
     }
 
     @Override
@@ -130,8 +130,11 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
     public void onSaveInstanceState(Bundle outState)
     {
         // Save marked location when view is temporarily destroyed (e.g. on rotation).
-        LatLng markedPosition = mapMarker.getPosition();
-        outState.putParcelable("MAP_MARKER_POSITION", markedPosition);
+        if (mapMarker != null)
+        {
+            LatLng markedPosition = mapMarker.getPosition();
+            outState.putParcelable(MAP_MARKER_POSITION_KEY, markedPosition);
+        }
 
         super.onSaveInstanceState(outState);
     }
@@ -150,9 +153,7 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
 
         updateMapMarkerLocation();
 
-        map.setOnMapClickListener((point) -> {
-            mapMarker.setPosition(point);
-        });
+        map.setOnMapClickListener((point) -> mapMarker.setPosition(point));
     }
 
     /**

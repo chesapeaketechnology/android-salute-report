@@ -1,53 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".ThirdFragmentLocation">
 
-    <TextView
-            android:id="@+id/title"
-            style="@style/TitleText"
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/location_title" />
+            android:orientation="vertical"
+            tools:context=".ThirdFragmentLocation">
 
-    <TextView
-            android:id="@+id/description"
-            style="@style/TextSample"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/location_description" />
+        <TextView
+                android:id="@+id/title"
+                style="@style/TitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/location_title" />
 
-    <Switch
-            android:id="@+id/switch_get_from_map"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_margin="@dimen/medium_margin"
-            android:layout_weight="0"
-            android:text="@string/get_from_map_switch_text"
-            android:textSize="16sp" />
+        <TextView
+                android:id="@+id/description"
+                style="@style/TextSample"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/location_description" />
 
-    <EditText
-            android:id="@+id/editText"
-            style="@style/EditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textMultiLine" />
+        <Switch
+                android:id="@+id/switch_get_from_map"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/medium_margin"
+                android:layout_weight="0"
+                android:text="@string/get_from_map_switch_text"
+                android:textSize="16sp" />
 
-    <com.google.android.gms.maps.MapView
-            android:id="@+id/map_view"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="@dimen/medium_margin"
-            android:layout_weight="1"
-            android:visibility="gone" />
+        <EditText
+                android:id="@+id/editText"
+                style="@style/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine" />
 
-    <Button
-            android:id="@+id/button_next"
-            style="@style/NextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <com.chesapeaketechnology.salute.CustomMapFragment
+                android:id="@+id/map_view"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_margin="@dimen/medium_margin"
+                android:minHeight="900dp"
+                android:visibility="gone" />
 
-</LinearLayout>
+        <Button
+                android:id="@+id/button_next"
+                style="@style/NextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>

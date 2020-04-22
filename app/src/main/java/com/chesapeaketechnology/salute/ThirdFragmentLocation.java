@@ -49,7 +49,7 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
     private static final String LOG_TAG = ThirdFragmentLocation.class.getSimpleName();
     private static final int ACCESS_PERMISSION_REQUEST_ID = 1;
     private static final String MAP_MARKER_POSITION_KEY = "MAP_MARKER_POSITION_KEY";
-    private static final int defaultMapZoom = 18;
+    private static final int DEFAULT_MAP_ZOOM = 18;
 
     private SaluteReport saluteReport;
     private View view;
@@ -176,7 +176,7 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
         {
             mapMarker = map.addMarker(new MarkerOptions().position(savedMarkerPosition));
             map.moveCamera(CameraUpdateFactory.newCameraPosition(
-                    CameraPosition.fromLatLngZoom(savedMarkerPosition, defaultMapZoom)));
+                    CameraPosition.fromLatLngZoom(savedMarkerPosition, DEFAULT_MAP_ZOOM)));
             return;
         }
 
@@ -196,7 +196,7 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
             {
                 mapMarker = map.addMarker(new MarkerOptions().position(currentPosition));
                 map.moveCamera(CameraUpdateFactory.newCameraPosition(
-                        CameraPosition.fromLatLngZoom(currentPosition, defaultMapZoom)));
+                        CameraPosition.fromLatLngZoom(currentPosition, DEFAULT_MAP_ZOOM)));
             } else
             {
                 mapMarker.setPosition(currentPosition);

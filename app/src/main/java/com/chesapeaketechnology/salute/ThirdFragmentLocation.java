@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -48,6 +49,7 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
     private static final String LOG_TAG = ThirdFragmentLocation.class.getSimpleName();
     private static final int ACCESS_PERMISSION_REQUEST_ID = 1;
     private static final String MAP_MARKER_POSITION_KEY = "MAP_MARKER_POSITION_KEY";
+    private static final int defaultMapZoom = 18;
 
     private SaluteReport saluteReport;
     private View view;
@@ -87,7 +89,8 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
         view.findViewById(R.id.button_next).setOnClickListener(view1 -> updateSaluteReportAndPassOn());
 
         getFromMapSwitch = view.findViewById(R.id.switch_get_from_map);
-        EditText editText = view.findViewById(R.id.editText);
+        final EditText editText = view.findViewById(R.id.editText);
+        final TextView description = view.findViewById(R.id.description);
 
         // Hide/display editText/map appropriately when switch is flipped
         getFromMapSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -96,10 +99,12 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
                 hideKeyboard();
                 editText.setVisibility(View.GONE);
                 mapView.setVisibility(View.VISIBLE);
+                description.setVisibility(View.GONE);
                 checkAndRequestPermissions();
             } else
             {
                 editText.setVisibility(View.VISIBLE);
+                description.setVisibility(View.VISIBLE);
                 mapView.setVisibility(View.GONE);
             }
         });
@@ -170,7 +175,8 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
         if (savedMarkerPosition != null)
         {
             mapMarker = map.addMarker(new MarkerOptions().position(savedMarkerPosition));
-            map.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.fromLatLngZoom(savedMarkerPosition, 18)));
+            map.moveCamera(CameraUpdateFactory.newCameraPosition(
+                    CameraPosition.fromLatLngZoom(savedMarkerPosition, defaultMapZoom)));
             return;
         }
 
@@ -189,12 +195,23 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
             if (mapMarker == null)
             {
                 mapMarker = map.addMarker(new MarkerOptions().position(currentPosition));
-                map.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.fromLatLngZoom(currentPosition, 18)));
+                map.moveCamera(CameraUpdateFactory.newCameraPosition(
+                        CameraPosition.fromLatLngZoom(currentPosition, defaultMapZoom)));
             } else
             {
                 mapMarker.setPosition(currentPosition);
             }
         }
+    }
+
+    /**
+     * Called when permission checks are done.
+     */
+    private void onGrantedPermissions()
+    {
+        permissionsCheckComplete = true;
+        checkLocationProvider();
+        updateMapMarkerLocation();
     }
 
     @Override
@@ -210,9 +227,7 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
                 {
                     if (grantResults[index] == PackageManager.PERMISSION_GRANTED)
                     {
-                        checkLocationProvider();
-                        updateMapMarkerLocation();
-                        permissionsCheckComplete = true;
+                        onGrantedPermissions();
                     } else
                     {
                         Log.w(LOG_TAG, "The ACCESS_FINE_LOCATION Permission was denied.");
@@ -234,9 +249,7 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
                     ACCESS_PERMISSION_REQUEST_ID);
         } else
         {
-            permissionsCheckComplete = true;
-            checkLocationProvider();
-            updateMapMarkerLocation();
+            onGrantedPermissions();
         }
     }
 

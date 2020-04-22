@@ -1,37 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".SeventhFragmentRemarks">
 
-    <TextView
-            android:id="@+id/title"
-            style="@style/TitleText"
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/remarks_title" />
+            android:orientation="vertical">
 
-    <TextView
-            android:id="@+id/description"
-            style="@style/TextSample"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/remarks_description" />
+        <TextView
+                android:id="@+id/title"
+                style="@style/TitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/remarks_title" />
 
-    <EditText
-            android:id="@+id/editText"
-            style="@style/EditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textMultiLine" />
+        <TextView
+                android:id="@+id/description"
+                style="@style/TextSample"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/remarks_description" />
 
-    <Button
-            android:id="@+id/button_next"
-            style="@style/NextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/create_report_button_text" />
+        <EditText
+                android:id="@+id/editText"
+                style="@style/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine" />
 
-</LinearLayout>
+        <Button
+                android:id="@+id/button_next"
+                style="@style/NextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/create_report_button_text" />
+
+    </LinearLayout>
+
+</ScrollView>

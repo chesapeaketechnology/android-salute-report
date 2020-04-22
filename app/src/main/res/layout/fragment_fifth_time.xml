@@ -1,69 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".FifthFragmentTime">
 
-    <TextView
-            android:id="@+id/title"
-            style="@style/TitleText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/time_title" />
-
-    <TextView
-            android:id="@+id/description"
-            style="@style/TextSample"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/time_description" />
-
-    <CheckBox
-            android:id="@+id/ongoing_check_box"
-            style="@style/TextSample"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/large_margin"
-            android:text="@string/ongoing" />
-
-    <Button
-            android:id="@+id/date_time_button"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/medium_margin"
-            android:layout_marginTop="@dimen/small_margin"
-            android:layout_marginEnd="@dimen/medium_margin"
-            android:text="@string/select_date_time" />
-
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            tools:context=".FifthFragmentTime">
 
         <TextView
-                android:id="@+id/date_time_label"
-                style="@style/ViewSample.Name"
+                android:id="@+id/title"
+                style="@style/TitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/time_title" />
+
+        <TextView
+                android:id="@+id/description"
+                style="@style/TextSample"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/time_description" />
+
+        <CheckBox
+                android:id="@+id/ongoing_check_box"
+                style="@style/TextSample"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/large_margin"
+                android:text="@string/ongoing" />
+
+        <Button
+                android:id="@+id/date_time_button"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/medium_margin"
-                android:text="@string/date_time_label" />
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:text="@string/select_date_time" />
 
-        <TextView
-                android:id="@+id/date_time_value"
-                style="@style/EditText"
-                android:layout_width="wrap_content"
+        <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="" />
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/date_time_label"
+                    style="@style/ViewSample.Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium_margin"
+                    android:text="@string/date_time_label" />
+
+            <TextView
+                    android:id="@+id/date_time_value"
+                    style="@style/EditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+        </LinearLayout>
+
+        <Button
+                android:id="@+id/button_next"
+                style="@style/NextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
     </LinearLayout>
-
-    <Button
-            android:id="@+id/button_next"
-            style="@style/NextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-</LinearLayout>
+</ScrollView>

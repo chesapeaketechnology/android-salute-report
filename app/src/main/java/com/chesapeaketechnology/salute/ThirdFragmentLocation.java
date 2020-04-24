@@ -118,10 +118,43 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
     }
 
     @Override
+    public void onPause()
+    {
+        super.onPause();
+        mapView.onPause();
+    }
+
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+        mapView.onStart();
+    }
+
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+        mapView.onStop();
+    }
+
+    @Override
     public void onDestroy()
     {
         super.onDestroy();
         if (mapView != null) mapView.onDestroy();
+    }
+
+    @Override
+    public void onDestroyView()
+    {
+        super.onDestroyView();
+
+        mapMarker = null;
+        map = null;
+        mapView = null;
+        mapReady = false;
+        permissionsCheckComplete = false;
     }
 
     @Override
@@ -158,7 +191,27 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
 
         updateMapMarkerLocation();
 
-        map.setOnMapClickListener((point) -> mapMarker.setPosition(point));
+        map.setOnMapClickListener((point) -> {
+            mapMarker.setPosition(point);
+        });
+    }
+
+    /**
+     * Helper method to set the marker and center the camera on it.
+     *
+     * @param location LatLng to set the marker at
+     */
+    private void setAndCenterMarker(LatLng location)
+    {
+        if (mapMarker == null)
+        {
+            mapMarker = map.addMarker(new MarkerOptions().position(location));
+        } else
+        {
+            mapMarker.setPosition(location);
+        }
+        map.moveCamera(CameraUpdateFactory.newCameraPosition(
+                CameraPosition.fromLatLngZoom(location, DEFAULT_MAP_ZOOM)));
     }
 
     /**
@@ -167,16 +220,18 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
     @SuppressLint("MissingPermission")
     private void updateMapMarkerLocation()
     {
-        // Make sure that the map is ready and all permissions have been granted.
+
+        // Make sure that the map is ready and open and that all permissions have been granted.
         // The order in which these are called can vary depending on fragment lifecycle, device rotations etc.
-        if (!mapReady || !permissionsCheckComplete) return;
+        if (!mapReady || !permissionsCheckComplete || mapView.getVisibility() != View.VISIBLE)
+        {
+            return;
+        }
 
         // If the fragment is restoring from a saved instance state, restore the marker the user previously had
         if (savedMarkerPosition != null)
         {
-            mapMarker = map.addMarker(new MarkerOptions().position(savedMarkerPosition));
-            map.moveCamera(CameraUpdateFactory.newCameraPosition(
-                    CameraPosition.fromLatLngZoom(savedMarkerPosition, DEFAULT_MAP_ZOOM)));
+            setAndCenterMarker(savedMarkerPosition);
             return;
         }
 
@@ -191,16 +246,7 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
         if (location != null)
         {
             LatLng currentPosition = new LatLng(location.getLatitude(), location.getLongitude());
-
-            if (mapMarker == null)
-            {
-                mapMarker = map.addMarker(new MarkerOptions().position(currentPosition));
-                map.moveCamera(CameraUpdateFactory.newCameraPosition(
-                        CameraPosition.fromLatLngZoom(currentPosition, DEFAULT_MAP_ZOOM)));
-            } else
-            {
-                mapMarker.setPosition(currentPosition);
-            }
+            setAndCenterMarker(currentPosition);
         }
     }
 
@@ -209,6 +255,7 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
      */
     private void onGrantedPermissions()
     {
+
         permissionsCheckComplete = true;
         checkLocationProvider();
         updateMapMarkerLocation();
@@ -243,10 +290,10 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
      */
     private void checkAndRequestPermissions()
     {
+
         if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
         {
-            ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                    ACCESS_PERMISSION_REQUEST_ID);
+            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, ACCESS_PERMISSION_REQUEST_ID);
         } else
         {
             onGrantedPermissions();

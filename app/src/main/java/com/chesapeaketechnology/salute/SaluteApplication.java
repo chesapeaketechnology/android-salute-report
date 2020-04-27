@@ -40,7 +40,7 @@ public class SaluteApplication extends Application
                 hasFixedGoogleBug154855417.edit().putBoolean("fixed", true).apply();
             }
         } catch (Exception e) {
-            Log.wtf(LOG_TAG, "Google Maps SDK bug workaround failed: " + e.toString());
+            Log.wtf(LOG_TAG, "Google Maps SDK bug workaround failed", e);
         }
     }
 }

@@ -57,14 +57,14 @@ public class ReportDetailsFragment extends Fragment
         TextView remarks = view.findViewById(R.id.remarks);
         TextView created = view.findViewById(R.id.created);
 
-        reportLabel.setText(stringOrNa(saluteReport.getReportName()));
-        size.setText(stringOrNa(saluteReport.getSize()));
-        activity.setText(stringOrNa(saluteReport.getActivity()));
-        location.setText(stringOrNa(saluteReport.getLocationString()));
-        unit.setText(stringOrNa(saluteReport.getUnit()));
+        reportLabel.setText(SaluteAppUtils.stringOrNa(saluteReport.getReportName()));
+        size.setText(SaluteAppUtils.stringOrNa(saluteReport.getSize()));
+        activity.setText(SaluteAppUtils.stringOrNa(saluteReport.getActivity()));
+        location.setText(SaluteAppUtils.stringOrNa(saluteReport.getLocationString()));
+        unit.setText(SaluteAppUtils.stringOrNa(saluteReport.getUnit()));
         time.setText(SaluteAppUtils.formatReportTime(saluteReport));
-        equipment.setText(stringOrNa(saluteReport.getEquipment()));
-        remarks.setText(stringOrNa(saluteReport.getRemarks()));
+        equipment.setText(SaluteAppUtils.stringOrNa(saluteReport.getEquipment()));
+        remarks.setText(SaluteAppUtils.stringOrNa(saluteReport.getRemarks()));
         created.setText(SaluteAppUtils.formatDate(saluteReport.getReportCreationTime()));
     }
 
@@ -100,17 +100,5 @@ public class ReportDetailsFragment extends Fragment
         {
             saluteReport = ReportDetailsFragmentArgs.fromBundle(arguments).getSaluteReport();
         }
-    }
-
-    /**
-     * If argument is empty string, return "N/A", otherwise return string
-     *
-     * @param s String to check
-     * @return String passed in or "N/A"
-     */
-    private String stringOrNa(String s)
-    {
-        if (s == null || s.isEmpty()) return "N/A";
-        return s;
     }
 }

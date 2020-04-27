@@ -1,10 +1,16 @@
 package com.chesapeaketechnology.salute.model;
 
+import android.content.Context;
+import android.util.Log;
+
 import androidx.annotation.Nullable;
 
+import com.chesapeaketechnology.salute.SaluteAppUtils;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Locale;
@@ -17,6 +23,17 @@ import java.util.Locale;
  */
 public class SaluteReport implements Serializable
 {
+    private static final String LOG_TAG = SaluteReport.class.getSimpleName();
+    private static final String textFormatTemplate =
+            "Report Name:\n%s\n\n"
+                    + "Size:\n%s\n\n"
+                    + "Activity:\n%s\n\n"
+                    + "Location:\n%s\n\n"
+                    + "Unit:\n%s\n\n"
+                    + "Time:\n%s\n\n"
+                    + "Equipment:\n%s\n\n"
+                    + "Remarks:\n%s";
+
     @SerializedName("To")
     private String to;
 
@@ -93,6 +110,48 @@ public class SaluteReport implements Serializable
             return String.format(Locale.getDefault(), "%.5f, %.5f", latitude, longitude);
         }
         return null;
+    }
+
+    private String formatAsHumanReadableString()
+    {
+        return String.format(textFormatTemplate,
+                reportName,
+                SaluteAppUtils.stringOrNa(size),
+                SaluteAppUtils.stringOrNa(activity),
+                SaluteAppUtils.stringOrNa(getLocationString()),
+                SaluteAppUtils.stringOrNa(unit),
+                SaluteAppUtils.formatReportTime(this),
+                SaluteAppUtils.stringOrNa(equipment),
+                SaluteAppUtils.stringOrNa(remarks)
+        );
+    }
+
+    /**
+     * Formats the SALUTE report as human-readable plaintext and saves it to a file.
+     *
+     * @return The text file's File object
+     * @since 0.1.1
+     */
+    public File formatAndSaveAsTextFile(Context context)
+    {
+        if (file == null)
+        {
+            Log.wtf(LOG_TAG, "File does not exist");
+        }
+
+        final String filenameWithoutExtension
+                = SaluteAppUtils.getNameWithoutExtension(file.getName());
+        final File txtFile = new File(SaluteAppUtils.getTempShareFilesDir(context), filenameWithoutExtension + ".txt");
+
+        try (final FileOutputStream stream = new FileOutputStream(txtFile))
+        {
+            stream.write(formatAsHumanReadableString().getBytes());
+        } catch (IOException e)
+        {
+            Log.e(LOG_TAG, "Error writing to text file: " + e.toString());
+        }
+
+        return txtFile;
     }
 
     public void setTo(String to)

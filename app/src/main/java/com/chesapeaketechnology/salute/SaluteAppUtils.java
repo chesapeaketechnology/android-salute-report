@@ -92,10 +92,33 @@ public final class SaluteAppUtils
         return formatDate(report.getTime());
     }
 
+    /**
+     * If argument is empty string, return "N/A", otherwise return string
+     *
+     * @param s String to check
+     * @return String passed in or "N/A"
+     */
+    public static String stringOrNa(String s)
+    {
+        return (s == null || s.isEmpty()) ? "N/A" : s;
+    }
+
     private static void openShareSaluteReportDialog(Intent sharingIntent, Context context)
     {
         sharingIntent.setType(shareMimeType);
         context.startActivity(Intent.createChooser(sharingIntent, null));
+    }
+
+    /**
+     * @return The File object representing the app's private storage directory where the Salute Report JSON files are
+     * stored.
+     */
+    @SuppressWarnings("ResultOfMethodCallIgnored")
+    public static File getTempShareFilesDir(Context context)
+    {
+        @SuppressWarnings("ConstantConditions") final File sharedFilesTempDirectory = new File(context.getFilesDir(), SaluteAppConstants.SHARE_FILES_TEMP_DIRECTORY);
+        if (!sharedFilesTempDirectory.exists()) sharedFilesTempDirectory.mkdir();
+        return sharedFilesTempDirectory;
     }
 
     /**
@@ -143,7 +166,7 @@ public final class SaluteAppUtils
         {
             ArrayList<Uri> reportUris = reports
                     .stream()
-                    .map(r -> getFileUri(r.getFile(), context))
+                    .map(r -> getFileUri(r.formatAndSaveAsTextFile(context), context))
                     .collect(Collectors.toCollection(ArrayList::new));
 
             sharingIntent.setAction(Intent.ACTION_SEND_MULTIPLE);
@@ -151,7 +174,8 @@ public final class SaluteAppUtils
         } else
         {
             sharingIntent.setAction(Intent.ACTION_SEND);
-            sharingIntent.putExtra(Intent.EXTRA_STREAM, getFileUri(reports.get(0).getFile(), context));
+            sharingIntent.putExtra(Intent.EXTRA_STREAM,
+                    getFileUri(reports.get(0).formatAndSaveAsTextFile(context), context));
         }
 
         context.startActivity(Intent.createChooser(sharingIntent, null));

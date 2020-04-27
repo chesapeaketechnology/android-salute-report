@@ -191,7 +191,7 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
                     }
                 } catch (Exception e)
                 {
-                    Log.wtf(LOG_TAG, "Could not read the salute report from a file");
+                    Log.wtf(LOG_TAG, "Could not read the salute report from a file: " + e.toString());
                 }
             }
         }

@@ -110,8 +110,7 @@ public final class SaluteAppUtils
     }
 
     /**
-     * @return The File object representing the app's private storage directory where the Salute Report JSON files are
-     * stored.
+     * @return The File object representing the app's directory where temp .txt files are stored.
      */
     @SuppressWarnings("ResultOfMethodCallIgnored")
     public static File getTempShareFilesDir(Context context)

@@ -24,15 +24,14 @@ import java.util.Locale;
 public class SaluteReport implements Serializable
 {
     private static final String LOG_TAG = SaluteReport.class.getSimpleName();
-    private static final String textFormatTemplate =
-            "Report Name:\n%s\n\n"
-                    + "Size:\n%s\n\n"
-                    + "Activity:\n%s\n\n"
-                    + "Location:\n%s\n\n"
-                    + "Unit:\n%s\n\n"
-                    + "Time:\n%s\n\n"
-                    + "Equipment:\n%s\n\n"
-                    + "Remarks:\n%s";
+    private static final String textFormatTemplate = "Report Name:\n%s\n\n"
+            + "Size:\n%s\n\n"
+            + "Activity:\n%s\n\n"
+            + "Location:\n%s\n\n"
+            + "Unit:\n%s\n\n"
+            + "Time:\n%s\n\n"
+            + "Equipment:\n%s\n\n"
+            + "Remarks:\n%s";
 
     @SerializedName("To")
     private String to;

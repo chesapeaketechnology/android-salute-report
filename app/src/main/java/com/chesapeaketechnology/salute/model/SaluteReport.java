@@ -15,7 +15,7 @@ import java.util.Locale;
  * Most of these fields are not required for a SALUTE report.  It is only necessary to fill out the fields that the
  * reporter finds meaningful.
  */
-public class SaluteReport implements Serializable
+public class SaluteReport implements Serializable, Comparable<SaluteReport>
 {
     @SerializedName("To")
     private String to;
@@ -74,6 +74,12 @@ public class SaluteReport implements Serializable
     {
         this.reportCreationTime = new Date(reportCreationTime);
         this.reportName = reportName;
+    }
+
+    // Reports sorted by date created
+    public int compareTo(SaluteReport report2)
+    {
+        return reportCreationTime.compareTo(report2.getReportCreationTime());
     }
 
     /**

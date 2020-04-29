@@ -78,8 +78,14 @@ public class ReportCreationTest
 
         onView(withText("Create Report")).perform(scrollTo(), click());
 
+        // Navigate into report details, then back
+        onView(allOf(withText("AUniqueReportNameThatShouldNeverExist"), withId(R.id.report_name))).perform(click());
+        onView(withContentDescription("Navigate up")).perform(click());
+        onView(withText("AUniqueReportNameThatShouldNeverExist")).check(matches(isDisplayed()));
+
         onView(allOf(withText("AUniqueReportNameThatShouldNeverExist"), withId(R.id.report_name))).perform(longClick());
 
+        // Delete report
         onView(withId(R.id.action_delete)).perform(click());
     }
 

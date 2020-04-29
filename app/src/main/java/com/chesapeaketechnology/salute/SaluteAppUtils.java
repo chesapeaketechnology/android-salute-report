@@ -4,10 +4,13 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 
 import com.chesapeaketechnology.salute.model.SaluteReport;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,6 +26,8 @@ import java.util.stream.Collectors;
 @SuppressWarnings("WeakerAccess")
 public final class SaluteAppUtils
 {
+    private static final String LOG_TAG = SaluteAppUtils.class.getSimpleName();
+
     // TODO: change to DateTimeFormatter when minimum API is 26
     @SuppressLint("SimpleDateFormat")
     private static final SimpleDateFormat militaryFormat = new SimpleDateFormat("yyyy/MM/dd HHmm zzz");
@@ -92,10 +97,32 @@ public final class SaluteAppUtils
         return formatDate(report.getTime());
     }
 
+    /**
+     * If argument is empty string, return "N/A", otherwise return string
+     *
+     * @param s String to check
+     * @return String passed in or "N/A"
+     */
+    public static String stringOrNa(String s)
+    {
+        return (s == null || s.isEmpty()) ? "N/A" : s;
+    }
+
     private static void openShareSaluteReportDialog(Intent sharingIntent, Context context)
     {
         sharingIntent.setType(shareMimeType);
         context.startActivity(Intent.createChooser(sharingIntent, null));
+    }
+
+    /**
+     * @return The File object representing the app's directory where temp .txt files are stored.
+     */
+    @SuppressWarnings("ResultOfMethodCallIgnored")
+    public static File getTempShareFilesDir(Context context)
+    {
+        @SuppressWarnings("ConstantConditions") final File sharedFilesTempDirectory = new File(context.getFilesDir(), SaluteAppConstants.SHARE_FILES_TEMP_DIRECTORY);
+        if (!sharedFilesTempDirectory.exists()) sharedFilesTempDirectory.mkdir();
+        return sharedFilesTempDirectory;
     }
 
     /**
@@ -111,6 +138,35 @@ public final class SaluteAppUtils
         context.grantUriPermission(context.getPackageName(), uri,
                 Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
         return uri;
+    }
+
+    /**
+     * Formats the SALUTE report as human-readable plaintext and saves it to a file.
+     *
+     * @return The text file's File object
+     * @since 0.1.1
+     */
+    public static File formatAndSaveAsTextFile(SaluteReport report, Context context)
+    {
+        File reportFile = report.getFile();
+        if (reportFile == null)
+        {
+            Log.wtf(LOG_TAG, "File does not exist");
+        }
+
+        final String filenameWithoutExtension
+                = SaluteAppUtils.getNameWithoutExtension(reportFile.getName());
+        final File txtFile = new File(SaluteAppUtils.getTempShareFilesDir(context), filenameWithoutExtension + ".txt");
+
+        try (final FileOutputStream stream = new FileOutputStream(txtFile))
+        {
+            stream.write(report.formatAsHumanReadableString().getBytes());
+        } catch (IOException e)
+        {
+            Log.e(LOG_TAG, "Error writing to text file:", e);
+        }
+
+        return txtFile;
     }
 
     /**
@@ -143,7 +199,7 @@ public final class SaluteAppUtils
         {
             ArrayList<Uri> reportUris = reports
                     .stream()
-                    .map(r -> getFileUri(r.getFile(), context))
+                    .map(report -> getFileUri(formatAndSaveAsTextFile(report, context), context))
                     .collect(Collectors.toCollection(ArrayList::new));
 
             sharingIntent.setAction(Intent.ACTION_SEND_MULTIPLE);
@@ -151,7 +207,8 @@ public final class SaluteAppUtils
         } else
         {
             sharingIntent.setAction(Intent.ACTION_SEND);
-            sharingIntent.putExtra(Intent.EXTRA_STREAM, getFileUri(reports.get(0).getFile(), context));
+            sharingIntent.putExtra(Intent.EXTRA_STREAM,
+                    getFileUri(formatAndSaveAsTextFile(reports.get(0), context), context));
         }
 
         context.startActivity(Intent.createChooser(sharingIntent, null));

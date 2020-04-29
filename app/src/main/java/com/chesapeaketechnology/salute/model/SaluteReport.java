@@ -2,6 +2,7 @@ package com.chesapeaketechnology.salute.model;
 
 import androidx.annotation.Nullable;
 
+import com.chesapeaketechnology.salute.SaluteAppUtils;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.File;
@@ -17,6 +18,16 @@ import java.util.Locale;
  */
 public class SaluteReport implements Serializable
 {
+    private static final String LOG_TAG = SaluteReport.class.getSimpleName();
+    private static final String textFormatTemplate = "Report Name:\n%s\n\n"
+            + "Size:\n%s\n\n"
+            + "Activity:\n%s\n\n"
+            + "Location:\n%s\n\n"
+            + "Unit:\n%s\n\n"
+            + "Time:\n%s\n\n"
+            + "Equipment:\n%s\n\n"
+            + "Remarks:\n%s";
+
     @SerializedName("To")
     private String to;
 
@@ -93,6 +104,23 @@ public class SaluteReport implements Serializable
             return String.format(Locale.getDefault(), "%.5f, %.5f", latitude, longitude);
         }
         return null;
+    }
+
+    /**
+     * @return String containing the SALUTE report's contents formatted as human-readable.
+     */
+    public String formatAsHumanReadableString()
+    {
+        return String.format(textFormatTemplate,
+                reportName,
+                SaluteAppUtils.stringOrNa(size),
+                SaluteAppUtils.stringOrNa(activity),
+                SaluteAppUtils.stringOrNa(getLocationString()),
+                SaluteAppUtils.stringOrNa(unit),
+                SaluteAppUtils.formatReportTime(this),
+                SaluteAppUtils.stringOrNa(equipment),
+                SaluteAppUtils.stringOrNa(remarks)
+        );
     }
 
     public void setTo(String to)

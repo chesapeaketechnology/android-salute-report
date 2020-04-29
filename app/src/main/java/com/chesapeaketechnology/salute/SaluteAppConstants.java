@@ -16,7 +16,10 @@ public class SaluteAppConstants
      * Need to stay in sync with the directory name found in file_provider_paths.xml
      */
     public static final String PRIVATE_REPORT_DIRECTORY = "salutereports";
-    public static final String SALUTE_REPORT_FILE_EXTENSION = ".json";
+    public static final String SALUTE_REPORT_FILE_EXTENSION = ".salutereport";
+
+    // Directory to temporary store .txt versions of files for sharing
+    public static final String SHARE_FILES_TEMP_DIRECTORY = "sharedreports";
 
     // The authority for the file provider
     public static final String AUTHORITY = "com.chesapeaketechnology.salute.fileprovider";

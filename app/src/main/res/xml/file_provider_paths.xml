@@ -3,4 +3,7 @@
     <files-path
             name="salutereports"
             path="salutereports/" />
+    <files-path
+    		name="sharedreports"
+    		path="sharedreports/" />
 </paths>

@@ -16,7 +16,7 @@ import java.util.Locale;
  * Most of these fields are not required for a SALUTE report.  It is only necessary to fill out the fields that the
  * reporter finds meaningful.
  */
-public class SaluteReport implements Serializable
+public class SaluteReport implements Serializable, Comparable<SaluteReport>
 {
     private static final String LOG_TAG = SaluteReport.class.getSimpleName();
     private static final String textFormatTemplate = "Report Name:\n%s\n\n"
@@ -85,6 +85,18 @@ public class SaluteReport implements Serializable
     {
         this.reportCreationTime = new Date(reportCreationTime);
         this.reportName = reportName;
+    }
+
+    /**
+     * Compare to another SaluteReport based on date created.
+     *
+     * @param report2 SaluteReport to compare to.
+     * @return -1 if less than, 0 if equal, 1 if greater than.
+     */
+    @Override
+    public int compareTo(SaluteReport report2)
+    {
+        return reportCreationTime.compareTo(report2.getReportCreationTime());
     }
 
     /**

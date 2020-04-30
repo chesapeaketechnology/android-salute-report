@@ -34,8 +34,6 @@ import com.google.gson.GsonBuilder;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -47,7 +45,7 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
 {
     private static final String LOG_TAG = HomeFragment.class.getSimpleName();
 
-    private final List<SaluteReport> saluteReports = new ArrayList<>();
+    private final List<SaluteReport> saluteReports = new SortedSaluteReportList();
     private RecyclerView recyclerView;
 
     @Override
@@ -196,8 +194,6 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
                 }
             }
         }
-
-        Collections.sort(saluteReports);
     }
 
     /**
@@ -274,7 +270,6 @@ public class HomeFragment extends Fragment implements SaluteReportInteractionLis
         String snackbarMessage = getString(R.string.created_report_toast_message);
 
         saluteReports.add(saluteReport);
-        Collections.sort(saluteReports);
 
         Log.d(LOG_TAG, "Serializing a SALUTE report");
 

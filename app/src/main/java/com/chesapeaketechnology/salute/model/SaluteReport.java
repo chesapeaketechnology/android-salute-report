@@ -76,7 +76,13 @@ public class SaluteReport implements Serializable, Comparable<SaluteReport>
         this.reportName = reportName;
     }
 
-    // Reports sorted by date created
+    /**
+     * Compare to another SaluteReport based on date created.
+     *
+     * @param report2 SaluteReport to compare to.
+     * @return -1 if less than, 0 if equal, 1 if greater than.
+     */
+    @Override
     public int compareTo(SaluteReport report2)
     {
         return reportCreationTime.compareTo(report2.getReportCreationTime());

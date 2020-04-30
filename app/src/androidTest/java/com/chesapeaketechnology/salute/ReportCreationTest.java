@@ -32,6 +32,12 @@ public class ReportCreationTest
     @Test
     public void reportCreationTest()
     {
+        String sizeText = "Some size";
+        String activityText = "Some activity";
+        String unitText = "Some unit";
+        String equipmentText = "Some equipment";
+        String remarksText = "Some remarks";
+
         onView(withId(R.id.fab)).perform(click());
 
         onView(withId(R.id.salute_report_name)).perform(
@@ -40,12 +46,12 @@ public class ReportCreationTest
         onView(withId(android.R.id.button1)).perform(scrollTo(), click());
 
         onView(withId(R.id.editText)).perform(
-            scrollTo(), replaceText("Some size"), closeSoftKeyboard());
+            scrollTo(), replaceText(sizeText), closeSoftKeyboard());
 
         clickNext();
 
         onView(withId(R.id.editText)).perform(
-            scrollTo(), replaceText("Some activity"), closeSoftKeyboard());
+            scrollTo(), replaceText(activityText), closeSoftKeyboard());
 
         clickNext();
 
@@ -57,7 +63,7 @@ public class ReportCreationTest
         clickNext();
 
         onView(withId(R.id.editText))
-                .perform(scrollTo(), replaceText("some unit"), closeSoftKeyboard());
+                .perform(scrollTo(), replaceText(unitText), closeSoftKeyboard());
 
         clickNext();
 
@@ -69,17 +75,26 @@ public class ReportCreationTest
         clickNext();
 
         onView(withId(R.id.editText))
-                .perform(scrollTo(), replaceText("Some equipment"), closeSoftKeyboard());
+                .perform(scrollTo(), replaceText(equipmentText), closeSoftKeyboard());
 
         clickNext();
 
         onView(withId(R.id.editText))
-                .perform(scrollTo(), replaceText("Some remarks"), closeSoftKeyboard());
+                .perform(scrollTo(), replaceText(remarksText), closeSoftKeyboard());
 
         onView(withText("Create Report")).perform(scrollTo(), click());
 
-        // Navigate into report details, then back
+        // Navigate into report details
         onView(allOf(withText("AUniqueReportNameThatShouldNeverExist"), withId(R.id.report_name))).perform(click());
+
+        // Check that text fields are what they should be.
+        // Time and location are difficult to assert here so are left out.
+        onView(withId(R.id.size)).check(matches(withText(sizeText)));
+        onView(withId(R.id.activity)).check(matches(withText(activityText)));
+        onView(withId(R.id.unit)).check(matches(withText(unitText)));
+        onView(withId(R.id.equipment)).check(matches(withText(equipmentText)));
+        onView(withId(R.id.remarks)).check(matches(withText(remarksText)));
+
         onView(withContentDescription("Navigate up")).perform(click());
         onView(withText("AUniqueReportNameThatShouldNeverExist")).check(matches(isDisplayed()));
 

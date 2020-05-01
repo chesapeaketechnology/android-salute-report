@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.location.LocationProvider;
 import android.os.Bundle;
@@ -189,11 +190,25 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
         uiSettings.setMyLocationButtonEnabled(true);
         uiSettings.setMapToolbarEnabled(false);
 
-        updateMapMarkerLocation();
+        setInitialMarkerLocation();
 
-        map.setOnMapClickListener((point) -> {
-            mapMarker.setPosition(point);
-        });
+        map.setOnMapClickListener(this::setMarkerLocation);
+    }
+
+    /**
+     * Helper method to set map marker position and ensure no NPEs.
+     *
+     * @param location LatLng to set the marker at
+     */
+    private void setMarkerLocation(LatLng location)
+    {
+        if (mapMarker == null)
+        {
+            mapMarker = map.addMarker(new MarkerOptions().position(location));
+        } else
+        {
+            mapMarker.setPosition(location);
+        }
     }
 
     /**
@@ -203,13 +218,7 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
      */
     private void setAndCenterMarker(LatLng location)
     {
-        if (mapMarker == null)
-        {
-            mapMarker = map.addMarker(new MarkerOptions().position(location));
-        } else
-        {
-            mapMarker.setPosition(location);
-        }
+        setMarkerLocation(location);
         map.moveCamera(CameraUpdateFactory.newCameraPosition(
                 CameraPosition.fromLatLngZoom(location, DEFAULT_MAP_ZOOM)));
     }
@@ -218,9 +227,8 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
      * Get the location from the Android Location Manager and update the icon on the map.
      */
     @SuppressLint("MissingPermission")
-    private void updateMapMarkerLocation()
+    private void setInitialMarkerLocation()
     {
-
         // Make sure that the map is ready and open and that all permissions have been granted.
         // The order in which these are called can vary depending on fragment lifecycle, device rotations etc.
         if (!mapReady || !permissionsCheckComplete || mapView.getVisibility() != View.VISIBLE)
@@ -235,6 +243,7 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
             return;
         }
 
+        // TODO: Docs recommend the use of FusedLocationProviderClient over LocationManager
         final LocationManager locationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
         if (locationManager == null)
         {
@@ -242,12 +251,19 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
             return;
         }
 
+        // Asynchronously get the user's location and update the map.
         final Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        if (location != null)
-        {
-            LatLng currentPosition = new LatLng(location.getLatitude(), location.getLongitude());
-            setAndCenterMarker(currentPosition);
-        }
+        locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, new LocationListener() {
+            @Override
+            public void onLocationChanged(Location location) {
+                LatLng currentPosition = new LatLng(location.getLatitude(), location.getLongitude());
+                setAndCenterMarker(currentPosition);
+            }
+
+            @Override public void onStatusChanged(String provider, int status, Bundle extras) { }
+            @Override public void onProviderEnabled(String provider) { }
+            @Override public void onProviderDisabled(String provider) { }
+        }, null);
     }
 
     /**
@@ -258,7 +274,7 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
 
         permissionsCheckComplete = true;
         checkLocationProvider();
-        updateMapMarkerLocation();
+        setInitialMarkerLocation();
     }
 
     @Override

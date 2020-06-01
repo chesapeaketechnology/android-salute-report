@@ -17,8 +17,18 @@ Install Android Studio to work on this code.
 
 ## Changelog
 
+##### [0.1.1](https://code.ctic-inc.com/android-salute-report/files/fa2ccc5bddaf096177aeaa1fde7818cef94b18c4/?at=v0.1.1) - 2020-05-06
+ * SALUTE Reports are now sorted in order of date created.
+ * Fixed a bug where the current location would not be displayed on the map when creating a SALUTE Report.
+ * Fixed a bug where a SALUTE Report title would center on screen if it was longer than one line.
+ * SALUTE reports are now shared as human-readable text files.
+ * Fixed a bug where the SALUTE Report app crashed when switching between portrait and landscape mode.
+ * Added a scroll bar to the SALUTE Report screens.
+ * Fixed a bug where the "Equipment" text was cutoff on the Report Details view when using a lower resolution setting.
+ * Added support for sharing Salute Reports.
+
 ##### [0.1.0](https://code.ctic-inc.com/android-salute-report/files/fa2ccc5bddaf096177aeaa1fde7818cef94b18c4/?at=v0.1.0) - 2020-04-03
- * Initial cut of the SALUTE Report Android App
+ * Initial cut of the SALUTE Report Android App.
 
 ## Contact
 

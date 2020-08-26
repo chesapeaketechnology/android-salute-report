@@ -1,5 +1,8 @@
 # Salute Report Android App
 
+[![Build Status](https://travis-ci.com/chesapeaketechnology/android-salute-report.svg?branch=develop)](https://travis-ci.com/github/chesapeaketechnology/android-salute-report)
+[![License](https://img.shields.io/badge/license-Apache%202-green.svg?style=flat)](https://github.com/chesapeaketechnology/android-salute-report/blob/develop/LICENSE)
+
 The Salute Report Android App allows for the creation of SALUTE reports.  It walk the user through the process of creating a SALUTE report, and then writes the report to a file.
 
 The SALUTE reports are stored in individual files with the `.salutereport` file extension. The file 

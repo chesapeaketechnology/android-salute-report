@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths>
     <files-path
-        name="salutereports"
-        path="salutereports/" />
+            name="salutereports"
+            path="salutereports/" />
+    <files-path
+    		name="sharedreports"
+    		path="sharedreports/" />
 </paths>

@@ -3,6 +3,9 @@ package com.chesapeaketechnology.salute;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -23,6 +26,13 @@ public class ReportDetailsFragment extends Fragment
     private static final String LOG_TAG = ReportDetailsFragment.class.getSimpleName();
 
     private SaluteReport saluteReport;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -47,21 +57,34 @@ public class ReportDetailsFragment extends Fragment
         TextView remarks = view.findViewById(R.id.remarks);
         TextView created = view.findViewById(R.id.created);
 
-        reportLabel.setText(stringOrNa(saluteReport.getReportName()));
-        size.setText(stringOrNa(saluteReport.getSize()));
-        activity.setText(stringOrNa(saluteReport.getActivity()));
-        location.setText(stringOrNa(saluteReport.getLocationString()));
-        unit.setText(stringOrNa(saluteReport.getUnit()));
+        reportLabel.setText(SaluteAppUtils.stringOrNa(saluteReport.getReportName()));
+        size.setText(SaluteAppUtils.stringOrNa(saluteReport.getSize()));
+        activity.setText(SaluteAppUtils.stringOrNa(saluteReport.getActivity()));
+        location.setText(SaluteAppUtils.stringOrNa(saluteReport.getLocationString()));
+        unit.setText(SaluteAppUtils.stringOrNa(saluteReport.getUnit()));
         time.setText(SaluteAppUtils.formatReportTime(saluteReport));
-        equipment.setText(stringOrNa(saluteReport.getEquipment()));
-        remarks.setText(stringOrNa(saluteReport.getRemarks()));
+        equipment.setText(SaluteAppUtils.stringOrNa(saluteReport.getEquipment()));
+        remarks.setText(SaluteAppUtils.stringOrNa(saluteReport.getRemarks()));
         created.setText(SaluteAppUtils.formatDate(saluteReport.getReportCreationTime()));
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState)
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater)
     {
-        super.onActivityCreated(savedInstanceState);
+        inflater.inflate(R.menu.menu_report_details, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    {
+        int id = item.getItemId();
+        if (id == R.id.share_button)
+        {
+            SaluteAppUtils.openShareSaluteReportDialog(saluteReport, requireContext());
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     /**
@@ -77,17 +100,5 @@ public class ReportDetailsFragment extends Fragment
         {
             saluteReport = ReportDetailsFragmentArgs.fromBundle(arguments).getSaluteReport();
         }
-    }
-
-    /**
-     * If argument is empty string, return "N/A", otherwise return string
-     *
-     * @param s String to check
-     * @return String passed in or "N/A"
-     */
-    private String stringOrNa(String s)
-    {
-        if (s == null || s.isEmpty()) return "N/A";
-        return s;
     }
 }

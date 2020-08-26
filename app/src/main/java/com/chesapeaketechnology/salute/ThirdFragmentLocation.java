@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.location.LocationProvider;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -47,6 +49,8 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
 {
     private static final String LOG_TAG = ThirdFragmentLocation.class.getSimpleName();
     private static final int ACCESS_PERMISSION_REQUEST_ID = 1;
+    private static final String MAP_MARKER_POSITION_KEY = "MAP_MARKER_POSITION_KEY";
+    private static final int DEFAULT_MAP_ZOOM = 18;
 
     private SaluteReport saluteReport;
     private View view;
@@ -55,15 +59,15 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
     private GoogleMap map;
     private Marker mapMarker;
 
+    private boolean permissionsCheckComplete = false;
+    private boolean mapReady = false;
+
+    private LatLng savedMarkerPosition;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         view = inflater.inflate(R.layout.fragment_third_location, container, false);
-
-        mapView = view.findViewById(R.id.map_view);
-        mapView.onCreate(savedInstanceState);
-        mapView.getMapAsync(this);
-
         return view;
     }
 
@@ -72,12 +76,22 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
     {
         super.onViewCreated(view, savedInstanceState);
 
+        if (savedInstanceState != null)
+        {
+            savedMarkerPosition = savedInstanceState.getParcelable(MAP_MARKER_POSITION_KEY);
+        }
+
         extractSaluteReport();
+
+        mapView = view.findViewById(R.id.map_view);
+        mapView.onCreate(savedInstanceState);
+        mapView.getMapAsync(this);
 
         view.findViewById(R.id.button_next).setOnClickListener(view1 -> updateSaluteReportAndPassOn());
 
         getFromMapSwitch = view.findViewById(R.id.switch_get_from_map);
-        EditText editText = view.findViewById(R.id.editText);
+        final EditText editText = view.findViewById(R.id.editText);
+        final TextView description = view.findViewById(R.id.description);
 
         // Hide/display editText/map appropriately when switch is flipped
         getFromMapSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -86,10 +100,12 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
                 hideKeyboard();
                 editText.setVisibility(View.GONE);
                 mapView.setVisibility(View.VISIBLE);
+                description.setVisibility(View.GONE);
                 checkAndRequestPermissions();
             } else
             {
                 editText.setVisibility(View.VISIBLE);
+                description.setVisibility(View.VISIBLE);
                 mapView.setVisibility(View.GONE);
             }
         });
@@ -103,10 +119,43 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
     }
 
     @Override
+    public void onPause()
+    {
+        super.onPause();
+        mapView.onPause();
+    }
+
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+        mapView.onStart();
+    }
+
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+        mapView.onStop();
+    }
+
+    @Override
     public void onDestroy()
     {
         super.onDestroy();
-        mapView.onDestroy();
+        if (mapView != null) mapView.onDestroy();
+    }
+
+    @Override
+    public void onDestroyView()
+    {
+        super.onDestroyView();
+
+        mapMarker = null;
+        map = null;
+        mapView = null;
+        mapReady = false;
+        permissionsCheckComplete = false;
     }
 
     @Override
@@ -117,22 +166,115 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
     }
 
     @Override
+    public void onSaveInstanceState(Bundle outState)
+    {
+        // Save marked location when view is temporarily destroyed (e.g. on rotation).
+        if (mapMarker != null)
+        {
+            LatLng markedPosition = mapMarker.getPosition();
+            outState.putParcelable(MAP_MARKER_POSITION_KEY, markedPosition);
+        }
+
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
     public void onMapReady(GoogleMap googleMap)
     {
+        mapReady = true;
+
         map = googleMap;
         UiSettings uiSettings = map.getUiSettings();
         uiSettings.setZoomControlsEnabled(true);
         uiSettings.setZoomGesturesEnabled(true);
         uiSettings.setMyLocationButtonEnabled(true);
+        uiSettings.setMapToolbarEnabled(false);
 
-        map.setOnMapClickListener((point) -> {
-            if (mapMarker == null)
-            {
-                mapMarker = map.addMarker(new MarkerOptions().position(point));
-                map.moveCamera(CameraUpdateFactory.newLatLng(point));
+        setInitialMarkerLocation();
+
+        map.setOnMapClickListener(this::setMarkerLocation);
+    }
+
+    /**
+     * Helper method to set map marker position and ensure no NPEs.
+     *
+     * @param location LatLng to set the marker at
+     */
+    private void setMarkerLocation(LatLng location)
+    {
+        if (mapMarker == null)
+        {
+            mapMarker = map.addMarker(new MarkerOptions().position(location));
+        } else
+        {
+            mapMarker.setPosition(location);
+        }
+    }
+
+    /**
+     * Helper method to set the marker and center the camera on it.
+     *
+     * @param location LatLng to set the marker at
+     */
+    private void setAndCenterMarker(LatLng location)
+    {
+        setMarkerLocation(location);
+        map.moveCamera(CameraUpdateFactory.newCameraPosition(
+                CameraPosition.fromLatLngZoom(location, DEFAULT_MAP_ZOOM)));
+    }
+
+    /**
+     * Get the location from the Android Location Manager and update the icon on the map.
+     */
+    @SuppressLint("MissingPermission")
+    private void setInitialMarkerLocation()
+    {
+        // Make sure that the map is ready and open and that all permissions have been granted.
+        // The order in which these are called can vary depending on fragment lifecycle, device rotations etc.
+        if (!mapReady || !permissionsCheckComplete || mapView.getVisibility() != View.VISIBLE)
+        {
+            return;
+        }
+
+        // If the fragment is restoring from a saved instance state, restore the marker the user previously had
+        if (savedMarkerPosition != null)
+        {
+            setAndCenterMarker(savedMarkerPosition);
+            return;
+        }
+
+        // TODO: Docs recommend the use of FusedLocationProviderClient over LocationManager
+        final LocationManager locationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
+        if (locationManager == null)
+        {
+            Log.wtf(LOG_TAG, "Location manager is null.");
+            return;
+        }
+
+        // Asynchronously get the user's location and update the map.
+        final Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, new LocationListener() {
+            @Override
+            public void onLocationChanged(Location location) {
+                LatLng currentPosition = new LatLng(location.getLatitude(), location.getLongitude());
+                setAndCenterMarker(currentPosition);
             }
-            mapMarker.setPosition(point);
-        });
+
+            @Override public void onStatusChanged(String provider, int status, Bundle extras) { }
+            @Override public void onProviderEnabled(String provider) { }
+            @Override public void onProviderDisabled(String provider) { }
+        }, null);
+    }
+
+    /**
+     * Called when permission checks are done.
+     */
+    private void onGrantedPermissions()
+    {
+
+        permissionsCheckComplete = true;
+        checkLocationProvider();
+        setInitialMarkerLocation();
     }
 
     @Override
@@ -148,8 +290,7 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
                 {
                     if (grantResults[index] == PackageManager.PERMISSION_GRANTED)
                     {
-                        checkLocationProvider();
-                        updateMapMarkerLocation();
+                        onGrantedPermissions();
                     } else
                     {
                         Log.w(LOG_TAG, "The ACCESS_FINE_LOCATION Permission was denied.");
@@ -160,34 +301,18 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
     }
 
     /**
-     * Pull the Salute Report from the fragment's arguments and set it as an instance variable.
-     */
-    private void extractSaluteReport()
-    {
-        final Bundle arguments = getArguments();
-        if (arguments == null)
-        {
-            Log.wtf(LOG_TAG, "The arguments bundle was null when creating the Location Fragment (Third Fragment)");
-        } else
-        {
-            saluteReport = ThirdFragmentLocationArgs.fromBundle(arguments).getSaluteReport();
-        }
-    }
-
-    /**
      * Request the permissions needed for this app if any of them have not yet been granted.  If all of the permissions
      * are already granted then don't request anything.
      */
     private void checkAndRequestPermissions()
     {
+
         if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
         {
-            ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                    ACCESS_PERMISSION_REQUEST_ID);
+            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, ACCESS_PERMISSION_REQUEST_ID);
         } else
         {
-            checkLocationProvider();
-            updateMapMarkerLocation();
+            onGrantedPermissions();
         }
     }
 
@@ -242,43 +367,30 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
     }
 
     /**
-     * Get the location from the Android Location Manager and update the icon on the map.
-     */
-    @SuppressLint("MissingPermission")
-    private void updateMapMarkerLocation()
-    {
-        final LocationManager locationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
-        if (locationManager == null)
-        {
-            Log.wtf(LOG_TAG, "Location manager is null.");
-            return;
-        }
-        final Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-
-        map.setMyLocationEnabled(true);
-
-        if (location != null)
-        {
-            LatLng currentPosition = new LatLng(location.getLatitude(), location.getLongitude());
-
-            if (mapMarker == null)
-            {
-                mapMarker = map.addMarker(new MarkerOptions().position(currentPosition));
-                map.moveCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.fromLatLngZoom(currentPosition, 18)));
-            } else
-            {
-                mapMarker.setPosition(currentPosition);
-            }
-        }
-    }
-
-    /**
      * Hides the keyboard if it is open.
      */
     private void hideKeyboard()
     {
         final InputMethodManager inputMethodManager = (InputMethodManager) requireContext().getSystemService(Activity.INPUT_METHOD_SERVICE);
-        if (inputMethodManager != null) inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        if (inputMethodManager != null)
+        {
+            inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
+    }
+
+    /**
+     * Pull the Salute Report from the fragment's arguments and set it as an instance variable.
+     */
+    private void extractSaluteReport()
+    {
+        final Bundle arguments = getArguments();
+        if (arguments == null)
+        {
+            Log.wtf(LOG_TAG, "The arguments bundle was null when creating the Location Fragment (Third Fragment)");
+        } else
+        {
+            saluteReport = ThirdFragmentLocationArgs.fromBundle(arguments).getSaluteReport();
+        }
     }
 
     /**

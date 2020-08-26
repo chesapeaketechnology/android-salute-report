@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ReportDetailsFragment">
 
-    <LinearLayout
+    <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -20,135 +19,134 @@
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
-        <LinearLayout
+        <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
             <TextView
                     android:id="@+id/sizeLabel"
-                    style="@style/ReportDetailsLabel"
-                    android:text="@string/size_label" />
+                    android:text="@string/size_label"
+                    style="@style/ReportDetailsLabel" />
 
             <TextView
                     android:id="@+id/size"
                     style="@style/ReportDetailsValueText" />
 
-        </LinearLayout>
+        </TableRow>
 
-        <LinearLayout
+        <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
             <TextView
                     android:id="@+id/activityLabel"
-                    style="@style/ReportDetailsLabel"
-                    android:text="@string/activity_label" />
-
+                    android:text="@string/activity_label"
+                    style="@style/ReportDetailsLabel" />
 
             <TextView
                     android:id="@+id/activity"
                     style="@style/ReportDetailsValueText" />
 
-        </LinearLayout>
+        </TableRow>
 
-        <LinearLayout
+        <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
             <TextView
                     android:id="@+id/locationLabel"
-                    style="@style/ReportDetailsLabel"
-                    android:text="@string/location_label" />
+                    android:text="@string/location_label"
+                    style="@style/ReportDetailsLabel" />
 
             <TextView
                     android:id="@+id/location"
                     style="@style/ReportDetailsValueText" />
 
-        </LinearLayout>
+        </TableRow>
 
-        <LinearLayout
+        <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
             <TextView
                     android:id="@+id/unitLabel"
-                    style="@style/ReportDetailsLabel"
-                    android:text="@string/unit_label" />
+                    android:text="@string/unit_label"
+                    style="@style/ReportDetailsLabel" />
 
             <TextView
                     android:id="@+id/unit"
                     style="@style/ReportDetailsValueText" />
 
-        </LinearLayout>
+        </TableRow>
 
-        <LinearLayout
+        <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
             <TextView
                     android:id="@+id/timeLabel"
-                    style="@style/ReportDetailsLabel"
-                    android:text="@string/time_label" />
+                    android:text="@string/time_label"
+                    style="@style/ReportDetailsLabel" />
 
             <TextView
                     android:id="@+id/time"
                     style="@style/ReportDetailsValueText" />
 
-        </LinearLayout>
+        </TableRow>
 
-        <LinearLayout
+        <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
             <TextView
                     android:id="@+id/equipmentLabel"
-                    style="@style/ReportDetailsLabel"
-                    android:text="@string/equipment_label" />
+                    android:text="@string/equipment_label"
+                    style="@style/ReportDetailsLabel" />
 
             <TextView
                     android:id="@+id/equipment"
                     style="@style/ReportDetailsValueText" />
 
-        </LinearLayout>
+        </TableRow>
 
-        <LinearLayout
+        <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
             <TextView
                     android:id="@+id/remarksLabel"
-                    style="@style/ReportDetailsLabel"
-                    android:text="@string/remarks_label" />
+                    android:text="@string/remarks_label"
+                    style="@style/ReportDetailsLabel" />
 
             <TextView
                     android:id="@+id/remarks"
                     style="@style/ReportDetailsValueText" />
 
-        </LinearLayout>
+        </TableRow>
 
-        <LinearLayout
+        <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
             <TextView
                     android:id="@+id/createdLabel"
-                    style="@style/ReportDetailsLabel"
-                    android:text="@string/created_label" />
+                    android:text="@string/created_label"
+                    style="@style/ReportDetailsLabel" />
 
             <TextView
                     android:id="@+id/created"
                     style="@style/ReportDetailsValueText" />
 
-        </LinearLayout>
+        </TableRow>
 
-    </LinearLayout>
+    </TableLayout>
 
 </ScrollView>

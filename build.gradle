@@ -10,9 +10,9 @@ buildscript {
 
     }
     dependencies {
-        def navigationVersion = '2.3.0-alpha03'
+        def navigationVersion = '2.3.0-alpha04'
 
-        classpath 'com.android.tools.build:gradle:3.6.1'
+        classpath 'com.android.tools.build:gradle:3.6.2'
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
 
         // NOTE: Do not place your application dependencies here; they belong

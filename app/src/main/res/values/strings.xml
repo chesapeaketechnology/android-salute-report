@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Salute Report</string>
+    <string name="app_name">SALUTE Report</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="home_fragment_label">SALUTE Reports</string>
@@ -43,6 +43,8 @@
     <string name="error_creating_report_toast_message">Could not save the SALUTE report. Please try again or contact the developer if the issue persists.</string>
     <string name="sync_monkey_error_toast_message">Saved the SALUTE report, but could not find the Sync Monkey app to upload it to Azure</string>
 
+    <string name="share_button_title">Share</string>
+
     <!-- Name Dialog Strings -->
     <string name="name_dialog_title">SALUTE Report Name</string>
     <string name="activity_title_text">Activity:</string>
@@ -60,11 +62,17 @@
     <string name="equipment_label">Equipment:</string>
     <string name="remarks_label">Remarks:</string>
     <string name="created_label">Created:</string>
-    <string name="delete_report_dialog_title">Delete report?</string>
-    <string name="delete_report_dialog_message">Are you sure you want to delete this SALUTE report?</string>
+    <string name="delete_report_dialog_title">Delete report(s)?</string>
+    <string name="delete_report_dialog_message">Are you sure you want to delete these SALUTE reports?</string>
+    <string name="none_selected_dialog_title">Nothing selected</string>
+    <string name="none_selected_dialog_message">This action cannot be completed as there are no reports selected.</string>
     <string name="get_from_map_switch_text">Get from Map</string>
 
     <!-- Location Fragment Strings -->
     <string name="map_marker_title">Selected Location</string>
+    <string name="select_optionbar_text">Select</string>
+    <string name="delete_optionbar_title">Delete</string>
+    <string name="share_optionbar_title">Share</string>
+    <string name="deselect_optionbar_title">Deselect</string>
 
 </resources>

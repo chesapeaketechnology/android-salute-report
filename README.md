@@ -2,6 +2,11 @@
 
 The Salute Report Android App allows for the creation of SALUTE reports.  It walk the user through the process of creating a SALUTE report, and then writes the report to a file.
 
+The SALUTE reports are stored in individual files with the `.salutereport` file extension. The file 
+contents are written in JSON which makes it easy for other systems to consume the reports. If Sync
+Monkey is also installed on the phone, the SALUTE reports are sent over to Sync Monkey so they can be 
+synced to the cloud.
+
 ## Getting Started
 
 To build and install the project follow the steps below:
@@ -32,4 +37,4 @@ Install Android Studio to work on this code.
 
 ## Contact
 
-* Christian Rowlands <crowlands@ctic-inc.com>  
+* **Christian Rowlands** - [Craxiom](https://github.com/christianrowlands)

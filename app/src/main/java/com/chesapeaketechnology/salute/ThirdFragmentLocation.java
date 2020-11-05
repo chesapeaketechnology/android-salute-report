@@ -253,16 +253,29 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
 
         // Asynchronously get the user's location and update the map.
         final Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, new LocationListener() {
+        locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, new LocationListener()
+        {
             @Override
-            public void onLocationChanged(Location location) {
+            public void onLocationChanged(Location location)
+            {
                 LatLng currentPosition = new LatLng(location.getLatitude(), location.getLongitude());
                 setAndCenterMarker(currentPosition);
             }
 
-            @Override public void onStatusChanged(String provider, int status, Bundle extras) { }
-            @Override public void onProviderEnabled(String provider) { }
-            @Override public void onProviderDisabled(String provider) { }
+            @Override
+            public void onStatusChanged(String provider, int status, Bundle extras)
+            {
+            }
+
+            @Override
+            public void onProviderEnabled(String provider)
+            {
+            }
+
+            @Override
+            public void onProviderDisabled(String provider)
+            {
+            }
         }, null);
     }
 
@@ -402,6 +415,13 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
         final EditText locationEditText = view.findViewById(R.id.editText);
         if (getFromMapSwitch.isChecked())
         {
+            if (mapMarker == null)
+            {
+                // A location has not been selected by the user. Don't move to the next fragment
+                // and prompt the user to pick a valid location.
+                Toast.makeText(getContext(), getString(R.string.select_a_location), Toast.LENGTH_LONG).show();
+                return;
+            }
             LatLng markedPosition = mapMarker.getPosition();
             saluteReport.setLatitude(markedPosition.latitude);
             saluteReport.setLongitude(markedPosition.longitude);
@@ -413,6 +433,6 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
         final ThirdFragmentLocationDirections.ActionLocationToUnit action =
                 ThirdFragmentLocationDirections.actionLocationToUnit(saluteReport);
 
-        NavHostFragment.findNavController(ThirdFragmentLocation.this).navigate(action);
+        NavHostFragment.findNavController(this).navigate(action);
     }
 }

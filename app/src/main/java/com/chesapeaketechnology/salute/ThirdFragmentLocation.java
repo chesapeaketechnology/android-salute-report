@@ -258,8 +258,16 @@ public class ThirdFragmentLocation extends Fragment implements OnMapReadyCallbac
             @Override
             public void onLocationChanged(Location location)
             {
-                LatLng currentPosition = new LatLng(location.getLatitude(), location.getLongitude());
-                setAndCenterMarker(currentPosition);
+                try
+                {
+                    LatLng currentPosition = new LatLng(location.getLatitude(), location.getLongitude());
+                    setAndCenterMarker(currentPosition);
+                } catch (Throwable e)
+                {
+                    // This exception will happen in an edge case where the user moves on to the next fragment
+                    // before this callback occurs. In that case, we don't care about the updated location.
+                    Log.w(LOG_TAG, "Could not update the current position based on a location change callback", e);
+                }
             }
 
             @Override

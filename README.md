@@ -27,6 +27,7 @@ Install Android Studio to work on this code.
 
 ##### [0.1.2](https://code.ctic-inc.com/android-salute-report/files/fa2ccc5bddaf096177aeaa1fde7818cef94b18c4/?at=v0.1.2) - 2020-11-05
  * Fixed a bug where the app would crash when clicking next on the location screen when no location is selected.
+ * Added the report creation time to the text that is used for sharing.
 
 ##### [0.1.1](https://code.ctic-inc.com/android-salute-report/files/fa2ccc5bddaf096177aeaa1fde7818cef94b18c4/?at=v0.1.1) - 2020-05-06
  * SALUTE Reports are now sorted in order of date created.

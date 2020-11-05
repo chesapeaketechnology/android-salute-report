@@ -26,7 +26,8 @@ public class SaluteReport implements Serializable, Comparable<SaluteReport>
             + "Unit:\n%s\n\n"
             + "Time:\n%s\n\n"
             + "Equipment:\n%s\n\n"
-            + "Remarks:\n%s";
+            + "Remarks:\n%s\n\n"
+            + "Created:\n%s";
 
     @SerializedName("To")
     private String to;
@@ -131,7 +132,8 @@ public class SaluteReport implements Serializable, Comparable<SaluteReport>
                 SaluteAppUtils.stringOrNa(unit),
                 SaluteAppUtils.formatReportTime(this),
                 SaluteAppUtils.stringOrNa(equipment),
-                SaluteAppUtils.stringOrNa(remarks)
+                SaluteAppUtils.stringOrNa(remarks),
+                SaluteAppUtils.formatDate(reportCreationTime)
         );
     }
 

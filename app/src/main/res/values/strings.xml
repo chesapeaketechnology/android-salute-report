@@ -17,6 +17,7 @@
     <string name="location_description">Location/Where: Generally a grid coordinate, but can include an address if appropriate.</string>
     <string name="no_gps_device">No GPS detected in device!</string>
     <string name="turn_on_gps">Please turn on GPS</string>
+    <string name="select_a_location">A valid location needs to be selected from the map or entered in the text box</string>
     <string name="enable_gps_message">Location (GPS) is disabled. It is helpful for getting the Report location from the map.
     \n\nDo you want to enable it now?</string>
     <string name="enable_gps_positive_button">Enable GPS</string>

@@ -99,6 +99,9 @@ atlassian-ide-plugin.xml
 # Mongo Explorer plugin
 .idea/mongoSettings.xml
 
+# Google Maps API Key
+google_maps_api.xml
+
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
 crashlytics.properties
@@ -172,3 +175,4 @@ out
 
 # End of https://www.gitignore.io/api/java,gradle,windows,androidstudio
 app/release/output.json
+app/release/

@@ -1,5 +1,8 @@
 # Salute Report Android App
 
+[![Build Status](https://travis-ci.com/chesapeaketechnology/android-salute-report.svg?branch=develop)](https://travis-ci.com/github/chesapeaketechnology/android-salute-report)
+[![License](https://img.shields.io/badge/license-Apache%202-green.svg?style=flat)](https://github.com/chesapeaketechnology/android-salute-report/blob/develop/LICENSE)
+
 The Salute Report Android App allows for the creation of SALUTE reports.  It walk the user through the process of creating a SALUTE report, and then writes the report to a file.
 
 The SALUTE reports are stored in individual files with the `.salutereport` file extension. The file 
@@ -21,6 +24,10 @@ To build and install the project follow the steps below:
 Install Android Studio to work on this code.
 
 ## Changelog
+
+##### [0.1.2](https://code.ctic-inc.com/android-salute-report/files/fa2ccc5bddaf096177aeaa1fde7818cef94b18c4/?at=v0.1.2) - 2020-11-05
+ * Fixed a bug where the app would crash when clicking next on the location screen when no location is selected.
+ * Added the report creation time to the text that is used for sharing.
 
 ##### [0.1.1](https://code.ctic-inc.com/android-salute-report/files/fa2ccc5bddaf096177aeaa1fde7818cef94b18c4/?at=v0.1.1) - 2020-05-06
  * SALUTE Reports are now sorted in order of date created.

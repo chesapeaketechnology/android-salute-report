@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -179,7 +180,7 @@ public final class SaluteAppUtils
      */
     public static void openShareSaluteReportDialog(SaluteReport report, Context context)
     {
-        openShareSaluteReportDialog(Arrays.asList(report), context);
+        openShareSaluteReportDialog(Collections.singletonList(report), context);
     }
 
     /**

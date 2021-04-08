@@ -23,6 +23,12 @@ To build and install the project follow the steps below:
 
 Install Android Studio to work on this code.
 
+#### Google Maps API Key
+
+This app uses the Google Maps API. As such, you need to set a valid Google Maps API key. Nagigate
+to the [google_maps_api.xml](app/src/main/res/values/google_maps_api.xml) file and enter in your
+Google Maps API key.
+
 ## Changelog
 
 ##### [0.1.2](https://code.ctic-inc.com/android-salute-report/files/fa2ccc5bddaf096177aeaa1fde7818cef94b18c4/?at=v0.1.2) - 2020-11-05
